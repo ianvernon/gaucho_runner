@@ -19,7 +19,7 @@ public class GauchoRunner {
 	}
 	
 	public static void main(String[] argv) {
-		DisplayTest displayExample = new DisplayTest();
+		GauchoRunner displayExample = new GauchoRunner();
 		displayExample.start();
 	}
 }
