@@ -1,9 +1,9 @@
 <project default="compile">
-  <!-- build.xml for gaucho_runner for CS48 F2013                                                      
+  <!-- build.xml for gaucho_runner for CS48 F2013
        name: Sarah Darwiche, James Thompson, Heneli Kailahi, Evan Moelter, Ian Vernon
        based off of build.xml used in CS56 S2013
     -->
-  <property environment="env"/> 
+  <property environment="env"/>
   <!-- load the environment variables -->
   <!--
   <property name="webRoot" value="${env.HOME}/public_html/cs48" />
@@ -33,7 +33,7 @@
       </classpath>
       <!--<jvmarg value="-Djava.library.path=lib/lwjgl-2.9.0/native/macosx"/>-->
       <sysproperty key="java.library.path"
-		   path="/lib/lwjgl-2.9.0/native/macosx"/>
+		   value="lib/lwjgl-2.9.0/native/macosx"/>
     </java>
   </target>
 
@@ -47,16 +47,16 @@
     <javadoc  destdir="javadoc" author="true" version="true" use="true" >
       <fileset dir="src" includes="**/*.java"/>
     </javadoc>
-    delete the old javadoc 
+    delete the old javadoc
     <delete quiet="true" dir="${javadocDest}" />
-    copy everything you just made to the javadoc destination, and then make it rea    
-     dable 
+    copy everything you just made to the javadoc destination, and then make it rea
+     dable
     <copy todir="${javadocDest}" >
       <fileset dir="javadoc"/>
     </copy>
-    Note: this only does the chmod command on the                                     
-         javadoc subdirectory and its contents.  You MIGHT have to                         
-         MANUALLY do the chmod on the parent directories.  However,                        
+    Note: this only does the chmod command on the
+         javadoc subdirectory and its contents.  You MIGHT have to
+         MANUALLY do the chmod on the parent directories.  However,
          you should only need to do that once
     <chmod dir="${javadocDest}" perm="755"  type="dir" includes="**" />
     <chmod dir="${javadocDest}" perm="755"  type="file" includes="**/*" />
