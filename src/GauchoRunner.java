@@ -33,8 +33,9 @@ public class GauchoRunner {
 		    //Render code
 
 		    // clears the display 
-		    glClear(GL_COLOR_BUFFER_BIT);
-		    glBegin(GL_LINES);
+		    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		    glColor3f(0.5f, 0.5f, 1.0f);
+//		    glBegin(GL_LINES);
 		    if(Keyboard.isKeyDown(Keyboard.KEY_LEFT))
 			{
 			    box.update(-5, 0);
@@ -42,7 +43,7 @@ public class GauchoRunner {
 		    
 		    if(Keyboard.isKeyDown(Keyboard.KEY_DOWN))
 			{
-			    box.update(0, -5);
+			    box.update(0, 5);
 			}
 		    if(Keyboard.isKeyDown(Keyboard.KEY_RIGHT))
 			{
@@ -50,11 +51,11 @@ public class GauchoRunner {
 			}
 		    if(Keyboard.isKeyDown(Keyboard.KEY_UP))
 			{
-			    box.update(0, 5);
+			    box.update(0, -5);
 			}
 		    box.draw();
 		    Display.update();
-			    Display.sync(60);
+			Display.sync(60);
 		}		
 		Display.destroy();
 	}
@@ -72,6 +73,22 @@ public class GauchoRunner {
 	{
 	    x += dx;
 	    y += dy;
+	    checkBounds();
+	}
+	//checks to see if the box has hit the side
+	public void checkBounds(){
+		if (x < 0){
+			x = 0;
+		}
+		else if (x > 800 - 50){
+			x = 800 - 50;
+		}
+		if(y < 0){
+			y = 0;
+		}
+		else if (y > 800 - 50){
+			y = 800 - 50;
+		}
 	}
 	
 	public void draw(){
