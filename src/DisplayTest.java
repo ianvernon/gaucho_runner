@@ -1,6 +1,7 @@
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
+import org.lwjgl.Sys;
 
 public class DisplayTest {
 
@@ -14,13 +15,17 @@ public class DisplayTest {
 	public void start() {
 		try {
 			Display.setDisplayMode(new DisplayMode(800,600));
-			Display.setTitle("Gaucho Runner");
+			Display.setTitle("Gauchoo Runner");
 			Display.create();
 		} catch (LWJGLException e) {
 			e.printStackTrace();
 			System.exit(0);
 		}
+
+		lastFPS = getTime();
+
 		while (!Display.isCloseRequested()) {
+			updateFPS();
 			Display.update();
 			Display.sync(60);
 		}
@@ -31,9 +36,9 @@ public class DisplayTest {
 		DisplayTest displayExample = new DisplayTest();
 		displayExample.start();
 	}
-	public void getTime()
+	public long getTime()
 	{
-		return Sys.getTime() * 1000 / Sys.getTimeResolution();
+		return (Sys.getTime() * 1000) / Sys.getTimerResolution();
 	}
 
 	public void updateFPS()
