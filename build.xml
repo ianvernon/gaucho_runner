@@ -31,7 +31,6 @@
 	<path refid="path.lib" />
 	<pathelement location="build"/>
       </classpath>
-      <!--<jvmarg value="-Djava.library.path=lib/lwjgl-2.9.0/native/macosx"/>-->
       <sysproperty key="java.library.path"
 		   value="lib/lwjgl-2.9.0/native/macosx"/>
     </java>
