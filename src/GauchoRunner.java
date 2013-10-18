@@ -1,12 +1,20 @@
 import org.lwjgl.LWJGLException;
+
 import static org.lwjgl.opengl.GL11.*;
+
 import org.lwjgl.input.Mouse;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.openal.AL;
 import org.lwjgl.opengl.*;
 import org.lwjgl.*;
 
 
 public class GauchoRunner {
+	public static void main(String[] argv) {
+		MainMenu mainMenu = new MainMenu();
+		mainMenu.start();
+	}
+/*
 	public void start() {
 		try {
 			Display.setDisplayMode(new DisplayMode(800,600));
@@ -16,10 +24,8 @@ public class GauchoRunner {
 			e.printStackTrace();
 			System.exit(0);
 		}
-
-
 		Box box = new Box(300, 300);
-
+		
 		// Initialize OpenGL to use a mode to create a window of x & y dimensions
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -29,13 +35,10 @@ public class GauchoRunner {
 		glMatrixMode(GL_MODELVIEW);
 
 		while (!Display.isCloseRequested()) {
-		    
-		    //Render code
 
 		    // clears the display 
 		    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		    glColor3f(0.5f, 0.5f, 1.0f);
-//		    glBegin(GL_LINES);
 		    if(Keyboard.isKeyDown(Keyboard.KEY_LEFT))
 			{
 			    box.update(-5, 0);
@@ -54,13 +57,14 @@ public class GauchoRunner {
 			    box.update(0, -5);
 			}
 		    box.draw();
+		    
 		    Display.update();
 			Display.sync(60);
 		}		
 		Display.destroy();
 	}
     
-    private static class Box{
+private static class Box{
 	public int x, y;
 	
 	public Box(int x, int y)
@@ -99,9 +103,6 @@ public class GauchoRunner {
 	    glVertex2f(x, y+50);
 	    glEnd();
 	}
-    }
-	public static void main(String[] argv) {
-		GauchoRunner displayExample = new GauchoRunner();
-		displayExample.start();
-	}
+}
+*/    
 }
