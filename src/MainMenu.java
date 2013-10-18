@@ -12,7 +12,7 @@ public class MainMenu {
 	long lastFPS;
 	int FPS;
 
-	public void start() {
+	public int start() {
 		initGL(800, 600);
 		init();
 
@@ -45,7 +45,7 @@ public class MainMenu {
 				soundTest.destroy();
 
 				System.out.println(">> Main Menu: Done");
-				System.exit(0);
+				return 0;
 			}
 		}
 	}
