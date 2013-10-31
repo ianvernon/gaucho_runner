@@ -1,6 +1,7 @@
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
@@ -11,6 +12,8 @@ public class MainMenu {
 	SoundTest soundTest;
 	long lastFPS;
 	int FPS;
+	//translate along the x-axis
+	float translate_x = 0;
 
 	public int start() {
 		initGL(800, 600);
@@ -75,6 +78,8 @@ public class MainMenu {
 		GL11.glLoadIdentity();
 		GL11.glOrtho(0, width, height, 0, 1, -1);
 		GL11.glMatrixMode(GL11.GL_MODELVIEW);
+		
+
 	}
 
 	// Initialize resources
@@ -83,6 +88,7 @@ public class MainMenu {
 		soundTest = new SoundTest("res/theme.wav");
 		bird = new TextureBox(400 - 128, 300, "res/captain.png");
 
+		
 		title.init();
 		soundTest.init();
 		bird.init();
@@ -90,7 +96,21 @@ public class MainMenu {
 		soundTest.play();
 	}
 
-	public void render() {
+	public void render() {	
+		//translate the background
+		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
+//		GL11.glPushMatrix();
+		if(Keyboard.isKeyDown(Keyboard.KEY_A)){
+			translate_x -= 1;
+		}
+		if(Keyboard.isKeyDown(Keyboard.KEY_D)){
+			translate_x += 1;
+		}
+		
+		GL11.glTranslated(translate_x, 0, 0);
+//		GL11.glPopMatrix();
+		
+		
 		bird.render();
 		title.render(100, 100, "Gaucho Runner", 0);
 	}
