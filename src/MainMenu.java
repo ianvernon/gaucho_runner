@@ -8,6 +8,7 @@ import org.lwjgl.opengl.GL11;
 
 public class MainMenu {
 	private FontTest title;
+	private FontTest title2;
 	TextureBox bird;
 	SoundTest soundTest;
 	long lastFPS;
@@ -85,11 +86,15 @@ public class MainMenu {
 	// Initialize resources
 	public void init() {
 		title = new FontTest();
-		soundTest = new SoundTest("res/theme.wav");
-		bird = new TextureBox(400 - 128, 300, "res/captain.png");
+		soundTest = new SoundTest("res/Testarossa.wav");
+		bird = new TextureBox(400 - 128, 300, "res/bike.png");
+
+		title2 = new FontTest();
+
 
 		
 		title.init();
+		title2.init();
 		soundTest.init();
 		bird.init();
 
@@ -107,6 +112,8 @@ public class MainMenu {
 			translate_x += 1;
 		}
 		
+//		System.out.println(">> Translate: " + translate_x);
+
 		GL11.glTranslated(translate_x, 0, 0);
 //		GL11.glPopMatrix();
 		
