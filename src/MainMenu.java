@@ -1,16 +1,15 @@
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 
 public class MainMenu {
-	private FontTest title;
-	private FontTest title2;
+	private FontManager title;
+	private FontManager title2;
 	TextureBox bird;
-	SoundTest soundTest;
+	SoundManager soundManager;
 	long lastFPS;
 	int FPS;
 	//translate along the x-axis
@@ -46,7 +45,7 @@ public class MainMenu {
 
 			if (Display.isCloseRequested() || Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {
 				Display.destroy();
-				soundTest.destroy();
+				soundManager.destroy();
 
 				System.out.println(">> Main Menu: Done");
 				return 0;
@@ -85,20 +84,20 @@ public class MainMenu {
 
 	// Initialize resources
 	public void init() {
-		title = new FontTest();
-		soundTest = new SoundTest("res/Testarossa.wav");
+		title = new FontManager();
+		soundManager = new SoundManager("res/Testarossa.wav");
 		bird = new TextureBox(400 - 128, 300, "res/bike.png");
 
-		title2 = new FontTest();
+		title2 = new FontManager();
 
 
 		
 		title.init();
 		title2.init();
-		soundTest.init();
+		soundManager.init();
 		bird.init();
 
-		soundTest.play();
+		soundManager.play();
 	}
 
 	public void render() {	
