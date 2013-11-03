@@ -4,7 +4,7 @@ import java.io.InputStream;
 import org.newdawn.slick.*;
 import org.newdawn.slick.util.ResourceLoader;
 
-public class FontTest {
+public class FontManager {
 	private TrueTypeFont font;
 	private boolean antiAlias = false;
 

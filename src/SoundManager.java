@@ -6,13 +6,13 @@ import org.newdawn.slick.openal.AudioLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
 
-public class SoundTest {
+public class SoundManager {
 	
 	private String src;
 	private Audio oggStream;
 	private Audio wav;
 
-	public SoundTest(String src) {
+	public SoundManager(String src) {
 		this.src = src;
 	}
 
