@@ -18,6 +18,7 @@ public class SoundManager {
 
 	public void init(){
 		try{
+            //TODO use ogg instead of wav
 //			oggStream = AudioLoader.getStreamingAudio("OGG", ResourceLoader.getResource(src));
 			wav = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream(src));
 		}catch (IOException e){

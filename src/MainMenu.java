@@ -85,13 +85,10 @@ public class MainMenu {
 	// Initialize resources
 	public void init() {
 		title = new FontManager();
+        title2 = new FontManager();
 		soundManager = new SoundManager("res/Testarossa.wav");
 		bird = new TextureBox(400 - 128, 300, "res/bike.png");
 
-		title2 = new FontManager();
-
-
-		
 		title.init();
 		title2.init();
 		soundManager.init();
@@ -105,20 +102,26 @@ public class MainMenu {
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 //		GL11.glPushMatrix();
 		if(Keyboard.isKeyDown(Keyboard.KEY_A)){
-			translate_x -= 1;
+			translate_x = -4;
 		}
 		if(Keyboard.isKeyDown(Keyboard.KEY_D)){
-			translate_x += 1;
+			translate_x = 0;
 		}
+//        System.out.println(">> Bird x coord: " + bird.x);
+
+        if(bird.x > 1600){
+            translate_x = 0;
+        }
 		
 //		System.out.println(">> Translate: " + translate_x);
 
 		GL11.glTranslated(translate_x, 0, 0);
+
 //		GL11.glPopMatrix();
-		
-		
+
 		bird.render();
 		title.render(100, 100, "Gaucho Runner", 0);
+        title2.render(1600, 100, "The End", 0);
 	}
 
 	public void updateFPS() {

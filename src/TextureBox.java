@@ -40,16 +40,15 @@ public class TextureBox {
 	}
 
 	// checks to see if the box has hit the side
-	// TODO make it dynamic not hard coded ie. getDemension of screen and texture.
 	public void checkBounds() {
-		if (x < 0) {
-			x = 0;
-		} else if (x > Display.getWidth() - texture.getTextureWidth()) {
-			x = Display.getWidth() - texture.getTextureWidth();
-		}
+//		if (x < 0) {
+//			x = 0;
+//		} else if (x > Display.getWidth() - texture.getTextureWidth()) {
+//			x = Display.getWidth() - texture.getTextureWidth();
+//		}
 		if (y < 0) {
 			y = 0;
-		} else if (y > Display.getHeight() - texture.getTextureHeight()) {
+		} else if (y > Display.getHeight() - texture.getImageHeight()) {
 			y = Display.getHeight() - texture.getImageHeight();
 		}
 	}
