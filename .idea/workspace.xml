@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="007dadf2-38d9-474c-bda0-3164ab07ab96" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/Footsteps.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/appletlogo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/appletprogress.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/ball.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/ball_sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/center.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/ding.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/left.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/logo/lwjgl_logo-with_jacket.ai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/logo/lwjgl_logo-with_jacket.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/lwjgl_16x16.xpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/lwjgl_32x32.xpm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/resources.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/right.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/alien.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/alien2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/alien3.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/gotyou.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/hit.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/loose.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/pressanykey.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/ship.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/shot.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/shot.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/start.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/win.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lwjgl-2.9.0/res/spaceinvaders/youwin.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/Pack200Task.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/ibxm.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/jinput.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/jnlp.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/jogg-0.0.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/jorbis-0.0.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/lwjgl.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/lwjgl_util.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/lwjgl_util_applet.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/natives-linux.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/natives-mac.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/natives-windows.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/slick-examples.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/slick.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/lib/tinylinepp.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/scripts/game-build-example.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/scripts/slickdemo.jnlp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/scripts/slickexample.jnlp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/scripts/slicktemplate.jnlp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/scripts/slicktemplatewithdata.jnlp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/scripts/slickwithextension.jnlp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/AngelCodeFont.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Animation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/AppGameContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/AppletGameContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/BasicGame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/BigImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/CachedRender.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/CanvasGameContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Color.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/ControlledInputReciever.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/ControllerListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Font.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Game.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/GameContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Graphics.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Image.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/ImageBuffer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Input.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/InputListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/KeyListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/MouseListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Music.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/MusicListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/PackedSpriteSheet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Renderable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/SavedState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/ScalableGame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/ShapeFill.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/SlickException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/Sound.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/SpriteSheet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/SpriteSheetFont.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/TrueTypeFont.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/UnicodeFont.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/XMLPackedSheet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/BasicCommand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/Command.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/Control.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/ControllerButtonControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/ControllerControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/ControllerDirectionControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/InputProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/InputProviderListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/KeyControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/MouseButtonControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/command/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/data/defaultfont.fnt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/data/defaultfont.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/data/helvetica_svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/data/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/data/particle.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/fills/GradientFill.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/fills/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/Glyph.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/GlyphPage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/HieroSettings.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/ColorEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/ConfigurableEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/Effect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/EffectUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/FilterEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/GradientEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/OutlineEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/OutlineWobbleEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/OutlineZigzagEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/font/effects/ShadowEffect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/BasicTriangulator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Circle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Curve.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Ellipse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/GeomUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/GeomUtilListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Line.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/MannTriangulator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/MorphShape.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/NeatTriangulator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/OverTriangulator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Path.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Point.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Polygon.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Rectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/RoundedRectangle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Shape.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/ShapeRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/TexCoordGenerator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Transform.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Triangulator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/Vector2f.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/geom/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/gui/AbstractComponent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/gui/BasicComponent.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/gui/ComponentListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/gui/GUIContext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/gui/MouseOverArea.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/gui/TextField.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/gui/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/imageout/ImageIOWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/imageout/ImageOut.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/imageout/ImageWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/imageout/ImageWriterFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/imageout/TGAWriter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/imageout/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/loading/DeferredResource.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/loading/LoadingList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/loading/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/muffin/FileMuffin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/muffin/Muffin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/muffin/WebstartMuffin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/muffin/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/AiffData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/Audio.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/AudioImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/AudioInputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/AudioLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/DeferredSound.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/MODSound.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/NullAudio.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/OggData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/OggDecoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/OggInputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/OpenALStreamPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/SoundStore.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/StreamSound.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/WaveData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/openal/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/CompositeIOException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/CompositeImageData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/CursorLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/DeferredTexture.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/EmptyImageData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/GLUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/ImageData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/ImageDataFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/ImageIOImageData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/InternalTextureLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/LoadableImageData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/PNGDecoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/PNGImageData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/SlickCallable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/TGAImageData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/Texture.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/TextureImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/TextureLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/pbuffer/FBOGraphics.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/pbuffer/GraphicsFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/pbuffer/PBufferGraphics.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/pbuffer/PBufferUniqueGraphics.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/renderer/DefaultLineStripRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/renderer/ImmediateModeOGLRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/renderer/LineStripRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/renderer/QuadBasedLineStripRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/renderer/Renderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/renderer/SGL.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/opengl/renderer/VAOGLRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/ConfigurableEmitter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/ConfigurableEmitterFactory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/Particle.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/ParticleEmitter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/ParticleIO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/ParticleSystem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/effects/FireEmitter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/effects/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/particles/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/BasicGameState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/GameState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/StateBasedGame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/BlobbyTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/CombinedTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/CrossStateTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/EmptyTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/FadeInTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/FadeOutTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/HorizontalSplitTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/RotateTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/SelectTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/Transition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/state/transition/VerticalSplitTransition.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/Diagram.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/Figure.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/Gradient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/InkscapeLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/LinearGradientFill.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/Loader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/NonGeometricData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/ParsingException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/RadialGradientFill.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/SVGMorph.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/SimpleDiagramRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/DefsProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/ElementProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/EllipseProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/GroupProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/InkscapeNonGeometricData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/LineProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/PathProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/PolygonProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/RectProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/UseProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/inkscape/Util.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/svg/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/AlphaMapTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/AnimationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/AntiAliasTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/BigImageTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/BigSpriteSheetTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/CachedRenderTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/CanvasContainerTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/CanvasSizeTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ClipTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/CopyAreaAlphaTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/CurveTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/DeferredLoadingTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/DistanceFieldTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/DoubleClickTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/DuplicateEmitterTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/FlashTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/FontPerformanceTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/FontTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GUITest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GeomAccuracyTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GeomTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GeomUtilTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GeomUtilTileTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GradientImageTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GradientTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/GraphicsTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageBufferEndianTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageBufferTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageCornerTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageGraphicsTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageMemTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageOutTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageReadTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ImageTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/InkscapeTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/InputProviderTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/InputTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/IsoTiledTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/KeyRepeatTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/LameTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/LineRenderTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/MorphSVGTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/MorphShapeTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/MusicListenerTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/NavMeshTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/PackedSheetTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ParticleTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/PedigreeTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/PolygonTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/PureFontTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/SavedStateTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ScalableTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/ShapeTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/SlickCallableTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/SoundPositionTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/SoundTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/SoundURLTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/SpriteSheetFontTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/StateBasedTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TestBox.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TestUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TexturePaintTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TileMapTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TransformTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TransformTest2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TransitionTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TransparentColorTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/TrueTypeFontPerformanceTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/UnicodeFontTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/states/TestState1.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/states/TestState2.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/states/TestState3.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/states/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/Entity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/GameData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/Inventory.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/Item.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/ItemContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/ObjectParserTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/Stats.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/XMLTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tests/xml/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tiled/Layer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tiled/TileSet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tiled/TiledMap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/tiled/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/Bootstrap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/BufferedImageUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/ClasspathLocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/DefaultLogSystem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/FastTrig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/FileSystemLocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/FontUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/InputAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/LocatedImage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/Log.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/LogSystem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/MaskUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/OperationNotSupportedException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/ResourceLoader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/ResourceLocation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/AStarHeuristic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/AStarPathFinder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/Mover.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/Path.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/PathFinder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/PathFindingContext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/TileBasedMap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/heuristics/ClosestHeuristic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/heuristics/ClosestSquaredHeuristic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/heuristics/ManhattanHeuristic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/navmesh/Link.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/navmesh/NavMesh.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/navmesh/NavMeshBuilder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/navmesh/NavPath.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/navmesh/Space.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/pathfinding/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/xml/ObjectTreeParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/xml/SlickXMLException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/xml/XMLElement.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/xml/XMLElementList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/xml/XMLParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/src/org/newdawn/slick/util/xml/package.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/SMB-X.XM" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/alphamap.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/bigimage.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/bongos.ogg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/burp.aif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/cbrown01.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/compressed.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/cross.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/cursor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/cursor.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/demo.fnt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/demo2.fnt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/demo2_00.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/demo_00.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/distance-dis.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/distance.fnt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/distance.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/distance.test" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/drag/cursor.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/drag/icon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/drag/icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/drag/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/dungeontiles.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/effects_example.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/endlessexplosion.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/engine.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/explosion.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/flame.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/grass.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/heartbeat.ogg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/heirosetup.props" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/hiero.fnt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/hiero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/homeranim.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/icon.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/indexpng.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/isoexample.tmx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/isotiles.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/kirby.ogg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/logo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/logo.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/map.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/objxmltest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/palette_tool.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/particle.tga" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/perffont.fnt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/perffont.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/plimited.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/restart.ogg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/retro4.svgz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/rocket.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/rocks.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/scroller/map.tmx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/scroller/sprites.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/sky.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/smoke.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/smoketrail.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/spriteSheetFont.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/clonetest.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/cow.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/gradients.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/head2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/head3.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/lwjgl3.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/orc.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/santa.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/test1.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/walk1.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/walk2.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/walk3.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/svg/walk4.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/system.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/test.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/testcard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/testloop.ogg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/testmap.tmx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/testout" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/testout.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/testpack.def" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/testpack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/theme.ogg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/tiles.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/transtest.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/wallpaper/paper1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/testdata/wallpaper/paper2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/BMFontUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/CharSet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/CharSetDialog.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/DataSet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/Hiero.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/HieroConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/Kerning.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/ProgressDialog.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/ProgressListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/Splash.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/distancemap/DistanceFieldFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/resources/splash.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/splash.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/FontData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/FontFileReader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/Glyphs.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/IOUtils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/Log.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/StatusListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFCmapEntry.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFDirTabEntry.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFFile.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFMtxEntry.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/hiero/truetype/TTFSubSetFile.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/packulike/Pack.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/packulike/Packer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/packulike/Sheet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/packulike/SheetPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/packulike/Sprite.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/ColorPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/ControlPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/DefaultPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/EmissionControls.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/EmitterList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/GradientEditor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/GraphEditorWindow.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/InputPanelListener.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/LimitPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/MinMaxPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/ParticleEditor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/ParticleGame.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/PositionControls.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/SettingsPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/ValuePanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/WhiskasPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/data/charlie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/data/icon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/peditor/data/linear.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/scalar/ImagePanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/scalar/ImageScale2x.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/scalar/ImageScale3x.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/scalar/RawScale2x.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/scalar/RawScale3x.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/slick/tools/org/newdawn/slick/tools/scalar/Scalar.java" afterPath="" />
+    </list>
+    <ignored path="gaucho_runner.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="007dadf2-38d9-474c-bda0-3164ab07ab96" time="1383596922032" ignored="false" />
+    <file path="/fragment.java" changelist="007dadf2-38d9-474c-bda0-3164ab07ab96" time="1383596968493" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="gaucho_runner" />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="12" />
+    <option name="y" value="31" />
+    <option name="width" value="1420" />
+    <option name="height" value="860" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gaucho_runner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gaucho_runner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gaucho_runner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+  </component>
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unnamed" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=&lt;lwjgl-X.X path&gt;/native/&lt;linux|macosx|solaris|windows&gt; " />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gaucho_runner" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="007dadf2-38d9-474c-bda0-3164ab07ab96" name="Default" comment="" />
+      <created>1383596916883</created>
+      <updated>1383596916883</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="12" y="31" width="1420" height="860" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+</project>
+
