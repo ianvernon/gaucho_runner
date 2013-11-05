@@ -1,8 +1,8 @@
+import org.newdawn.slick.gui.ComponentListener;
 import org.newdawn.slick.gui.MouseOverArea;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.gui.GUIContext;
 import org.newdawn.slick.Graphics;
-
 import java.util.ArrayList;
 
 /**
@@ -26,13 +26,13 @@ public class Menu {
         this.spaceBetweenItems = spaceBetweenItems;
     }
 
-    public void addItem(GUIContext container, String name, Image normalImage, Image mouseOverImage)
+    public void addItem(GUIContext container, String name, Image normalImage, Image mouseOverImage/*, ComponentListener listener*/)
     {
         // create new MouseOverArea based on input
         // get Y of last item in the list - so we can set the Y position of the next menu item
         // in relation to it
         int finalItemY = items.get(items.size() - 1).getY();
-        items.add(new MouseOverArea(container, normalImage, startingX, finalItemY + spaceBetweenItems));
+        items.add(new MouseOverArea(container, normalImage, startingX, finalItemY + spaceBetweenItems/*, listener*/));
         // set mouseOver image to be image that appears when button mousedOver for button just added in list
         items.get(items.size()-1).setMouseOverImage(mouseOverImage);
     }
