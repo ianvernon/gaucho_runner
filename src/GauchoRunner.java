@@ -4,8 +4,11 @@ import org.newdawn.slick.SlickException;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.tiled.TiledMap;
 
 public class GauchoRunner extends BasicGame{
+
+    private TiledMap map;
 
     public GauchoRunner(){
         super("Gaucho Runner");
@@ -18,6 +21,8 @@ public class GauchoRunner extends BasicGame{
 
         try{
             AppGameContainer app = new AppGameContainer(new GauchoRunner());
+            app.setVSync(true);
+            app.setTargetFrameRate(60);
             app.setDisplayMode(800,600, false);
             app.start();
         }
@@ -28,6 +33,7 @@ public class GauchoRunner extends BasicGame{
     @Override
     public void init(GameContainer container) throws SlickException
     {
+           map = new TiledMap("res/map/DemoMap.tmx");
     }
 
     @Override
@@ -37,5 +43,6 @@ public class GauchoRunner extends BasicGame{
 
     public void render(GameContainer container, Graphics g) throws SlickException
     {
+           map.render(0,0);
     }
 }
