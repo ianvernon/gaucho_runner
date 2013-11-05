@@ -16,7 +16,7 @@ public class InteractiveEntity implements Entity {
     protected Image image;
     protected Vector2f position;
 
-    public InteractiveEntity(String name, Image image, Vector2f pos)
+    public InteractiveEntity(String name, Image image, Vector2f position)
     {
         this.name = name;
         this.image = image;

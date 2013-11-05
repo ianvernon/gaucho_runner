@@ -59,8 +59,9 @@ public class GauchoRunner extends BasicGame{
     @Override
     public void update(GameContainer container, int delta) throws SlickException
     {
+
         //TODO: CAN THIS BE MORE EFFICIENT?
-        Input input = container.getInput();
+        /*Input input = container.getInput();
         if (input.isKeyDown(Input.KEY_UP))
         {
            player.setPosition(new Vector2f(player.getPosition().getX(),player.getPosition().getY() + 5));
@@ -77,6 +78,7 @@ public class GauchoRunner extends BasicGame{
         {
             player.setPosition(new Vector2f(player.getPosition().getX()+5,player.getPosition().getY()));
         }
+        */
     }
     public void render(GameContainer container, Graphics g) throws SlickException
     {
