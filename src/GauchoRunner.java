@@ -9,6 +9,7 @@ public class GauchoRunner extends BasicGame{
 
     private TiledMap map;
     private Player player;
+    private final String MAPPATH = "res/map/DemoMap.tmx";
 
     public GauchoRunner(){
         super("Gaucho Runner");
@@ -38,7 +39,19 @@ public class GauchoRunner extends BasicGame{
            Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
            playerShape.setLocation(playerPos);
 
-           map = new TiledMap("res/map/DemoMap.tmx");
+           // load map
+           try
+           {
+               map = new TiledMap(MAPPATH);
+           }
+           catch(SlickException ex)
+           {
+               System.out.println("BlockMap.BlockMap(): "
+                       + "could not load: " + MAPPATH +  ": " + ex);
+               ex.printStackTrace();
+               return;
+
+           }
            player = new Player("GauchoRunner", playerImage, playerPos, playerShape);
     }
 
