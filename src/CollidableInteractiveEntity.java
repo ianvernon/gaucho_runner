@@ -32,6 +32,7 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
                 Transform.createTranslateTransform(position.x, position.y));
     }
     public void render(Graphics graphics) {
+        // why doesn't this work!
         image.draw(position.x, position.y);
 
         //TODO: figure out what this does

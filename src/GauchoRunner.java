@@ -10,6 +10,7 @@ public class GauchoRunner extends BasicGame{
     private TiledMap map;
     private Player player;
     private final String MAPPATH = "res/map/DemoMap.tmx";
+    private static AppGameContainer app;
 
     public GauchoRunner(){
         super("Gaucho Runner");
@@ -21,7 +22,7 @@ public class GauchoRunner extends BasicGame{
 //		System.exit(0);
 
         try{
-            AppGameContainer app = new AppGameContainer(new GauchoRunner());
+            app = new AppGameContainer(new GauchoRunner());
             app.setVSync(true);
             app.setTargetFrameRate(60);
             app.setDisplayMode(800,600, false);
@@ -79,9 +80,15 @@ public class GauchoRunner extends BasicGame{
     }
     public void render(GameContainer container, Graphics g) throws SlickException
     {
-           map.render(0,0);
-            // TODO - FIGURE OUT HOW TO RENDER PLAYER
-           //player.render(g);
+        map.render(0,0);
+        if(app.getGraphics() == null)
+        {
+            System.out.println("GRAPHICS ARE NULL");
+        }
+        else
+        {
+            player.render(app.getGraphics());
+        }
 
     }
 }
