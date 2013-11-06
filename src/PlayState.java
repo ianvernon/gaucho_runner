@@ -55,6 +55,7 @@ public class PlayState extends BasicGameState{
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         map.render(0,0);
+        player.render(g);
 //        camera.render(gc, sbg, g);
 //        if(app.getGraphics() == null)
 //        {
