@@ -63,7 +63,7 @@ public class MenuState extends BasicGameState {
             ex.printStackTrace();
             return;
         }
-        AnimatedButton play = new AnimatedButton(gc, sbg, playUs, playS, startingX, startingY, 1);
+        AnimatedButton play = new AnimatedButton(gc, sbg, playUs, playS, startingX, startingY, 1);  //should 1 be PLAYSTATEID?
 
         play.add(new ButtonAction()
         {
