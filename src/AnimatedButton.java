@@ -23,9 +23,9 @@ public class AnimatedButton extends MouseOverArea {
     private int stateID;
     private StateBasedGame sbg;
     private final List<ButtonAction> actions = new ArrayList<ButtonAction>();
-    private GameContainer gc;
+    //private GameContainer gc;
 
-    public AnimatedButton(GameContainer gameContainer,GUIContext guiContext, StateBasedGame sbg, Image normalImage,Image mouseOverImage, int x, int y,
+    public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage,Image mouseOverImage, int x, int y,
                          int stateID)
     {
         super(guiContext,normalImage, x, y);
@@ -35,7 +35,7 @@ public class AnimatedButton extends MouseOverArea {
         this.stateID = stateID;
         this.normalImage = normalImage;
         this.mouseOverImage = mouseOverImage;
-        this.gc = gameContainer;
+        //this.gc = gameContainer;
 
     }
 
@@ -70,7 +70,7 @@ public class AnimatedButton extends MouseOverArea {
             activated = !activated;
             for(ButtonAction action: actions)
             {
-                action.perform(gc, sbg);
+                action.perform();
             }
         }
         super.mouseClicked(button, x, y, clickCount);

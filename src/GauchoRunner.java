@@ -13,7 +13,7 @@ public class GauchoRunner extends StateBasedGame{
 
     public GauchoRunner(){
         super("Gaucho Runner");
-        MenuState menuState = new MenuState(/* WAT */, MAINMENUSTATEID, 300, 180, 131);
+        MenuState menuState = new MenuState(MAINMENUSTATEID, 300, 180, 131);
         this.addState(menuState);
         PlayState playState = new PlayState(PLAYSTATEID);
         this.addState(playState);
@@ -24,6 +24,7 @@ public class GauchoRunner extends StateBasedGame{
 
         try{
             app = new AppGameContainer(new GauchoRunner());
+
             app.setVSync(true);
             app.setTargetFrameRate(60);
             app.setDisplayMode(800,600, false);

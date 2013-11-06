@@ -33,7 +33,7 @@ public class MenuState extends BasicGameState {
     private STATES currentState;
     private GUIContext guiContext;
 
-    public MenuState(GUIContext guiContext, int stateID, int startingX, int startingY, int spaceBetweenItems)
+    public MenuState(int stateID, int startingX, int startingY, int spaceBetweenItems)
     {
         super();
         this.stateID = stateID;
@@ -64,23 +64,23 @@ public class MenuState extends BasicGameState {
             ex.printStackTrace();
             return;
         }
-        AnimatedButton play = new AnimatedButton(gc,guiContext, sbg, playUs, playS, startingX, startingY, 0);
+        AnimatedButton play = new AnimatedButton(gc, sbg, playUs, playS, startingX, startingY, 0);
 
         play.add(new ButtonAction()
         {
-            public void perform(GameContainer gc, StateBasedGame sbg)
+            public void perform()
             {
-                currentState = STATES.PLAY;
-                sbg.enterState(GauchoRunner.PLAYSTATEID);
+                /*currentState = STATES.PLAY;
+                sbg.enterState(GauchoRunner.PLAYSTATEID);*/
             }
         }
         );
 
-        AnimatedButton instructions = new AnimatedButton(gc, guiContext, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 1);
+        AnimatedButton instructions = new AnimatedButton(gc, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 1);
 
         play.add(new ButtonAction()
         {
-            public void perform(GameContainer app, StateBasedGame sbg)
+            public void perform()
             {
 
             }
@@ -88,13 +88,13 @@ public class MenuState extends BasicGameState {
 
         );
 
-        AnimatedButton quit = new AnimatedButton(gc, guiContext, sbg, quitUs, quitS, startingX, startingY + 2*spaceBetweenItems, 2);
+        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2*spaceBetweenItems, 2);
 
         quit.add(new ButtonAction()
         {
-            public void perform(GameContainer gc, StateBasedGame sbg)
+            public void perform()
             {
-                gc.exit();
+                //gc.exit();
             }
         }
         );

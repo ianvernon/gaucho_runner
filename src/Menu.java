@@ -30,7 +30,7 @@ public class Menu {
         this.spaceBetweenItems = spaceBetweenItems;
     }
 
-    public void addItem(GameContainer gc, GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y,
+    public void addItem(GameContainer gc, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y,
                         int stateID)
     {
         // create new MouseOverArea based on input
@@ -45,7 +45,7 @@ public class Menu {
         {
             itemY = items.get(items.size()-1).getY();
         }
-        items.add(new AnimatedButton(gc, guiContext, sbg, normalImage, mouseOverImage, x, y, stateID));
+        items.add(new AnimatedButton(gc, sbg, normalImage, mouseOverImage, x, y, stateID));
     }
 
     public void addItem(AnimatedButton button)

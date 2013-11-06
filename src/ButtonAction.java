@@ -9,5 +9,5 @@ import org.newdawn.slick.state.StateBasedGame;
  * To change this template use File | Settings | File Templates.
  */
 public interface ButtonAction {
-    public void perform(GameContainer gc, StateBasedGame sbg);
+    public void perform();
 }
