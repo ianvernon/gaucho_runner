@@ -18,6 +18,7 @@ public class PlayState extends BasicGameState{
     private Player player;
     private final String MAPPATH = "res/map/DemoMap.tmx";
     private static AppGameContainer app;
+    int time;
 
     private int stateID;
 
@@ -56,6 +57,7 @@ public class PlayState extends BasicGameState{
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         map.render(0,0);
         player.render(g);
+        g.drawString("Time : " + time/1000, 10, 100);
 //        camera.render(gc, sbg, g);
 //        if(app.getGraphics() == null)
 //        {
@@ -88,6 +90,8 @@ public class PlayState extends BasicGameState{
         {
             player.setPosition(new Vector2f(player.getPosition().getX()+5,player.getPosition().getY()));
         }
+
+        time += i;
     }
 
     @Override
