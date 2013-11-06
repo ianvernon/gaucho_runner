@@ -65,15 +65,19 @@ public class AnimatedButton extends MouseOverArea {
 
     @Override
     public void mouseClicked(int button, int x, int y, int clickCount) {
-        if (isMouseOver() && sbg.getCurrentStateID() == stateID)
-        {
-            sbg.enterState(2);    //TODO this is what i added. not sure what the for loop is for. Also change from 1 playState            activated = !activated;
-            for(ButtonAction action: actions)
-            {
-                action.perform();
-            }
+//        if (isMouseOver() && sbg.getCurrentStateID() == stateID)
+//        {
+//            sbg.enterState(2);    //TODO this is what i added. not sure what the for loop is for. Also change from 1 playState            activated = !activated;
+//            for(ButtonAction action: actions)
+//            {
+//                action.perform();
+//            }
+//        }
+//        super.mouseClicked(button, x, y, clickCount);
+        if(isMouseOver()){
+            sbg.enterState(stateID);
+
         }
-        super.mouseClicked(button, x, y, clickCount);
     }
 
     public void render(GUIContext gc, Graphics g) {

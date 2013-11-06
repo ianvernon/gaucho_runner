@@ -44,8 +44,7 @@ public class MenuState extends BasicGameState {
 
     }
 
-    private void initMenu(GameContainer gc,
-                          StateBasedGame sbg)
+    private void initMenu(GameContainer gc, StateBasedGame sbg)
     {
         mainMenu = new Menu(startingX, startingY, spaceBetweenItems);
 
@@ -64,7 +63,7 @@ public class MenuState extends BasicGameState {
             ex.printStackTrace();
             return;
         }
-        AnimatedButton play = new AnimatedButton(gc, sbg, playUs, playS, startingX, startingY, 0);
+        AnimatedButton play = new AnimatedButton(gc, sbg, playUs, playS, startingX, startingY, 1);
 
         play.add(new ButtonAction()
         {
@@ -76,7 +75,7 @@ public class MenuState extends BasicGameState {
         }
         );
 
-        AnimatedButton instructions = new AnimatedButton(gc, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 1);
+        AnimatedButton instructions = new AnimatedButton(gc, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 2);
 
         play.add(new ButtonAction()
         {
@@ -88,7 +87,7 @@ public class MenuState extends BasicGameState {
 
         );
 
-        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2*spaceBetweenItems, 2);
+        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2*spaceBetweenItems, 3);
 
         quit.add(new ButtonAction()
         {
