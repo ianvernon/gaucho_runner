@@ -1,11 +1,9 @@
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.SlickException;
+import org.newdawn.slick.*;
 import org.newdawn.slick.gui.AbstractComponent;
 import org.newdawn.slick.gui.ComponentListener;
+import org.newdawn.slick.gui.GUIContext;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.BasicGameState;
-import org.newdawn.slick.Image;
-import org.newdawn.slick.Graphics;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,18 +26,26 @@ public class MenuState extends BasicGameState {
     private final String quitUnselected = "res/menu/QuitButtonSelected.png";
     private final String bgPath = "res/menu/MenuBG.png";
     private Image bg, playUs, playS, instructionsUs, instructionsS, quitUs, quitS;
+    private enum STATES
+    {
+        PLAY, INSTRUCTIONS
+    }
+    private STATES currentState;
+    private GUIContext guiContext;
 
-    public MenuState(int stateID, int startingX, int startingY, int spaceBetweenItems)
+    public MenuState(GUIContext guiContext, int stateID, int startingX, int startingY, int spaceBetweenItems)
     {
         super();
         this.stateID = stateID;
         this.startingX = startingX;
         this.startingY = startingY;
         this.spaceBetweenItems = spaceBetweenItems;
+        this.guiContext = guiContext;
 
     }
 
-    private void initMenu(GameContainer gc)
+    private void initMenu(GameContainer gc,
+                          StateBasedGame sbg)
     {
         mainMenu = new Menu(startingX, startingY, spaceBetweenItems);
 
@@ -58,29 +64,57 @@ public class MenuState extends BasicGameState {
             ex.printStackTrace();
             return;
         }
-        //ComponentListener playListener = new ComponentListener()
-        // TODO READ UP ON ACTIONLISTENERS
-         /*
-            @Override
-            public void componentActivated(AbstractComponent abstractComponent) {
-                //To change body of implemented methods use File | Settings | File Templates.
+        AnimatedButton play = new AnimatedButton(gc,guiContext, sbg, playUs, playS, startingX, startingY, 0);
+
+        play.add(new ButtonAction()
+        {
+            public void perform(GameContainer gc, StateBasedGame sbg)
+            {
+                currentState = STATES.PLAY;
+                sbg.enterState(GauchoRunner.PLAYSTATEID);
             }
-           */
-        mainMenu.addItem(gc, "Play", playUs, playS);
-        mainMenu.addItem(gc, "Instructions", instructionsUs, instructionsS);
-        mainMenu.addItem(gc, "Quit", quitUs, quitS);
+        }
+        );
+
+        AnimatedButton instructions = new AnimatedButton(gc, guiContext, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 1);
+
+        play.add(new ButtonAction()
+        {
+            public void perform(GameContainer app, StateBasedGame sbg)
+            {
+
+            }
+        }
+
+        );
+
+        AnimatedButton quit = new AnimatedButton(gc, guiContext, sbg, quitUs, quitS, startingX, startingY + 2*spaceBetweenItems, 2);
+
+        quit.add(new ButtonAction()
+        {
+            public void perform(GameContainer gc, StateBasedGame sbg)
+            {
+                gc.exit();
+            }
+        }
+        );
+
+        mainMenu.addItem(play);
+        mainMenu.addItem(instructions);
+        mainMenu.addItem(quit);
     }
         public int getID()
     {
         return this.stateID;
     }
+
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException
     {
         try
         {
 
             bg = new Image(bgPath);
-            initMenu(gc);
+            initMenu(gc, sbg);
         }
         catch(SlickException ex)
         {
@@ -91,15 +125,18 @@ public class MenuState extends BasicGameState {
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
     {
-        // put background image on screen
-         g.drawImage(bg,0,0);
-         g.drawImage(playUs, startingX, startingY);
-         g.drawImage(instructionsUs, startingX, startingY + 131);
-         g.drawImage(quitUs, startingX, startingY + 2*131);
+        g.drawImage(bg, 0, 0);
+        mainMenu.render(gc, g);
     }
-
-    public void update(GameContainer gc, StateBasedGame sbg, int delta)
+    public void update(GameContainer gc, StateBasedGame sbg, int id)
     {
-        // what to do here
+       /* switch(currentState)
+        {
+            case PLAY:
+
+                break;
+            case INSTRUCTIONS:
+                break;
+        } */
     }
 }

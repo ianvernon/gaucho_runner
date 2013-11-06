@@ -17,95 +17,58 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class Menu {
-    private ArrayList<MouseOverArea> items;
+    private ArrayList<AnimatedButton> items;
     private int startingX;
     private int startingY;
     private int spaceBetweenItems;
 
     public Menu(int startingX,int startingY, int spaceBetweenItems)
     {
-        this.items = new ArrayList<MouseOverArea>();
+        this.items = new ArrayList<AnimatedButton>();
         this.startingX = startingX;
         this.startingY = startingY;
         this.spaceBetweenItems = spaceBetweenItems;
     }
 
-    public void addItem(GUIContext container, String name, Image normalImage, Image mouseOverImage, ComponentListener listener)
+    public void addItem(GameContainer gc, GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y,
+                        int stateID)
     {
         // create new MouseOverArea based on input
         // get Y of last item in the list - so we can set the Y position of the next menu item
         // in relation to it
-        int finalItemY;
+        int itemY;
         if(items.size() == 0)
         {
-            finalItemY = startingY;
+            itemY = startingY;
         }
         else
         {
-            finalItemY = items.get(items.size()-1).getY();
+            itemY = items.get(items.size()-1).getY();
         }
-        items.add(new MouseOverArea(container, normalImage, startingX, finalItemY + spaceBetweenItems/*, listener*/));
-        // set mouseOver image to be image that appears when button mousedOver for button just added in list
-        items.get(items.size()-1).setMouseOverImage(mouseOverImage);
+        items.add(new AnimatedButton(gc, guiContext, sbg, normalImage, mouseOverImage, x, y, stateID));
+    }
+
+    public void addItem(AnimatedButton button)
+    {
+        items.add(button);
     }
 
     public void render(GUIContext gc, Graphics g)
     {
-        for(MouseOverArea area : items)
+        for(AnimatedButton button : items)
         {
-            area.render(gc, g);
+            button.render(gc, g);
         }
     }
 
     public void update(GameContainer gc, StateBasedGame sbg, int i)
     {
-       /* for(MouseOverArea area : items)
-        {
-            if(area.isMouseOver())
-            {
-
-            }
-        }   */
+        //TODO: see if this is needed
     }
-        /*
-        Input input = gc.getInput();
 
-        int mouseX = input.getMouseX();
-        int mouseY = input.getMouseY();
-        boolean mouseClicked = input.isMousePressed(Input.MOUSE_LEFT_BUTTON);
-
-        boolean downKeyPressed = input.isKeyPressed(Input.KEY_DOWN);
-        boolean upKeyPressed = input.isKeyPressed(Input.KEY_UP);
-        boolean enterKeyPressed = input.isKeyPressed(Input.KEY_ENTER);
-
-        for (int j = 0; j < items.size(); j++)
-        {
-            AbstractMenuItem menuItem = items.get(j);
-            // only apply mouse input if mouse moved or was clicked
-            // (otherwise keyboard input does not work)
-            if ((mouseX != oldMouseX && mouseY != oldMouseY) || mouseClicked) {
-                menuItem.applyMouseInput(mouseX, mouseY,
-                        mouseClicked, i, gc, sbg);
-            }
-
-            // keyboard input:
-            if (downKeyPressed && menuItem.isSelected()) {
-                menuItem.unSelect();
-                selectNext(j);
-                return;
-
-            } else if (upKeyPressed && menuItem.isSelected()) {
-                menuItem.unSelect();
-                selectPrevious(j);
-                return;
-
-            } else if (enterKeyPressed && menuItem.isSelected()) {
-                menuItem.execute(gc, sbg);
-
-            }
-        }
-    }         */
-
-
+    public int listSize()
+    {
+        return this.items.size();
+    }
 
 }
