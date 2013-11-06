@@ -27,7 +27,7 @@ public class MenuState extends BasicGameState {
     private final String quitSelected = "res/menu/QuitButton.png";
     private final String quitUnselected = "res/menu/QuitButtonSelected.png";
     private final String bgPath = "res/menu/MenuBG.png";
-    private Image bg;
+    private Image bg, playUs, playS, instructionsUs, instructionsS, quitUs, quitS;
 
     public MenuState(int stateID, int startingX, int startingY, int spaceBetweenItems)
     {
@@ -36,6 +36,7 @@ public class MenuState extends BasicGameState {
         this.startingX = startingX;
         this.startingY = startingY;
         this.spaceBetweenItems = spaceBetweenItems;
+
     }
 
     private void initMenu(GameContainer gc)
@@ -43,7 +44,6 @@ public class MenuState extends BasicGameState {
         mainMenu = new Menu(startingX, startingY, spaceBetweenItems);
 
         // create images for each button
-        Image playUs, playS, instructionsUs, instructionsS, quitUs, quitS;
         try
         {
             playUs = new Image(playUnselected);
@@ -78,21 +78,24 @@ public class MenuState extends BasicGameState {
     {
         try
         {
+
             bg = new Image(bgPath);
+            initMenu(gc);
         }
         catch(SlickException ex)
         {
             ex.printStackTrace();
             return;
         }
-        initMenu(gc);
-
     }
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
     {
         // put background image on screen
          g.drawImage(bg,0,0);
+         g.drawImage(playUs, startingX, startingY);
+         g.drawImage(instructionsUs, startingX, startingY + 131);
+         g.drawImage(quitUs, startingX, startingY + 2*131);
     }
 
     public void update(GameContainer gc, StateBasedGame sbg, int delta)

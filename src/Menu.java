@@ -31,7 +31,15 @@ public class Menu {
         // create new MouseOverArea based on input
         // get Y of last item in the list - so we can set the Y position of the next menu item
         // in relation to it
-        int finalItemY = items.get(items.size() - 1).getY();
+        int finalItemY;
+        if(items.size() == 0)
+        {
+            finalItemY = startingY;
+        }
+        else
+        {
+            finalItemY = items.get(items.size()-1).getY();
+        }
         items.add(new MouseOverArea(container, normalImage, startingX, finalItemY + spaceBetweenItems/*, listener*/));
         // set mouseOver image to be image that appears when button mousedOver for button just added in list
         items.get(items.size()-1).setMouseOverImage(mouseOverImage);

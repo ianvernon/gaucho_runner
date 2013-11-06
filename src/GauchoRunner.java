@@ -2,15 +2,22 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class GauchoRunner extends StateBasedGame{
-
+      private static final int MAINMENUSTATEID = 0;
+      private static final int PLAYSTATEID = 1;
+      private static AppGameContainer app;
 //    private TiledMap map;
 //    private Camera camera;
 //    private Player player;
 //    private final String MAPPATH = "res/map/DemoMap.tmx";
-    private static AppGameContainer app;
+
 
     public GauchoRunner(){
         super("Gaucho Runner");
+        MenuState menuState = new MenuState(MAINMENUSTATEID, 300, 180, 30);
+        this.addState(menuState);
+        PlayState playState = new PlayState(PLAYSTATEID);
+        this.addState(playState);
+        this.enterState(MAINMENUSTATEID);
     }
 
 	public static void main(String[] argv) {

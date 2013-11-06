@@ -21,6 +21,12 @@ public class PlayState extends BasicGameState{
 
     private int stateID;
 
+    public PlayState(int stateID)
+    {
+        super();
+        this.stateID = stateID;
+    }
+
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         Image playerImage = new Image("res/character/bike.png");
