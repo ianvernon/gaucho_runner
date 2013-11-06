@@ -4,6 +4,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class GauchoRunner extends StateBasedGame{
       public static final int MAINMENUSTATEID = 0;
       public static final int PLAYSTATEID = 1;
+      public static final int INSTRUCTIONSTATEID = 2;
       private static AppGameContainer app;
 //    private TiledMap map;
 //    private Camera camera;
@@ -17,6 +18,8 @@ public class GauchoRunner extends StateBasedGame{
         this.addState(menuState);
         PlayState playState = new PlayState(PLAYSTATEID);
         this.addState(playState);
+        InstructionState instructionState = new InstructionState(INSTRUCTIONSTATEID);
+        this.addState(instructionState);
         this.enterState(MAINMENUSTATEID);
     }
 
