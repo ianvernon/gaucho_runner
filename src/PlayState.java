@@ -16,9 +16,10 @@ public class PlayState extends BasicGameState{
     private TiledMap map;
     private Camera camera;
     private Player player;
-    private final String MAPPATH = "res/map/DemoMap.tmx";
+    private final String MAPPATH = "res/map/DemoMap2.tmx";
     private static AppGameContainer app;
     int time;
+    int i;
 
     private int stateID;
 
@@ -31,7 +32,7 @@ public class PlayState extends BasicGameState{
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         Image playerImage = new Image("res/character/bike.png");
-        Vector2f playerPos = new Vector2f(400, 300);
+        Vector2f playerPos = new Vector2f(50, 300);
         Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
         playerShape.setLocation(playerPos);
 
@@ -55,9 +56,10 @@ public class PlayState extends BasicGameState{
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        map.render(0,0);
+        map.render(i,0);
         player.render(g);
-        g.drawString("Time : " + time/1000, 10, 100);
+        g.drawString("Time: " + time/1000 + "s", 10, 100);
+        i = i - 5;
 //        camera.render(gc, sbg, g);
 //        if(app.getGraphics() == null)
 //        {
@@ -73,6 +75,7 @@ public class PlayState extends BasicGameState{
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         //TODO: CAN THIS BE MORE EFFICIENT?
+
         Input input = gc.getInput();
         if (input.isKeyDown(Input.KEY_UP))
         {
@@ -82,7 +85,7 @@ public class PlayState extends BasicGameState{
         {
             player.setPosition(new Vector2f(player.getPosition().getX(),player.getPosition().getY() + 5));
         }
-        else if (input.isKeyDown(Input.KEY_LEFT))
+        if (input.isKeyDown(Input.KEY_LEFT))
         {
             player.setPosition(new Vector2f(player.getPosition().getX() - 5,player.getPosition().getY()));
         }
