@@ -16,10 +16,10 @@ public class PlayState extends BasicGameState{
     private TiledMap map;
     private Camera camera;
     private Player player;
-    private final String MAPPATH = "res/map/DemoMap2.tmx";
+    private final String MAP_PATH = "res/map/DemoMap2.tmx";
     private static AppGameContainer app;
     int time;
-    int i;
+    Image background;
 
     private int stateID;
 
@@ -31,35 +31,32 @@ public class PlayState extends BasicGameState{
 
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+        background = new Image("res/menu/MenuBG.png");
+
         Image playerImage = new Image("res/character/bike.png");
         Vector2f playerPos = new Vector2f(50, 300);
         Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
         playerShape.setLocation(playerPos);
 
         // load map
-        try
-        {
-            map = new TiledMap(MAPPATH);
-        }
-        catch(SlickException ex)
-        {
-            System.out.println("BlockMap.BlockMap(): "
-                    + "could not load: " + MAPPATH +  ": " + ex);
-            ex.printStackTrace();
-            return;
-
-        }
+        map = new TiledMap(MAP_PATH);
+        camera = new Camera(gc, map, playerShape);
         player = new Player("GauchoRunner", playerImage, playerPos, playerShape);
+
+
 
 
     }
 
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        map.render(i,0);
+//        map.render(0,0);
+        camera.drawMap(0,0,g);
+//        background.draw();
         player.render(g);
-        g.drawString("Time: " + time/1000 + "s", 10, 100);
-        i = i - 5;
+        g.drawString("Time : " + time/1000, 10, 100);
+
+
 //        camera.render(gc, sbg, g);
 //        if(app.getGraphics() == null)
 //        {
@@ -70,13 +67,20 @@ public class PlayState extends BasicGameState{
 //            player.render(app.getGraphics());
 //        }
 //        camera.renderFinish(gc, sbg, g);
+
+
     }
 
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         //TODO: CAN THIS BE MORE EFFICIENT?
 
+        //camera.centerOn(player.getCollisionShape());
+        camera.centerOn(player.getPosition().getX(),0);
+        camera.translateGraphics();
+
         Input input = gc.getInput();
+        System.out.println(player.getPosition().getX());
         if (input.isKeyDown(Input.KEY_UP))
         {
             player.setPosition(new Vector2f(player.getPosition().getX(),player.getPosition().getY() - 5));
