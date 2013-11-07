@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" width="40" height="30" tilewidth="20" tileheight="20">
  <tileset firstgid="1" name="Road" tilewidth="20" tileheight="20">
   <image source="Road.png" width="874" height="474"/>
