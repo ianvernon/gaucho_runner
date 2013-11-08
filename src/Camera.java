@@ -66,7 +66,7 @@ public class Camera {
 //        this.drawMap(g, "", "");
 //    }
 
-    public void drawMap(int offsetX, int offsetY, Graphics g) {
+    public void drawMap(int offsetX, int offsetY) {
         // TODO try to make this perform better
         // (remove draw string from here, etc)
         //calculate the offset to the next tile (needed by TiledMap.render())
