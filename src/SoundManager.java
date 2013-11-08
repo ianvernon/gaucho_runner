@@ -1,35 +1,54 @@
-import java.io.IOException;
-
 import org.lwjgl.openal.AL;
 import org.newdawn.slick.openal.Audio;
 import org.newdawn.slick.openal.AudioLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
+import java.io.IOException;
 
+/**
+ * A class that loads a sound resource and makes it available for output
+ */
 public class SoundManager {
-	
-	private String src;
-	private Audio oggStream;
-	private Audio wav;
+    /** Source of sound*/
+    private String src;
+    /** OGG file stream */
+    private Audio oggStream;
+    /** WAV file stream */
+    private Audio wav;
 
-	public SoundManager(String src) {
-		this.src = src;
-	}
+    /**
+     * Initializes the source of sound
+     * @param src
+     */
+    public SoundManager(String src) {
+        this.src = src;
+    }
 
-	public void init(){
-		try{
+    /**
+     * Loads sound resource
+     */
+    public void init() {
+        try {
 //			oggStream = AudioLoader.getStreamingAudio("OGG", ResourceLoader.getResource(src));
-			wav = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream(src));
-		}catch (IOException e){
-			e.printStackTrace();
-		}
-	}
-	public void destroy(){
-		AL.destroy();
-	}
-	public void play(){
+            wav = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream(src));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Destroys sound resource
+     */
+    public void destroy() {
+        AL.destroy();
+    }
+
+    /**
+     * Plays sound resource
+     */
+    public void play() {
 //		oggStream.playAsMusic(1.0f, 1.0f, true);
-		wav.playAsMusic(1.0f, 1.0f, true);
-	}
+        wav.playAsMusic(1.0f, 1.0f, true);
+    }
 
 }

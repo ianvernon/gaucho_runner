@@ -1,46 +1,71 @@
-import org.newdawn.slick.Graphics;
 import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
- * Created with IntelliJ IDEA.
- * User: ianvernon
- * Date: 11/4/13
- * Time: 10:36 PM
- * To change this template use File | Settings | File Templates.
+ * A class that implements positioning, rendering, and game logic updating
  */
 public class InteractiveEntity implements Entity {
+    /** Name of entity */
     protected String name;
+    /** Graphic for entity */
     protected Image image;
+    /** Position of entity */
     protected Vector2f position;
 
-    public InteractiveEntity(String name, Image image, Vector2f position)
-    {
+    /**
+     * Initializes the name, graphic, and position of entity
+     * @param name
+     * @param image
+     * @param position
+     */
+    public InteractiveEntity(String name, Image image, Vector2f position) {
         this.name = name;
         this.image = image;
         this.position = position;
     }
 
-    public String getName()
-    {
+    /**
+     * Gets name of entity
+     * @return
+     */
+    public String getName() {
         return name;
     }
-    public Vector2f getPosition()
-    {
+
+    /**
+     * Gets position of entity
+     * @return
+     */
+    public Vector2f getPosition() {
         return position;
     }
-    public void setPosition(Vector2f position)
-    {
+
+    /**
+     * Sets position of entity
+     * @param position
+     */
+    public void setPosition(Vector2f position) {
         this.position = position;
     }
-    public void render(Graphics graphics)
-    {
+
+    /**
+     * Draws entity
+     * @param graphics
+     */
+    public void render(Graphics graphics) {
         image.draw(position.x, position.y);
     }
-    public void update(GameContainer gc, StateBasedGame sbg, int delta)
-    {
+
+    /**
+     * Updates location of entity
+     * @param gc
+     * @param sbg
+     * @param delta
+     */
+    public void update(GameContainer gc, StateBasedGame sbg, int delta) {
         // implement later
         return;
     }

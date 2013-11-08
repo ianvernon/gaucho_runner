@@ -1,22 +1,38 @@
 import org.newdawn.slick.GameContainer;
-
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Shape;
-import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
-
+/**
+ * A class that implements side-scrolling functionality by holding the player a constant x position while translates the map behind it.
+ */
 public class Camera {
-    private TiledMap map;
-    private int numTilesX, numTilesY;
-    private int mapWidth, mapHeight;
-    private int tileWidth, tileHeight;
-    private GameContainer gc;
-    private float cameraX, cameraY;
-    Shape playerShape;
+    /** the map used for our scene. */
+    protected TiledMap map;
+    /** the number of tiles in x-direction (width). */
+    protected int numTilesX;
+    /** the number of tiles in y-direction (height). */
+    protected int numTilesY;
+    /** the height of the map in pixel. */
+    protected int mapHeight;
+    /** the width of the map in pixel. */
+    protected int mapWidth;
+    /** the width of one tile of the map in pixel. */
+    protected int tileWidth;
+    /** the height of one tile of the map in pixel. */
+    protected int tileHeight;
+    /** the GameContainer, used for getting the size of the GameCanvas. */
+    protected GameContainer gc;
+    /** the x-position of our "camera" in pixel. */
+    protected float cameraX;
+    /** the y-position of our "camera" in pixel. */
+    protected float cameraY;
 
-    public Camera(GameContainer gc, TiledMap map, Shape playerShape){
+    /**
+     * Creates a new Camera instance that initializes Screen coordinate values
+     * @param gc
+     * @param map
+     */
+    public Camera(GameContainer gc, TiledMap map) {
         this.map = map;
 
         this.numTilesX = map.getWidth();
@@ -25,50 +41,44 @@ public class Camera {
         this.tileWidth = map.getTileWidth();
         this.tileHeight = map.getTileHeight();
 
-        this.mapWidth  = this.numTilesX * this.tileWidth;
+        this.mapWidth = this.numTilesX * this.tileWidth;
         this.mapHeight = this.numTilesY * this.mapHeight;
 
         this.gc = gc;
-        this.playerShape = playerShape;
     }
 
-    public void centerOn(float x, float y){
+    /**
+     * Centers the camera on the current x position of the player
+     * @param x
+     * @param y
+     */
+    public void centerOn(float x, float y) {
         cameraX = x;
         cameraY = y - gc.getHeight() / 2f;
 
-        if(cameraX < 0){
+        if (cameraX < 0) {
             cameraX = 0;
         }
-        if(cameraX + gc.getWidth() > mapWidth){
+        if (cameraX + gc.getWidth() > mapWidth) {
 //            cameraX = mapWidth - gc.getWidth();
             cameraX = 0;
         }
 
-        if(cameraY < 0){
+        if (cameraY < 0) {
             cameraY = 0;
         }
-        if(cameraY + gc.getHeight() > mapHeight){
+        if (cameraY + gc.getHeight() > mapHeight) {
 //            cameraY = mapHeight - gc.getHeight();
             cameraY = 0;
         }
     }
 
-    public void centerOn(float x, float y, float width, float height){
-        this.centerOn(x + width / 2, y + height / 2);
-    }
-
-    //???
-    public void centerOn(Shape shape){
-        this.centerOn(shape.getCenterX(), shape.getCenterY());
-    }
-
-//    public void drawMap(Graphics g) {
-//        this.drawMap(g, "", "");
-//    }
-
+    /**
+     * Draws the part of the map available on the screen
+     * @param offsetX
+     * @param offsetY
+     */
     public void drawMap(int offsetX, int offsetY) {
-        // TODO try to make this perform better
-        // (remove draw string from here, etc)
         //calculate the offset to the next tile (needed by TiledMap.render())
         int tileOffsetX = (int) -(cameraX % tileWidth);
         int tileOffsetY = (int) -(cameraY % tileHeight);
@@ -81,25 +91,16 @@ public class Camera {
         int height = (gc.getHeight() - tileOffsetY) / tileWidth + 1;
 
         try {
-            map.render(tileOffsetX + offsetX, tileOffsetY + offsetY, tileIndexX, tileIndexY , width, height);
+            map.render(tileOffsetX + offsetX, tileOffsetY + offsetY, tileIndexX, tileIndexY, width, height);
         } catch (Exception e) {
             System.out.println("Camera.drawMap(): " + "could not draw: " + e);
         }
-
-        // add time to upper right corner
-//        g.drawString("time: " + time + " money: " + money,
-//                width + (gc.getWidth() / 1.5f),
-//                height);
     }
 
-    public void translateGraphics(){
+    /**
+     * Translates the current view of the map
+     */
+    public void translateGraphics() {
         gc.getGraphics().translate(-cameraX, -cameraY);
     }
-
-
-
-//    public void renderFinish(GameContainer gc, StateBasedGame sbg, Graphics g){
-//        g.setWorldClip(0, 0, 800, 600);
-//    }
-
 }

@@ -1,73 +1,97 @@
 import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.gui.ComponentListener;
-import org.newdawn.slick.gui.MouseOverArea;
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.gui.GUIContext;
-import org.newdawn.slick.Graphics;
 import org.newdawn.slick.state.StateBasedGame;
 
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
- * User: ianvernon
- * Date: 11/5/13
- * Time: 11:17 AM
- * To change this template use File | Settings | File Templates.
+ * A class that sets up the menu by declaring and initializing
+ * several animated button with which the player uses to enter
+ * different game states
  */
 public class Menu {
+    /** An array list of animated buttons */
     private ArrayList<AnimatedButton> items;
+    /** Starting x-position */
     private int startingX;
+    /** Starting y-position */
     private int startingY;
+    /** Space between animated buttons */
     private int spaceBetweenItems;
 
-    public Menu(int startingX,int startingY, int spaceBetweenItems)
-    {
+    /**
+     * Initializes Menu
+     * @param startingX
+     * @param startingY
+     * @param spaceBetweenItems
+     */
+    public Menu(int startingX, int startingY, int spaceBetweenItems) {
         this.items = new ArrayList<AnimatedButton>();
         this.startingX = startingX;
         this.startingY = startingY;
         this.spaceBetweenItems = spaceBetweenItems;
     }
 
+    /**
+     * Adds animated button
+     * @param gc
+     * @param sbg
+     * @param normalImage
+     * @param mouseOverImage
+     * @param x
+     * @param y
+     * @param stateID
+     */
     public void addItem(GameContainer gc, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y,
-                        int stateID)
-    {
+                        int stateID) {
         // create new MouseOverArea based on input
         // get Y of last item in the list - so we can set the Y position of the next menu item
         // in relation to it
         int itemY;
-        if(items.size() == 0)
-        {
+        if (items.size() == 0) {
             itemY = startingY;
-        }
-        else
-        {
-            itemY = items.get(items.size()-1).getY();
+        } else {
+            itemY = items.get(items.size() - 1).getY();
         }
         items.add(new AnimatedButton(gc, sbg, normalImage, mouseOverImage, x, y, stateID));
     }
 
-    public void addItem(AnimatedButton button)
-    {
+    /**
+     * Adds animated button
+     * @param button
+     */
+    public void addItem(AnimatedButton button) {
         items.add(button);
     }
 
-    public void render(GUIContext gc, Graphics g)
-    {
-        for(AnimatedButton button : items)
-        {
+    /**
+     * Draws animated buttons
+     * @param gc
+     * @param g
+     */
+    public void render(GUIContext gc, Graphics g) {
+        for (AnimatedButton button : items) {
             button.render(gc, g);
         }
     }
 
-    public void update(GameContainer gc, StateBasedGame sbg, int i)
-    {
+    /**
+     * Updates buttons
+     * @param gc
+     * @param sbg
+     * @param i
+     */
+    public void update(GameContainer gc, StateBasedGame sbg, int i) {
         //TODO: see if this is needed
     }
 
-    public int listSize()
-    {
+    /**
+     * Returns number of animated buttons
+     * @return
+     */
+    public int listSize() {
         return this.items.size();
     }
 
