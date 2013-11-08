@@ -92,7 +92,6 @@ public class PlayState extends BasicGameState {
 
         //TODO: CAN THIS BE MORE EFFICIENT?
         Input input = gc.getInput();
-        System.out.println(player.getPosition().getX());
         if (input.isKeyDown(Input.KEY_UP)) {
             player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() - 5));
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
