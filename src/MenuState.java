@@ -100,7 +100,7 @@ public class MenuState extends BasicGameState {
 
         AnimatedButton instructions = new AnimatedButton(gc, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 2);
 
-        play.add(new ButtonAction() {
+        instructions.add(new ButtonAction() {
             public void perform() {
 
             }

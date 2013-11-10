@@ -40,6 +40,16 @@
     <delete dir="build" quiet="true"/>
     <delete dir="javadoc" quiet="true" />
   </target>
+
+  <target name="javadoc" depends="compile">
+    <delete dir="javadoc" quiet="true" />
+    <javadoc  destdir="javadoc" author="true" version="true" use="true" >
+      <fileset dir="src" includes="**/*.java"/>
+      <classpath>
+        <fileset dir="lib" includes="**/*.jar"/>
+      </classpath>
+    </javadoc>
+  </target>
   <!--
   <target name="javadoc" depends="compile">
     <delete dir="javadoc" quiet="true" />
@@ -94,5 +104,5 @@
         <param name="-link" value="http://java.sun.com/j2se/1.5/docs/api"/>
       </doclet>
     </javadoc>
-  </target>
-  </project> -->
+  </target> -->
+  </project>
