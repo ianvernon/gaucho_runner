@@ -1,10 +1,10 @@
-<project default="compile">
+  <project default="compile">
   <!-- build.xml for gaucho_runner for CS48 F2013
        name: Sarah Darwiche, James Thompson, Heneli Kailahi, Evan Moelter, Ian Vernon
        based off of build.xml used in CS56 S2013
-    -->
-  <property environment="env"/>
-  <!-- load the environment variables -->
+     -->
+     <property environment="env"/>
+     <!-- load the environment variables -->
   <!--
   <property name="webRoot" value="${env.HOME}/public_html/cs48" />
   <property name="webBaseURL" value="http://www.cs.ucsb.edu/~${env.USER}/cs48" />
@@ -20,7 +20,7 @@
   <target name="compile" description="compile my code">
     <mkdir dir="build" />
     <javac srcdir="src" destdir="build" includeantruntime="false"
-              debug="true" debuglevel="lines,vars,source">
+      debug="true" debuglevel="lines,vars,source">
       <classpath refid="path.lib" />
     </javac>
   </target>
@@ -28,15 +28,15 @@
   <target name="run" depends="compile" description="run Gaucho Runner game">
     <java classname="GauchoRunner" fork="true">
       <classpath>
-	<path refid="path.lib" />
-	<pathelement location="build"/>
-      </classpath>
-      <sysproperty key="java.library.path"
-		   value="lib/lwjgl-2.9.0/native/macosx"/>
-    </java>
-  </target>
+       <path refid="path.lib" />
+       <pathelement location="build"/>
+     </classpath>
+     <sysproperty key="java.library.path"
+       value="lib/lwjgl-2.9.0/native/macosx"/>
+     </java>
+   </target>
 
-  <target name="clean" description="delete unnecessary files and directories">
+   <target name="clean" description="delete unnecessary files and directories">
     <delete dir="build" quiet="true"/>
     <delete dir="javadoc" quiet="true" />
   </target>
@@ -67,7 +67,7 @@
       <classpath>
         <path refid="path.lib" />
         <pathelement location="build"/>
-</classpath>
+      </classpath>
       <batchtest fork="yes">
         <fileset dir="src">
           <!-- this will pick up every class with a name ending in Test -->
@@ -77,4 +77,22 @@
       <formatter type="plain" usefile="false" />
     </junit>
   </target>
-</project>
+
+  <!-- <target name="javadocs" depends="compile">
+    <javadoc packagenames="org.umlgraph.doclet.*" destdir="javadoc" private="true">
+     <fileset dir="src" includes="**/*.java"/>
+       <doclet name="org.umlgraph.doclet.UmlGraphDoc" path="${lib}/UMLGraph.jar">
+        <param name="-inferrel"/>
+        <param name="-inferdep"/>
+        <param name="-hide" value="java.*"/>
+        <param name="-collpackages" value="java.util.*"/>
+        <param name="-qualify"/>
+        <param name="-postfixpackage"/>
+        <param name="-nodefontsize" value="9"/>
+        <param name="-nodefontpackagesize" value="7"/>
+        <param name="-link" value="http://java.sun.com/j2se/1.5.0/docs/guide/javadoc/doclet/spec"/>
+        <param name="-link" value="http://java.sun.com/j2se/1.5/docs/api"/>
+      </doclet>
+    </javadoc>
+  </target>
+  </project> -->
