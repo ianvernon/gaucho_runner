@@ -32,8 +32,8 @@ public class Camera {
      * @param gc
      * @param map
      */
-    public Camera(GameContainer gc, TiledMap map) {
-        this.map = map;
+    public Camera(GameContainer gc, String mapPath) {
+        this.map = new TiledMap(mapPath);
 
         this.numTilesX = map.getWidth();
         this.numTilesY = map.getHeight();
