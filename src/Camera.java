@@ -1,4 +1,5 @@
 import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.tiled.TiledMap;
 
@@ -33,7 +34,14 @@ public class Camera {
      * @param map
      */
     public Camera(GameContainer gc, String mapPath) {
-        this.map = new TiledMap(mapPath);
+        try
+        {
+            this.map = new TiledMap(mapPath);
+        }
+        catch(SlickException s)
+        {
+            s.printStackTrace();
+        }
 
         this.numTilesX = map.getWidth();
         this.numTilesY = map.getHeight();
