@@ -50,6 +50,8 @@ public class MenuState extends BasicGameState {
     private Image quitS;
     /** GUI context of menu state */
     private GUIContext guiContext;
+    public SoundManager soundManager;
+
 
     /**
      * Initializes Menu state
@@ -141,6 +143,8 @@ public class MenuState extends BasicGameState {
 
             bg = new Image(bgPath);
             initMenu(gc, sbg);
+            soundManager = new SoundManager();
+            soundManager.play();
         } catch (SlickException ex) {
             ex.printStackTrace();
             return;
