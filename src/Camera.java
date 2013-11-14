@@ -33,16 +33,9 @@ public class Camera {
      * @param gc
      * @param map
      */
-    public Camera(GameContainer gc, String mapPath) {
-        try
-        {
-            this.map = new TiledMap(mapPath);
-        }
-        catch(SlickException s)
-        {
-            s.printStackTrace();
-        }
+    public Camera(GameContainer gc, TiledMap map) {
 
+        this.map = map;
         this.numTilesX = map.getWidth();
         this.numTilesY = map.getHeight();
 

@@ -10,8 +10,8 @@ import org.newdawn.slick.tiled.TiledMap;
  * A class that implements the state where the game is played
  */
 public class PlayState extends BasicGameState {
-    ///** Game map */
-    //private TiledMap map; >>MOVED to Camera class
+    /** Game map */
+    private TiledMap map;
     /** Camera that moves the map */
     private Camera camera;
     /** User-controlled object */
@@ -47,9 +47,9 @@ public class PlayState extends BasicGameState {
         Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
         playerShape.setLocation(playerPos);
 
-        //load map >>MOVED to Camera class
-        //map = new TiledMap(MAP_PATH);
-        camera = new Camera(gc, MAP_PATH);
+        //load map
+        map = new TiledMap(MAP_PATH);
+        camera = new Camera(gc, this.map);
         player = new Player("GauchoRunner", playerImage, playerPos, playerShape);
     }
 
