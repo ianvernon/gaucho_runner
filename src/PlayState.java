@@ -24,6 +24,7 @@ public class PlayState extends BasicGameState {
     int currentX = 0;
     /** State ID of the playable game */
     private int stateID;
+    private Image timerBox;
 
     /**
      * Sets game to playable state
@@ -49,6 +50,7 @@ public class PlayState extends BasicGameState {
 
         //load map
         map = new TiledMap(MAP_PATH);
+        timerBox = new Image("res/misc/TimerBackground.png");
         camera = new Camera(gc, this.map);
         player = new Player("GauchoRunner", playerImage, playerPos, playerShape);
     }
@@ -64,6 +66,7 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
+        timerBox.draw(10 ,10);
         g.drawString("Time: " + time / 1000 + "s", 10, 100);
 
 //        camera.render(gc, sbg, g);
