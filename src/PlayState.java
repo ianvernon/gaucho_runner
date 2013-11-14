@@ -66,7 +66,7 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
-        timerBox.draw(10 ,10);
+        timerBox.draw(2, 98);
         g.drawString("Time: " + time / 1000 + "s", 10, 100);
 
 //        camera.render(gc, sbg, g);
