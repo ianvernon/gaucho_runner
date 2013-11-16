@@ -25,8 +25,8 @@ public class PlayState extends BasicGameState {
     /** State ID of the playable game */
     private int stateID;
     private Image timerBox;
-    /** The shortest duration possible in seconds*/
-    private int courseDuration = 5;
+    /** The shortest time possible to move the width of the screen once in seconds*/
+    private int secondsPerWindow = 2;
 
     /**
      * Sets game to playable state
@@ -93,6 +93,7 @@ public class PlayState extends BasicGameState {
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         int eventsPerSecond;
+        int windowsPerMap;
         time += i;
         //camera.centerOn(player.getCollisionShape());
 
@@ -104,9 +105,11 @@ public class PlayState extends BasicGameState {
             eventsPerSecond = gc.getFPS();
         }
 
-        int speed = camera.mapWidth / (eventsPerSecond * courseDuration);
+        //Sets the number of windows per map
+        windowsPerMap = (camera.mapWidth - 800) / ( 40 * camera.tileWidth);
 
-        //TODO: CAN THIS BE MORE EFFICIENT? YES!
+        int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
+
         Input input = gc.getInput();
         if (input.isKeyDown(Input.KEY_UP)) {
             player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() - 5));

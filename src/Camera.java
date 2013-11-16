@@ -57,6 +57,7 @@ public class Camera {
         cameraX = x;
         cameraY = y - gc.getHeight() / 2f;
 
+        /*
         if (cameraX < 0) {
             cameraX = 0;
         }
@@ -68,6 +69,8 @@ public class Camera {
         if (cameraY < 0) {
             cameraY = 0;
         }
+        */
+
         if (cameraY + gc.getHeight() > mapHeight) {
 //            cameraY = mapHeight - gc.getHeight();
             cameraY = 0;
