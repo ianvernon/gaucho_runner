@@ -109,8 +109,10 @@ public class PlayState extends BasicGameState {
         windowsPerMap = (camera.mapWidth - 800) / ( 40 * camera.tileWidth);
 
         int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
-
+        System.out.println(player.getPosition().getY());
         Input input = gc.getInput();
+
+        //
         if (input.isKeyDown(Input.KEY_UP)) {
             player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() - 5));
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
@@ -119,6 +121,15 @@ public class PlayState extends BasicGameState {
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             currentX = currentX + speed;
         }
+
+        // Check bounds
+        if (player.getPosition().getY() < 90) {
+            player.setPosition(new Vector2f(player.getPosition().getX(), 90));
+        }
+        else if(player.getPosition().getY() > 450) {
+            player.setPosition(new Vector2f(player.getPosition().getX(), 450));
+        }
+
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
     }
