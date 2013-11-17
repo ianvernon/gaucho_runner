@@ -30,6 +30,8 @@ public class PlayState extends BasicGameState {
     /** The shortest time possible to move the width of the screen once in seconds*/
     private int secondsPerWindow = 2;
 
+    private ProgressBar progBar;
+
     public ArrayList<Image> livesList;
 
     private int STARTING_LIVES = 3;
@@ -68,6 +70,7 @@ public class PlayState extends BasicGameState {
         timerBox = new Image("res/misc/TimerBackground.png");
         camera = new Camera(gc, this.map);
         player = new Player("GauchoRunner", playerImage, playerPos, playerShape);
+        progBar = new ProgressBar(250,20);
     }
 
     /**
@@ -81,6 +84,8 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
+        progBar.update(currentX, camera.mapWidth);
+        progBar.render();
 
         //Scoreboard
         g.setColor(Color.blue);
