@@ -6,6 +6,8 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
+import java.util.ArrayList;
+
 /**
  * A class that implements the state where the game is played
  */
@@ -28,6 +30,10 @@ public class PlayState extends BasicGameState {
     /** The shortest time possible to move the width of the screen once in seconds*/
     private int secondsPerWindow = 2;
 
+    public ArrayList<Image> livesList;
+
+    private int STARTING_LIVES = 3;
+
     /**
      * Sets game to playable state
      * @param stateID
@@ -49,6 +55,13 @@ public class PlayState extends BasicGameState {
         Vector2f playerPos = new Vector2f(50, 300);
         Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
         playerShape.setLocation(playerPos);
+        livesList = new ArrayList<Image>();
+
+        //scoreboard stuff, loads the image
+        for(int i = 0; i < 3; i++){
+            Image liveImage = new Image("res/misc/heart.png");
+            livesList.add(liveImage);
+        }
 
         //load map
         map = new TiledMap(MAP_PATH);
@@ -68,8 +81,27 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
-        timerBox.draw(2, 98);
-        g.drawString("Time: " + time / 1000 + "s", 10, 100);
+
+        //Scoreboard
+        g.setColor(Color.blue);
+        g.fillRoundRect(0, 0, 225, 100, 10);
+        g.setColor(Color.white);
+
+        //TODO replace this with the new image for the scoreboard background
+        //timerBox.draw(2, 98);
+        g.drawString("Time: " + time / 1000 + "s", 10, 47);
+
+        //draws the lives
+
+        g.drawString("Lives:", 10, 10);
+        int location = 70;
+        for(int i = 0; i < livesList.size(); i++){
+            livesList.get(i).draw(location, 10);
+            location += livesList.get(i).getWidth() + 7; //the integer is the spacing between the images
+        }
+
+
+
 
 //        camera.render(gc, sbg, g);
 //        if(app.getGraphics() == null)
@@ -109,7 +141,6 @@ public class PlayState extends BasicGameState {
         windowsPerMap = (camera.mapWidth - 800) / ( 40 * camera.tileWidth);
 
         int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
-        System.out.println(player.getPosition().getY());
         Input input = gc.getInput();
 
         //

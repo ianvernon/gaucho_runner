@@ -39,6 +39,7 @@ public class GauchoRunner extends StateBasedGame {
         try {
             app = new AppGameContainer(new GauchoRunner());
 
+            app.setShowFPS(false);
             app.setVSync(true);
             app.setTargetFrameRate(60);
             app.setDisplayMode(800, 600, false);
