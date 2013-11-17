@@ -69,7 +69,7 @@ public class PlayState extends BasicGameState {
         map = new TiledMap(MAP_PATH);
         timerBox = new Image("res/misc/TimerBackground.png");
         camera = new Camera(gc, this.map);
-        player = new Player("GauchoRunner", playerImage, playerPos, playerShape);
+        player = new Player("GauchoRunner", playerImage, playerPos, playerShape, 5);
         progBar = new ProgressBar(250,20);
     }
 
@@ -150,9 +150,9 @@ public class PlayState extends BasicGameState {
 
         //
         if (input.isKeyDown(Input.KEY_UP)) {
-            player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() - 5));
+            player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() - player.getSpeed()));
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
-            player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() + 5));
+            player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() + player.getSpeed()));
         }
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             currentX = currentX + speed;

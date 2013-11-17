@@ -1,6 +1,8 @@
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
+import org.newdawn.slick.state.StateBasedGame;
 
 import java.util.ArrayList;
 
@@ -20,8 +22,8 @@ public class Player extends CollidableInteractiveEntity {
      * @param position
      * @param collisionShape
      */
-    public Player(String name, Image image, Vector2f position, Shape collisionShape) {
-        super(name, image, position, collisionShape);
+    public Player(String name, Image image, Vector2f position, Shape collisionShape, int speed) {
+        super(name, image, position, collisionShape, speed);
         this.lives = 3;
         this.powerups = new ArrayList<Powerup>();
     }

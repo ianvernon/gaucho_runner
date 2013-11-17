@@ -1,8 +1,10 @@
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Transform;
 import org.newdawn.slick.geom.Vector2f;
+import org.newdawn.slick.state.StateBasedGame;
 
 /**
  * A class that renders images and runs collision detection algorithm
@@ -11,7 +13,8 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
     /**
      * The shape of the given object
      */
-    private Shape collisionShape;
+    protected Shape collisionShape;
+    protected int speed;
 
     /**
      * Constructor for a collidable entity
@@ -20,9 +23,10 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
      * @param position
      * @param collisionShape
      */
-    public CollidableInteractiveEntity(String name, Image image, Vector2f position, Shape collisionShape) {
+    public CollidableInteractiveEntity(String name, Image image, Vector2f position, Shape collisionShape, int speed) {
         super(name, image, position);
         this.collisionShape = collisionShape;
+        this.speed = speed;
     }
 
     /**
@@ -42,6 +46,15 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
                 Transform.createTranslateTransform(position.x, position.y));
     }
 
+    public int getSpeed()
+    {
+        return speed;
+    }
+
+    public void setSpeed(int speed)
+    {
+        this.speed = speed;
+    }
     /**
      * Draws shape
      * @param graphics
@@ -66,5 +79,10 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
     public boolean isCollidingWith(Collidable collidable) {
         return collidable.getCollisionShape().intersects(
                 this.getCollisionShape());
+    }
+    public void update(GameContainer gc, StateBasedGame sbg, int delta) {
+        collisionShape.setX(position.getX());
+        collisionShape.setY(position.getY());
+        return;
     }
 }
