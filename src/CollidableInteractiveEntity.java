@@ -63,6 +63,7 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
         // why doesn't this work!
         // MAYBE IT NEEDS TO BE OVERWRITTEN
         image.draw(position.x, position.y);
+        //collisionShape.draw(collisionShape.getX(), collisionShape.getY());
 
         //TODO: figure out what this does
         /*if (Settings.debug) {
@@ -81,6 +82,9 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
                 this.getCollisionShape());
     }
     public void update(GameContainer gc, StateBasedGame sbg, int delta) {
+       // System.out.println("update for CollidableInteractiveEntity being called");
+        System.out.println("collisionShape x: " + position.getX());
+        System.out.println("collisionShape y: " + position.getY());
         collisionShape.setX(position.getX());
         collisionShape.setY(position.getY());
         return;

@@ -40,6 +40,7 @@ public class PlayState extends BasicGameState {
     private ArrayList<Enemy> enemies;
 
     private Enemy freshman;
+    private Enemy freshman2;
 
     /**
      * Sets game to playable state
@@ -81,10 +82,17 @@ public class PlayState extends BasicGameState {
 
         // populate map with enemies
         Image freshmanImage = new Image("res/character/Freshman.png");
-        Vector2f freshmanPos = new Vector2f(50, 225);
+        Vector2f freshmanPos = new Vector2f(550, 300);
         Shape freshmanShape = new Rectangle(freshmanPos.x, freshmanPos.y, freshmanImage.getWidth(), freshmanImage.getHeight());
         freshman = new Freshman("freshman1", freshmanImage, freshmanPos, freshmanShape, 3);
 
+        Image freshman2Image = new Image("res/character/Freshman.png");
+        Vector2f freshman2Pos = new Vector2f(1800, 300);
+        Shape freshman2Shape = new Rectangle(freshmanPos.x, freshmanPos.y, freshmanImage.getWidth(), freshmanImage.getHeight());
+        freshman2 = new Freshman("freshman1", freshmanImage, freshmanPos, freshmanShape, 3);
+
+        freshman.setPosition(new Vector2f(550, 300));
+        freshman2.setPosition(new Vector2f(550, 300));
 
     }
 
@@ -100,6 +108,7 @@ public class PlayState extends BasicGameState {
         camera.drawMap(0, 0);
         player.render(g);
         freshman.render(g);
+        freshman2.render(g);
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
 
@@ -172,6 +181,9 @@ public class PlayState extends BasicGameState {
         }
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             currentX = currentX + speed;
+            // TODO:  PLACEHOLDER - FIX THIS
+            freshman.setPosition(new Vector2f(freshman.getPosition().getX()-5, 300));
+            freshman2.setPosition(new Vector2f(freshman.getPosition().getX()-5, 300));
         }
 
         // Check bounds
@@ -182,7 +194,19 @@ public class PlayState extends BasicGameState {
             player.setPosition(new Vector2f(player.getPosition().getX(), 450));
         }
 
-        freshman.setPosition(new Vector2f(freshman.getPosition().getX() + freshman.getSpeed(), freshman.getPosition().getY()));
+        if(player.isCollidingWith(freshman))
+        {
+            System.out.println("Oh no: collision with freshman");
+        }
+        if(player.isCollidingWith(freshman2))
+        {
+            System.out.println("Oh no: collision with freshman2");
+        }
+        //freshman.setPosition(new Vector2f(freshman.getPosition().getX() + freshman.getSpeed(), freshman.getPosition().getY()));
+
+        player.update(gc, sbg, i);
+        freshman.update(gc, sbg, i);
+        freshman2.update(gc, sbg, i);
 
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
