@@ -14,8 +14,8 @@ public abstract class Powerup extends CollidableInteractiveEntity {
      * @param position
      * @param collisionShape
      */
-    public Powerup(String name, Image image, Vector2f position, Shape collisionShape) {
-        super(name, image, position, collisionShape);
+    public Powerup(String name, Image image, Vector2f position, Shape collisionShape, int speed) {
+        super(name, image, position, collisionShape, speed);
     }
 
     /**
