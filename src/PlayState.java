@@ -6,15 +6,10 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
-import java.util.ArrayList;
-
 /** A class that implements the state where the game is played */
 public class PlayState extends BasicGameState {
     /** Map location */
     private final String MAP_PATH = "res/map/DemoMap2.tmx";
-    public ArrayList<Image> livesList;
-    /** Time game has been in play state */
-    int time = 0;
     /** Current x-position */
     int currentX = 0;
     /** Game map */
@@ -25,13 +20,11 @@ public class PlayState extends BasicGameState {
     private Player player;
     /** State ID of the playable game */
     private int stateID;
-    private Image timerBox;
     /** The shortest time possible to move the width of the screen once in seconds */
     private int secondsPerWindow = 2;
     private ProgressBar progBar;
-    private int STARTING_LIVES = 3;
-    private int NUM_OF_ENEMIES = 10;
-    private ArrayList<Enemy> enemyList;
+    private boolean IS_MOVING = false;
+    private GameLogic logic;
 
     /**
      * Sets game to playable state
@@ -55,37 +48,14 @@ public class PlayState extends BasicGameState {
         Image playerImage = new Image("res/character/bike.png");
         Vector2f playerPos = new Vector2f(50, 300);
         Shape playerShape = new Rectangle(0, 0, playerImage.getWidth(), playerImage.getHeight());
-        // playerShape.setLocation(playerPos);
-        livesList = new ArrayList<Image>();
-        enemyList = new ArrayList<Enemy>();
-
-        //scoreboard stuff, loads the image
-        for (int i = 0; i < STARTING_LIVES; i++) {
-            Image liveImage = new Image("res/misc/heart.png");
-            livesList.add(liveImage);
-        }
-        //load the enemies
-        int LOCATION = 550;
-
-        for (int i = 0; i < NUM_OF_ENEMIES; i++) {
-            Image freshmanImage = new Image("res/character/Freshman.png");
-            Vector2f freshmanPos = new Vector2f(LOCATION, 300);
-            Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
-            enemyList.add(new Freshman("freshman" + i, freshmanImage, freshmanPos, freshmanShape, 3));
-            LOCATION = LOCATION + 300;
-        }
 
         //load map
         map = new TiledMap(MAP_PATH);
-        timerBox = new Image("res/misc/TimerBackground.png");
         camera = new Camera(gc, this.map);
         // add player and progress bar to map
         player = new Player("GauchoRunner", playerImage, playerPos, playerShape, 5);
         progBar = new ProgressBar(250, 20);
-
-        //freshman.setPosition(new Vector2f(550, 300));
-        //  freshman2.setPosition(new Vector2f(550, 300));
-
+        logic = new GameLogic();
 
     }
 
@@ -103,12 +73,6 @@ public class PlayState extends BasicGameState {
         player.render(g);
         g.draw(player.getCollisionShape());
 
-        //render enemies
-        for (int i = 0; i < enemyList.size(); i++) {
-            enemyList.get(i).render(g);
-            g.draw(enemyList.get(i).getCollisionShape());
-        }
-
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
 
@@ -117,26 +81,7 @@ public class PlayState extends BasicGameState {
         g.fillRoundRect(0, 0, 225, 100, 10);
         g.setColor(Color.white);
 
-        //TODO replace this with the new image for the scoreboard background
-        //timerBox.draw(2, 98);
-        g.drawString("Time: " + time / 1000 + "s", 10, 47);
-
-        //draws the lives
-
-        g.drawString("Lives:", 10, 10);
-        int location = 70;
-        for (int i = 0; i < livesList.size(); i++) {
-            livesList.get(i).draw(location, 10);
-            location += livesList.get(i).getWidth() + 7; //the integer is the spacing between the images
-        }
-
-        if (livesList.isEmpty()) {
-            g.drawString("No more lives!", 300, 50);
-        }
-
-        if( time / 1000 >= 15){
-            g.drawString("No more time!", 500, 50);
-        }
+        logic.render(g);
     }
 
     /**
@@ -151,7 +96,8 @@ public class PlayState extends BasicGameState {
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
         int eventsPerSecond;
         int windowsPerMap;
-        time += delta;
+
+
         //camera.centerOn(player.getCollisionShape());
 
         //checks to make sure it does not divide by zero
@@ -176,10 +122,9 @@ public class PlayState extends BasicGameState {
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             currentX = currentX + speed;
             // TODO:  PLACEHOLDER - FIX THIS
-
-            for (int i = 0; i < enemyList.size(); i++) {
-                enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, 300));
-            }
+            IS_MOVING = true;
+        } else {
+            IS_MOVING = false;
         }
 
         // Check bounds
@@ -187,18 +132,6 @@ public class PlayState extends BasicGameState {
             player.setPosition(new Vector2f(player.getPosition().getX(), 90));
         } else if (player.getPosition().getY() > 450) {
             player.setPosition(new Vector2f(player.getPosition().getX(), 450));
-        }
-        //checks for lives and collisions
-        for (int i = 0; i < enemyList.size(); i++) {
-            if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
-
-                System.out.println("Collision with" + enemyList.get(i).getName());
-                livesList.remove(livesList.size() - 1);
-                enemyList.remove(i);
-            } else {
-                //go to end screen
-            }
-
         }
 
         /*if(player.isCollidingWith(freshman))
@@ -215,6 +148,7 @@ public class PlayState extends BasicGameState {
        freshman2.update(gc, sbg, i);
           */
         //player.getCollisionShape().setLocation(player.getPosition());
+        logic.update(speed, IS_MOVING, player, delta);
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
     }
