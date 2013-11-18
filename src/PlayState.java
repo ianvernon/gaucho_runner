@@ -40,6 +40,15 @@ public class PlayState extends BasicGameState {
     private ArrayList<Enemy> enemies;
 
     private Enemy freshman;
+    private Enemy freshman2;
+    private Enemy freshman3;
+    private Enemy freshman4;
+    private Enemy freshman5;
+    private Enemy freshman6;
+    private Enemy freshman7;
+    private Enemy freshman8;
+    private Enemy freshman9;
+    private Enemy freshman10;
 
     /**
      * Sets game to playable state
@@ -60,8 +69,8 @@ public class PlayState extends BasicGameState {
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         Image playerImage = new Image("res/character/bike.png");
         Vector2f playerPos = new Vector2f(50, 300);
-        Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
-        playerShape.setLocation(playerPos);
+        Shape playerShape = new Rectangle(0,0, playerImage.getWidth(), playerImage.getHeight());
+       // playerShape.setLocation(playerPos);
         livesList = new ArrayList<Image>();
         enemies = new ArrayList<Enemy>();
 
@@ -79,11 +88,58 @@ public class PlayState extends BasicGameState {
         player = new Player("GauchoRunner", playerImage, playerPos, playerShape, 5);
         progBar = new ProgressBar(250,20);
 
-        // populate map with enemies
         Image freshmanImage = new Image("res/character/Freshman.png");
-        Vector2f freshmanPos = new Vector2f(50, 225);
-        Shape freshmanShape = new Rectangle(freshmanPos.x, freshmanPos.y, freshmanImage.getWidth(), freshmanImage.getHeight());
+        Vector2f freshmanPos = new Vector2f(550, 300);
+        Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
         freshman = new Freshman("freshman1", freshmanImage, freshmanPos, freshmanShape, 3);
+
+        Image freshman2Image = new Image("res/character/Freshman.png");
+        Vector2f freshman2Pos = new Vector2f(1350, 300);
+        Shape freshman2Shape = new Rectangle(0, 0, freshman2Image.getWidth(), freshman2Image.getHeight());
+        freshman2 = new Freshman("freshman2", freshman2Image, freshman2Pos, freshman2Shape, 3);
+
+        Image freshman3Image = new Image("res/character/Freshman.png");
+        Vector2f freshman3Pos = new Vector2f(2150, 300);
+        Shape freshman3Shape = new Rectangle(0, 0, freshman3Image.getWidth(), freshman3Image.getHeight());
+        freshman3 = new Freshman("freshman3", freshman3Image, freshman3Pos, freshman3Shape, 3);
+
+        Image freshman4Image = new Image("res/character/Freshman.png");
+        Vector2f freshman4Pos = new Vector2f(2950, 300);
+        Shape freshman4Shape = new Rectangle(0, 0, freshman4Image.getWidth(), freshman4Image.getHeight());
+        freshman4 = new Freshman("freshman4", freshman4Image, freshman4Pos, freshman4Shape, 3);
+
+        Image freshman5Image = new Image("res/character/Freshman.png");
+        Vector2f freshman5Pos = new Vector2f(3750, 300);
+        Shape freshman5Shape = new Rectangle(0, 0, freshman5Image.getWidth(), freshman5Image.getHeight());
+        freshman5 = new Freshman("freshman5", freshman5Image, freshman5Pos, freshman5Shape, 3);
+
+        Image freshman6Image = new Image("res/character/Freshman.png");
+        Vector2f freshman6Pos = new Vector2f(4550, 300);
+        Shape freshman6Shape = new Rectangle(0, 0, freshman6Image.getWidth(), freshman6Image.getHeight());
+        freshman6 = new Freshman("freshman6", freshman6Image, freshman6Pos, freshman6Shape, 3);
+
+        Image freshman7Image = new Image("res/character/Freshman.png");
+        Vector2f freshman7Pos = new Vector2f(5350, 300);
+        Shape freshman7Shape = new Rectangle(0, 0, freshman7Image.getWidth(), freshman7Image.getHeight());
+        freshman7 = new Freshman("freshman7", freshman7Image, freshman7Pos, freshman7Shape, 3);
+
+        Image freshman8Image = new Image("res/character/Freshman.png");
+        Vector2f freshman8Pos = new Vector2f(6150, 300);
+        Shape freshman8Shape = new Rectangle(0, 0, freshman8Image.getWidth(), freshman8Image.getHeight());
+        freshman8 = new Freshman("freshman8", freshman8Image, freshman8Pos, freshman8Shape, 3);
+
+        Image freshman9Image = new Image("res/character/Freshman.png");
+        Vector2f freshman9Pos = new Vector2f(6950, 300);
+        Shape freshman9Shape = new Rectangle(0, 0, freshman9Image.getWidth(), freshman9Image.getHeight());
+        freshman9 = new Freshman("freshman9", freshman9Image, freshman9Pos, freshman9Shape, 3);
+
+        Image freshman10Image = new Image("res/character/Freshman.png");
+        Vector2f freshman10Pos = new Vector2f(7750, 300);
+        Shape freshman10Shape = new Rectangle(0, 0, freshman10Image.getWidth(), freshman10Image.getHeight());
+        freshman10 = new Freshman("freshman10", freshman10Image, freshman10Pos, freshman10Shape, 3);
+
+        //freshman.setPosition(new Vector2f(550, 300));
+      //  freshman2.setPosition(new Vector2f(550, 300));
 
 
     }
@@ -99,7 +155,28 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
+        g.draw(player.getCollisionShape());
         freshman.render(g);
+        g.draw(freshman.getCollisionShape());
+        freshman2.render(g);
+        g.draw(freshman2.getCollisionShape());
+        freshman3.render(g);
+        g.draw(freshman3.getCollisionShape());
+        freshman4.render(g);
+        g.draw(freshman4.getCollisionShape());
+        freshman5.render(g);
+        g.draw(freshman5.getCollisionShape());
+        freshman6.render(g);
+        g.draw(freshman6.getCollisionShape());
+        freshman7.render(g);
+        g.draw(freshman7.getCollisionShape());
+        freshman8.render(g);
+        g.draw(freshman8.getCollisionShape());
+        freshman9.render(g);
+        g.draw(freshman9.getCollisionShape());
+        freshman10.render(g);
+        g.draw(freshman10.getCollisionShape());
+
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
 
@@ -172,6 +249,17 @@ public class PlayState extends BasicGameState {
         }
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             currentX = currentX + speed;
+            // TODO:  PLACEHOLDER - FIX THIS
+           freshman.setPosition(new Vector2f(freshman.getPosition().getX()-speed, 300));
+           freshman2.setPosition(new Vector2f(freshman2.getPosition().getX()-speed, 300));
+            freshman3.setPosition(new Vector2f(freshman3.getPosition().getX()-speed, 300));
+            freshman4.setPosition(new Vector2f(freshman4.getPosition().getX()-speed, 300));
+            freshman5.setPosition(new Vector2f(freshman5.getPosition().getX()-speed, 300));
+            freshman6.setPosition(new Vector2f(freshman6.getPosition().getX()-speed, 300));
+            freshman7.setPosition(new Vector2f(freshman7.getPosition().getX()-speed, 300));
+            freshman8.setPosition(new Vector2f(freshman8.getPosition().getX()-speed, 300));
+            freshman9.setPosition(new Vector2f(freshman9.getPosition().getX()-speed, 300));
+            freshman10.setPosition(new Vector2f(freshman10.getPosition().getX()-speed, 300));
         }
 
         // Check bounds
@@ -182,8 +270,20 @@ public class PlayState extends BasicGameState {
             player.setPosition(new Vector2f(player.getPosition().getX(), 450));
         }
 
-        freshman.setPosition(new Vector2f(freshman.getPosition().getX() + freshman.getSpeed(), freshman.getPosition().getY()));
+        /*if(player.isCollidingWith(freshman))
+        {
+            System.out.println("Oh no: collision with freshman");
+        }
+        if(player.isCollidingWith(freshman2))
+        {
+            System.out.println("Oh no: collision with freshman2");
+        } */
 
+        /*player.update(gc, sbg, i);
+       freshman.update(gc, sbg, i);
+       freshman2.update(gc, sbg, i);
+          */
+        //player.getCollisionShape().setLocation(player.getPosition());
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
     }
