@@ -36,6 +36,11 @@ public class PlayState extends BasicGameState {
 
     private int STARTING_LIVES = 3;
 
+    //TODO: PUT ENEMIES IN THIS ARRAYLIST
+    private ArrayList<Enemy> enemies;
+
+    private Enemy freshman;
+
     /**
      * Sets game to playable state
      * @param stateID
@@ -58,6 +63,7 @@ public class PlayState extends BasicGameState {
         Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
         playerShape.setLocation(playerPos);
         livesList = new ArrayList<Image>();
+        enemies = new ArrayList<Enemy>();
 
         //scoreboard stuff, loads the image
         for(int i = 0; i < 3; i++){
@@ -69,8 +75,17 @@ public class PlayState extends BasicGameState {
         map = new TiledMap(MAP_PATH);
         timerBox = new Image("res/misc/TimerBackground.png");
         camera = new Camera(gc, this.map);
+        // add player and progress bar to map
         player = new Player("GauchoRunner", playerImage, playerPos, playerShape, 5);
         progBar = new ProgressBar(250,20);
+
+        // populate map with enemies
+        Image freshmanImage = new Image("res/map/Freshman.png");
+        Vector2f freshmanPos = new Vector2f(50, 225);
+        Shape freshmanShape = new Rectangle(freshmanPos.x, freshmanPos.y, freshmanImage.getWidth(), freshmanImage.getHeight());
+        freshman = new Freshman("freshman1", freshmanImage, freshmanPos, freshmanShape, 3);
+
+
     }
 
     /**
@@ -84,6 +99,7 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
+        freshman.render(g);
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
 
@@ -165,6 +181,8 @@ public class PlayState extends BasicGameState {
         else if(player.getPosition().getY() > 450) {
             player.setPosition(new Vector2f(player.getPosition().getX(), 450));
         }
+
+        freshman.setPosition(new Vector2f(freshman.getPosition().getX() + freshman.getSpeed(), freshman.getPosition().getY()));
 
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
