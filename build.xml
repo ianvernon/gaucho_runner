@@ -13,8 +13,20 @@
   <property name="javadocURL" value="${webBaseURL}/${projectName}/javadoc" />
   -->
 
-  <path id="path.lib">
-    <fileset dir="lib" includes="**/*.jar" />
+  <condition property="native.path" value="lib/lwjgl-2.9.0/native/macosx">
+   <os family="mac"/>
+ </condition>
+
+ <condition property="native.path" value="lib/lwjgl-2.9.0/native/windows">
+   <os family="windows"/>
+ </condition>
+
+ <condition property="native.path" value="lib/lwjgl-2.9.0/native/linux">
+   <os family="unix"/>
+ </condition>
+
+ <path id="path.lib">
+  <fileset dir="lib" includes="**/*.jar" />
   </path>
 
   <target name="compile" description="compile my code">
@@ -32,7 +44,7 @@
        <pathelement location="build"/>
      </classpath>
      <sysproperty key="java.library.path"
-       value="lib/lwjgl-2.9.0/native/macosx"/>
+       value="${native.path}"/>
      </java>
    </target>
 
