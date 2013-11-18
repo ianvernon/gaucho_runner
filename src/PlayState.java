@@ -72,7 +72,7 @@ public class PlayState extends BasicGameState {
             Vector2f freshmanPos = new Vector2f(LOCATION, 300);
             Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
             enemyList.add(new Freshman("freshman" + i, freshmanImage, freshmanPos, freshmanShape, 3));
-            LOCATION = LOCATION + 800;
+            LOCATION = LOCATION + 300;
         }
 
         //load map
@@ -128,6 +128,10 @@ public class PlayState extends BasicGameState {
         for (int i = 0; i < livesList.size(); i++) {
             livesList.get(i).draw(location, 10);
             location += livesList.get(i).getWidth() + 7; //the integer is the spacing between the images
+        }
+
+        if (livesList.isEmpty()) {
+            g.drawString("No more lives", 300, 50);
         }
 
 //        camera.render(gc, sbg, g);
@@ -190,6 +194,18 @@ public class PlayState extends BasicGameState {
             player.setPosition(new Vector2f(player.getPosition().getX(), 90));
         } else if (player.getPosition().getY() > 450) {
             player.setPosition(new Vector2f(player.getPosition().getX(), 450));
+        }
+        //checks for lives and collisions
+        for (int i = 0; i < enemyList.size(); i++) {
+            if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
+
+                System.out.println("Collision with" + enemyList.get(i).getName());
+                livesList.remove(livesList.size() - 1);
+                enemyList.remove(i);
+            } else {
+                //go to end screen
+            }
+
         }
 
         /*if(player.isCollidingWith(freshman))
