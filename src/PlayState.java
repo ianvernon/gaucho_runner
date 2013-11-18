@@ -61,8 +61,8 @@ public class PlayState extends BasicGameState {
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         Image playerImage = new Image("res/character/bike.png");
         Vector2f playerPos = new Vector2f(50, 300);
-        Shape playerShape = new Rectangle(playerPos.x, playerPos.y, playerImage.getWidth(), playerImage.getHeight());
-        playerShape.setLocation(playerPos);
+        Shape playerShape = new Rectangle(0,0, playerImage.getWidth(), playerImage.getHeight());
+       // playerShape.setLocation(playerPos);
         livesList = new ArrayList<Image>();
         enemies = new ArrayList<Enemy>();
 
@@ -83,16 +83,17 @@ public class PlayState extends BasicGameState {
         // populate map with enemies
         Image freshmanImage = new Image("res/character/Freshman.png");
         Vector2f freshmanPos = new Vector2f(550, 300);
-        Shape freshmanShape = new Rectangle(freshmanPos.x, freshmanPos.y, freshmanImage.getWidth(), freshmanImage.getHeight());
+        Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
         freshman = new Freshman("freshman1", freshmanImage, freshmanPos, freshmanShape, 3);
 
         Image freshman2Image = new Image("res/character/Freshman.png");
         Vector2f freshman2Pos = new Vector2f(1800, 300);
-        Shape freshman2Shape = new Rectangle(freshmanPos.x, freshmanPos.y, freshmanImage.getWidth(), freshmanImage.getHeight());
-        freshman2 = new Freshman("freshman1", freshmanImage, freshmanPos, freshmanShape, 3);
+        Shape freshman2Shape = new Rectangle(0, 0, freshman2Image.getWidth(), freshman2Image.getHeight());
+        freshman2 = new Freshman("freshman1", freshman2Image, freshman2Pos, freshman2Shape, 3);
 
         freshman.setPosition(new Vector2f(550, 300));
         freshman2.setPosition(new Vector2f(550, 300));
+
 
     }
 
@@ -107,8 +108,12 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
+        g.draw(player.getCollisionShape());
         freshman.render(g);
+        g.draw(freshman.getCollisionShape());
         freshman2.render(g);
+        g.draw(freshman2.getCollisionShape());
+
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
 
@@ -182,8 +187,8 @@ public class PlayState extends BasicGameState {
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             currentX = currentX + speed;
             // TODO:  PLACEHOLDER - FIX THIS
-            freshman.setPosition(new Vector2f(freshman.getPosition().getX()-5, 300));
-            freshman2.setPosition(new Vector2f(freshman.getPosition().getX()-5, 300));
+           freshman.setPosition(new Vector2f(freshman.getPosition().getX()-5, 300));
+           freshman2.setPosition(new Vector2f(freshman2.getPosition().getX()-5, 300));
         }
 
         // Check bounds
@@ -202,12 +207,13 @@ public class PlayState extends BasicGameState {
         {
             System.out.println("Oh no: collision with freshman2");
         }
-        //freshman.setPosition(new Vector2f(freshman.getPosition().getX() + freshman.getSpeed(), freshman.getPosition().getY()));
+        freshman.setPosition(new Vector2f(freshman.getPosition().getX() + freshman.getSpeed(), freshman.getPosition().getY()));
 
         player.update(gc, sbg, i);
-        freshman.update(gc, sbg, i);
-        freshman2.update(gc, sbg, i);
+       freshman.update(gc, sbg, i);
+       freshman2.update(gc, sbg, i);
 
+        player.getCollisionShape().setLocation(player.getPosition());
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
     }

@@ -83,10 +83,13 @@ public class CollidableInteractiveEntity extends InteractiveEntity implements Co
     }
     public void update(GameContainer gc, StateBasedGame sbg, int delta) {
        // System.out.println("update for CollidableInteractiveEntity being called");
-        System.out.println("collisionShape x: " + position.getX());
-        System.out.println("collisionShape y: " + position.getY());
-        collisionShape.setX(position.getX());
-        collisionShape.setY(position.getY());
+       //System.out.println(name + "collisionShape x: " + collisionShape.getX());
+       //System.out.println(name + "collisionShape y: " + collisionShape.getY());
+       // System.out.println(name + "position x: " + position.getX());
+       // System.out.println(name + "position y: " + position.getY());
+       // System.out.println();
+        //collisionShape.setX(position.getX());
+        //collisionShape.setY(position.getY());
         return;
     }
 }
