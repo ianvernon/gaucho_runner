@@ -131,19 +131,12 @@ public class PlayState extends BasicGameState {
         }
 
         if (livesList.isEmpty()) {
-            g.drawString("No more lives", 300, 50);
+            g.drawString("No more lives!", 300, 50);
         }
 
-//        camera.render(gc, sbg, g);
-//        if(app.getGraphics() == null)
-//        {
-//            System.out.println("GRAPHICS ARE NULL");
-//        }
-//        else
-//        {
-//            player.render(app.getGraphics());
-//        }
-//        camera.renderFinish(gc, sbg, g);
+        if( time / 1000 >= 15){
+            g.drawString("No more time!", 500, 50);
+        }
     }
 
     /**
