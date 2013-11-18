@@ -80,7 +80,7 @@ public class PlayState extends BasicGameState {
         progBar = new ProgressBar(250,20);
 
         // populate map with enemies
-        Image freshmanImage = new Image("res/map/Freshman.png");
+        Image freshmanImage = new Image("res/character/Freshman.png");
         Vector2f freshmanPos = new Vector2f(50, 225);
         Shape freshmanShape = new Rectangle(freshmanPos.x, freshmanPos.y, freshmanImage.getWidth(), freshmanImage.getHeight());
         freshman = new Freshman("freshman1", freshmanImage, freshmanPos, freshmanShape, 3);
