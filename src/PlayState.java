@@ -9,7 +9,7 @@ import org.newdawn.slick.tiled.TiledMap;
 /** A class that implements the state where the game is played */
 public class PlayState extends BasicGameState {
     /** Map location */
-    private final String MAP_PATH = "res/map/DemoMap2.tmx";
+    private final String MAP_PATH = "res/map/DemoMap5.tmx";
     /** Current x-position */
     int currentX = 0;
     /** Game map */
