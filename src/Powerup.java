@@ -7,6 +7,7 @@ import org.newdawn.slick.geom.Vector2f;
  */
 public abstract class Powerup extends CollidableInteractiveEntity {
 
+    protected boolean isPickedUp;
     /**
      * Initializes powerup values
      * @param name
@@ -14,13 +15,15 @@ public abstract class Powerup extends CollidableInteractiveEntity {
      * @param position
      * @param collisionShape
      */
-    public Powerup(String name, Image image, Vector2f position, Shape collisionShape, int speed) {
+
+    public Powerup(String name, Image image, Vector2f position, Shape collisionShape, int speed, boolean isPickedUp) {
         super(name, image, position, collisionShape, speed);
+        isPickedUp = false;
     }
 
     /**
      * Utilize function
      */
-    public abstract void utilize();
+    public abstract void utilize(Player p);
 
 }

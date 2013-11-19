@@ -14,7 +14,9 @@ public class GameLogic {
     private int STARTING_LIVES = 3;
     private ArrayList<Image> livesList;
     private ArrayList<Enemy> enemyList;
-    private int NUM_OF_ENEMIES = 10;
+    private ArrayList<Powerup> powerups;
+    private static int NUM_OF_ENEMIES = 10;
+    private static int NUM_OF_POWERUPS = 5;
     private Image timerBox;
 
 
@@ -25,6 +27,7 @@ public class GameLogic {
     public void init() {
         livesList = new ArrayList<Image>();
         enemyList = new ArrayList<Enemy>();
+        powerups = new ArrayList<Powerup>();
 
         try {
             timerBox = new Image("res/misc/TimerBackground.png");
@@ -47,6 +50,27 @@ public class GameLogic {
             e.printStackTrace();
         }
 
+        // load the powerups
+
+        LOCATION = 600;
+
+        try
+        {
+            for(int i = 0; i < NUM_OF_POWERUPS; i++)
+            {
+                Image powerUpImage = new Image("res/character/ExtraLife.png");
+                Vector2f powerUpPos = new Vector2f(LOCATION, 370);
+                Shape powerUpShape = new Rectangle(0, 0, powerUpImage.getWidth(), powerUpImage.getHeight());
+                powerups.add(new ExtraLife("extraLife" + i, powerUpImage, powerUpPos, powerUpShape, 0, false));
+                LOCATION = LOCATION + 300;
+            }
+        }
+        catch(SlickException ex)
+        {
+            ex.printStackTrace();
+        }
+
+
         // initialize lives
         try {
             //scoreboard stuff, loads the image
@@ -67,6 +91,10 @@ public class GameLogic {
             for (int i = 0; i < enemyList.size(); i++) {
                 enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, 300));
             }
+            for (int i = 0; i < powerups.size(); i++)
+            {
+                powerups.get(i).setPosition(new Vector2f(powerups.get(i).getPosition().getX() - speed, 370));
+            }
         }
 
         //checks for lives and collisions
@@ -81,6 +109,24 @@ public class GameLogic {
             }
 
         }
+        // check if interacting with powerup
+        for(int i = 0; i < powerups.size(); i++)
+        {
+            if(player.isCollidingWith(powerups.get(i)) && !powerups.isEmpty())
+            {
+                System.out.println("Collision with" + powerups.get(i).getName());
+                try
+                {
+                    livesList.add(new Image("res/misc/heart.png"));
+                }
+                catch(Exception ex)
+                {
+                    ex.printStackTrace();
+                }
+                powerups.get(i).utilize(player);
+                powerups.remove(i);
+            }
+        }
 
     }
 
@@ -89,6 +135,14 @@ public class GameLogic {
         for (int i = 0; i < enemyList.size(); i++) {
             enemyList.get(i).render(g);
             g.draw(enemyList.get(i).getCollisionShape());
+        }
+
+        // render powerups
+
+        for(int i = 0; i < powerups.size(); i++)
+        {
+            powerups.get(i).render(g);
+            g.draw(powerups.get(i).getCollisionShape());
         }
 
         //draws the lives
