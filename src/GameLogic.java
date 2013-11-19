@@ -96,6 +96,10 @@ public class GameLogic {
                 powerups.get(i).setPosition(new Vector2f(powerups.get(i).getPosition().getX() - speed, 370));
             }
         }
+        for (int i = 0; i < enemyList.size(); i++){
+            enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() + 5, 300));
+        }
+
 
         //checks for lives and collisions
         for (int i = 0; i < enemyList.size(); i++) {
