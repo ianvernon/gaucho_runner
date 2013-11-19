@@ -43,4 +43,9 @@ public class Player extends CollidableInteractiveEntity {
     public boolean isAlive() {
         return (this.lives >= 0);
     }
+    public void addLife()
+    {
+        this.lives = lives+1;
+    }
+
 }
