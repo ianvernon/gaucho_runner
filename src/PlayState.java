@@ -76,10 +76,12 @@ public class PlayState extends BasicGameState {
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
 
+        /*
         //Scoreboard
         g.setColor(Color.blue);
         g.fillRoundRect(0, 0, 225, 100, 10);
         g.setColor(Color.white);
+        */
 
         logic.render(g);
     }

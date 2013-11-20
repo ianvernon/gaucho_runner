@@ -18,6 +18,7 @@ public class GameLogic {
     private static int NUM_OF_ENEMIES = 10;
     private static int NUM_OF_POWERUPS = 5;
     private Image timerBox;
+    private Scoreboard scoreboard;
 
 
     public GameLogic() {
@@ -28,6 +29,7 @@ public class GameLogic {
         livesList = new ArrayList<Image>();
         enemyList = new ArrayList<Enemy>();
         powerups = new ArrayList<Powerup>();
+        scoreboard = new Scoreboard();
 
         try {
             timerBox = new Image("res/misc/TimerBackground.png");
@@ -86,6 +88,7 @@ public class GameLogic {
     public void update(int speed, boolean isMoving, Player player, int delta) {
         this.time += delta;
 
+
         //Translates enemy
         if (isMoving) {
             for (int i = 0; i < enemyList.size(); i++) {
@@ -132,9 +135,12 @@ public class GameLogic {
             }
         }
 
+        scoreboard.update(livesList.size(), time, powerups.size());
     }
 
     public void render(Graphics g) {
+        scoreboard.render(g);
+
         //render enemies
         for (int i = 0; i < enemyList.size(); i++) {
             enemyList.get(i).render(g);
