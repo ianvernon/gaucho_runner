@@ -13,10 +13,12 @@ public class GauchoRunner extends StateBasedGame {
     public static final int PLAY_STATE_ID = 1;
     /** The state ID for Instructions menu */
     public static final int INSTRUCTION_STATE_ID = 2;
+    /** The state ID for Pause menu */
+    public static final int PAUSE_STATE_ID = 3;
     /** The container for the main game */
     private static AppGameContainer app;
-    /** The restartFlag to determine if the PlayState will be restarted upon entering */
-    private Boolean restartFlag = false;
+    ///** The restartFlag to determine if the PlayState will be restarted upon entering */
+    //private Boolean restartFlag = false;
 
     /**
      * Creates the states used in the game
@@ -29,6 +31,8 @@ public class GauchoRunner extends StateBasedGame {
         this.addState(playState);
         InstructionState instructionState = new InstructionState(INSTRUCTION_STATE_ID);
         this.addState(instructionState);
+        PauseState pauseState = new PauseState(PAUSE_STATE_ID, 300, 180, 131);
+        this.addState(pauseState);
         this.enterState(MAIN_MENU_STATE_ID);
     }
 

@@ -26,6 +26,8 @@ public class PlayState extends BasicGameState {
     private boolean IS_MOVING = false;
     private GameLogic logic;
 
+    private boolean needsRestart = false;
+
     /**
      * Sets game to playable state
      *
@@ -99,6 +101,8 @@ public class PlayState extends BasicGameState {
         int eventsPerSecond;
         int windowsPerMap;
 
+        if (needsRestart)
+            this.restart(gc, sbg);
 
         //camera.centerOn(player.getCollisionShape());
 
@@ -115,7 +119,10 @@ public class PlayState extends BasicGameState {
         int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
         Input input = gc.getInput();
 
-        //
+        // Enter Pause Screen if user presses escape
+        if (input.isKeyDown(Input.KEY_ESCAPE))
+            sbg.enterState(3);
+
         if (input.isKeyDown(Input.KEY_UP)) {
             player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() - player.getSpeed()));
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
@@ -153,6 +160,31 @@ public class PlayState extends BasicGameState {
         logic.update(speed, IS_MOVING, player, delta);
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
+    }
+
+    /**
+     * Restarts the game
+     */
+    public void restart() {
+        //TODO: implement reset() methods in the following classes:
+        //camera.reset();
+        //player.reset();
+        //logic.reset();
+        //hud.reset();
+        this.needsRestart = true;
+    }
+
+    /**
+     * Restarts the game ( using init() )
+     */
+    public void restart(GameContainer gc, StateBasedGame sbg) {
+        //TODO: implement init()-indepenent restart()
+        try {
+            this.init(gc, sbg);
+        } catch (SlickException ex) {
+            ex.printStackTrace();
+            return;
+        }
     }
 
     /**

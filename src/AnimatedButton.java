@@ -25,6 +25,8 @@ public class AnimatedButton extends MouseOverArea {
     private StateBasedGame sbg;
     /** An array list that contains actions for the buttons*/
     private final List<ButtonAction> actions = new ArrayList<ButtonAction>();
+    /** Should we restart on entering the button's state ID */
+    private boolean restart = false;
 
     /** The constructor for the Animated Button class
      * @param guiContext
@@ -34,8 +36,7 @@ public class AnimatedButton extends MouseOverArea {
      * @param x
      * @param y
      */
-    public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y,
-                          int stateID) {
+    public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y, int stateID) {
         super(guiContext, normalImage, x, y);
         super.setMouseOverImage(mouseOverImage);
         super.setMouseDownImage(mouseOverImage);
@@ -44,6 +45,28 @@ public class AnimatedButton extends MouseOverArea {
         this.normalImage = normalImage;
         this.mouseOverImage = mouseOverImage;
         //this.gc = gameContainer;
+
+    }
+
+    /** The constructor for the Animated Button class
+     * @param guiContext
+     * @param sbg
+     * @param normalImage
+     * @param mouseOverImage
+     * @param x
+     * @param y
+     * @param restart
+     */
+    public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y, int stateID, boolean restart) {
+        super(guiContext, normalImage, x, y);
+        super.setMouseOverImage(mouseOverImage);
+        super.setMouseDownImage(mouseOverImage);
+        this.sbg = sbg;
+        this.stateID = stateID;
+        this.normalImage = normalImage;
+        this.mouseOverImage = mouseOverImage;
+        //this.gc = gameContainer;
+        this.restart = restart;
 
     }
 
@@ -93,6 +116,9 @@ public class AnimatedButton extends MouseOverArea {
 //        }
 //        super.mouseClicked(button, x, y, clickCount);
         if (isMouseOver()) {
+            if (restart) {
+                //sbg.getState(1).restart();
+            }
             sbg.enterState(stateID);
 
         }

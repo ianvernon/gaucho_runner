@@ -100,17 +100,17 @@ public class PauseState extends BasicGameState {
         }
         );
 
-        AnimatedButton restart = new AnimatedButton(gc, sbg, restartUs, restartS, startingX, startingY + spaceBetweenItems, 1);
+        AnimatedButton restart = new AnimatedButton(gc, sbg, restartUs, restartS, startingX, startingY + spaceBetweenItems, 1, true);
 
         restart.add(new ButtonAction() {
             public void perform() {
-                sbg.setRestartFlag(True);
+
             }
         }
 
         );
 
-        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2 * spaceBetweenItems, 3);
+        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2 * spaceBetweenItems, 0);
 
         quit.add(new ButtonAction() {
             public void perform() {
