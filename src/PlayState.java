@@ -9,7 +9,7 @@ import org.newdawn.slick.tiled.TiledMap;
 /** A class that implements the state where the game is played */
 public class PlayState extends BasicGameState {
     /** Map location */
-    private final String MAP_PATH = "res/map/DemoMap5.tmx";
+    private final String MAP_PATH = "res/map/fullmap.tmx";
     /** Current x-position */
     int currentX = 0;
     /** Game map */
@@ -21,7 +21,7 @@ public class PlayState extends BasicGameState {
     /** State ID of the playable game */
     private int stateID;
     /** The shortest time possible to move the width of the screen once in seconds */
-    private int secondsPerWindow = 2;
+    private int secondsPerWindow = 1;
     private ProgressBar progBar;
     private boolean IS_MOVING = false;
     private GameLogic logic;

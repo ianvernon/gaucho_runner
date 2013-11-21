@@ -8,7 +8,6 @@ public class Scoreboard {
     private int timeFinished;
     private int numOfPowerUps;
     private int TIME_ALLOWED = 180;
-    private Graphics g;
 
 
     public Scoreboard() {
