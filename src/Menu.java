@@ -49,12 +49,12 @@ public class Menu {
         // create new MouseOverArea based on input
         // get Y of last item in the list - so we can set the Y position of the next menu item
         // in relation to it
-        int itemY;
+        /*int itemY;
         if (items.size() == 0) {
             itemY = startingY;
         } else {
             itemY = items.get(items.size() - 1).getY();
-        }
+        }*/
         items.add(new AnimatedButton(gc, sbg, normalImage, mouseOverImage, x, y, stateID));
     }
 

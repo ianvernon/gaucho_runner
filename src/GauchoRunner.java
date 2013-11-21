@@ -15,6 +15,8 @@ public class GauchoRunner extends StateBasedGame {
     public static final int INSTRUCTION_STATE_ID = 2;
     /** The container for the main game */
     private static AppGameContainer app;
+    /** The restartFlag to determine if the PlayState will be restarted upon entering */
+    private Boolean restartFlag = false;
 
     /**
      * Creates the states used in the game
