@@ -169,9 +169,7 @@ public class PlayState extends BasicGameState {
 
         logic.update(speed, isMoving, player, delta);
         //check to see if collision happened
-        System.out.println(logic.getIsColliding());
         if(logic.getIsColliding()){
-            System.out.println("Yup");
             speed = 3;
         }
 
