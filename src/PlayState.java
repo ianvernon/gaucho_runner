@@ -12,8 +12,7 @@ public class PlayState extends BasicGameState {
     private final String MAP_PATH = "res/map/fullmap.tmx";
     /** Current x-position */
     int currentX = 0;
-    int currentStaticX = 0;
-    int speed = 5;
+    public static int speed = 5;
     /** Game map */
     private TiledMap map;
     /** Camera that moves the map */
@@ -104,11 +103,8 @@ public class PlayState extends BasicGameState {
         int eventsPerSecond;
         int windowsPerMap;
 
-
         if (needsRestart)
             this.restart(gc, sbg);
-
-        //camera.centerOn(player.getCollisionShape());
 
         //checks to make sure it does not divide by zero
         if (gc.getFPS() == 0) {
@@ -144,7 +140,6 @@ public class PlayState extends BasicGameState {
                 System.out.println(speed);
             }
         }
-
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             // TODO:  PLACEHOLDER - FIX THIS
             IS_MOVING = true;
@@ -158,12 +153,17 @@ public class PlayState extends BasicGameState {
         } else {
             IS_MOVING = false;
         }
-
         // Check bounds
-        if (player.getPosition().getY() < 90) {
-            player.setPosition(new Vector2f(player.getPosition().getX(), 90));
-        } else if (player.getPosition().getY() > 450) {
-            player.setPosition(new Vector2f(player.getPosition().getX(), 450));
+        if (player.getPosition().getY() < 150) {
+            player.setPosition(new Vector2f(player.getPosition().getX(), 150));
+        } else if (player.getPosition().getY() > 540) {
+            player.setPosition(new Vector2f(player.getPosition().getX(), 540));
+        }
+        //check tp see if player is on the dirt
+        if((player.getPosition().getY() < 210) && (speed >= 3)) {
+            speed = 3;
+        } else if ((player.getPosition().getY() > 485) && (speed >= 3)){
+            speed = 3;
         }
 
         logic.update(speed, IS_MOVING, player, delta);
