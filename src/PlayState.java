@@ -12,6 +12,8 @@ public class PlayState extends BasicGameState {
     private final String MAP_PATH = "res/map/fullmap.tmx";
     /** Current x-position */
     int currentX = 0;
+    int currentStaticX = 0;
+    int speed = 5;
     /** Game map */
     private TiledMap map;
     /** Camera that moves the map */
@@ -25,8 +27,8 @@ public class PlayState extends BasicGameState {
     private ProgressBar progBar;
     private boolean IS_MOVING = false;
     private GameLogic logic;
-
     private boolean needsRestart = false;
+    private long speedTime = 0;
 
     /**
      * Sets game to playable state
@@ -50,6 +52,7 @@ public class PlayState extends BasicGameState {
         Image playerImage = new Image("res/character/bike.png");
         Vector2f playerPos = new Vector2f(50, 300);
         Shape playerShape = new Rectangle(0, 0, playerImage.getWidth(), playerImage.getHeight());
+
 
         //load map
         map = new TiledMap(MAP_PATH);
@@ -101,6 +104,7 @@ public class PlayState extends BasicGameState {
         int eventsPerSecond;
         int windowsPerMap;
 
+
         if (needsRestart)
             this.restart(gc, sbg);
 
@@ -116,9 +120,10 @@ public class PlayState extends BasicGameState {
         //Sets the number of windows per map
         windowsPerMap = (camera.mapWidth - 800) / (40 * camera.tileWidth);
 
-        int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
+//        int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
         Input input = gc.getInput();
 
+        speedTime += delta;
         // Enter Pause Screen if user presses escape
         if (input.isKeyDown(Input.KEY_ESCAPE))
             sbg.enterState(3);
@@ -128,10 +133,28 @@ public class PlayState extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() + player.getSpeed()));
         }
+        currentX = currentX + speed;
+
+        if (input.isKeyDown(Input.KEY_LEFT)) {
+            if (speedTime >= 100) {
+                speedTime = 0;
+                if (speed > 0) {
+                    speed--;
+                }
+                System.out.println(speed);
+            }
+        }
+
         if (input.isKeyDown(Input.KEY_RIGHT)) {
-            currentX = currentX + speed;
             // TODO:  PLACEHOLDER - FIX THIS
             IS_MOVING = true;
+            if (speedTime >= 250) {
+                speedTime = 0;
+                if (speed < 25) {
+                    speed++;
+                }
+                System.out.println(speed);
+            }
         } else {
             IS_MOVING = false;
         }
@@ -143,28 +166,12 @@ public class PlayState extends BasicGameState {
             player.setPosition(new Vector2f(player.getPosition().getX(), 450));
         }
 
-        /*if(player.isCollidingWith(freshman))
-        {
-            System.out.println("Oh no: collision with freshman");
-        }
-        if(player.isCollidingWith(freshman2))
-        {
-            System.out.println("Oh no: collision with freshman2");
-        } */
-
-        /*player.update(gc, sbg, i);
-       freshman.update(gc, sbg, i);
-       freshman2.update(gc, sbg, i);
-          */
-        //player.getCollisionShape().setLocation(player.getPosition());
         logic.update(speed, IS_MOVING, player, delta);
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
     }
 
-    /**
-     * Restarts the game
-     */
+    /** Restarts the game */
     public void restart() {
         //TODO: implement reset() methods in the following classes:
         //camera.reset();
@@ -174,9 +181,7 @@ public class PlayState extends BasicGameState {
         this.needsRestart = true;
     }
 
-    /**
-     * Restarts the game ( using init() )
-     */
+    /** Restarts the game ( using init() ) */
     public void restart(GameContainer gc, StateBasedGame sbg) {
         //TODO: implement init()-indepenent restart()
         try {

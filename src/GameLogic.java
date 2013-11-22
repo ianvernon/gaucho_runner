@@ -94,8 +94,15 @@ public class GameLogic {
             for (int i = 0; i < enemyList.size(); i++) {
                 enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, 300));
             }
-            for (int i = 0; i < powerups.size(); i++)
-            {
+            for (int i = 0; i < powerups.size(); i++) {
+                powerups.get(i).setPosition(new Vector2f(powerups.get(i).getPosition().getX() - speed, 370));
+            }
+        }else{
+            //TODO fix this ian. please. :)
+            for (int i = 0; i < enemyList.size(); i++) {
+                enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, 300));
+            }
+            for (int i = 0; i < powerups.size(); i++) {
                 powerups.get(i).setPosition(new Vector2f(powerups.get(i).getPosition().getX() - speed, 370));
             }
         }
