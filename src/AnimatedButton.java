@@ -1,8 +1,11 @@
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.gui.GUIContext;
 import org.newdawn.slick.gui.MouseOverArea;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.state.transition.FadeInTransition;
+import org.newdawn.slick.state.transition.FadeOutTransition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -119,7 +122,7 @@ public class AnimatedButton extends MouseOverArea {
             if (restart) {
                 //sbg.getState(1).restart();
             }
-            sbg.enterState(stateID);
+            sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
 
         }
     }
@@ -132,10 +135,10 @@ public class AnimatedButton extends MouseOverArea {
     public void render(GUIContext gc, Graphics g) {
         if (activated) {
             g.drawImage(normalImage, this.getX(), this.getY());
-            super.render(gc, g);
+//            super.render(gc, g);
         } else {
             g.drawImage(mouseOverImage, this.getX(), this.getY());
-            super.render(gc, g);
+//            super.render(gc, g);
         }
     }
 
