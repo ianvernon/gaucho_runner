@@ -19,6 +19,7 @@ public class GameLogic {
     private static int NUM_OF_POWERUPS = 5;
     private Image timerBox;
     private Scoreboard scoreboard;
+    public boolean isColliding;
 
 
     public GameLogic() {
@@ -30,6 +31,7 @@ public class GameLogic {
         enemyList = new ArrayList<Enemy>();
         powerups = new ArrayList<Powerup>();
         scoreboard = new Scoreboard();
+        isColliding = false;
 
         try {
             timerBox = new Image("res/misc/TimerBackground.png");
@@ -110,7 +112,7 @@ public class GameLogic {
             enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() + 5, 300));
         }
 
-
+        isColliding = false;
         //checks for lives and collisions
         for (int i = 0; i < enemyList.size(); i++) {
             //if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
@@ -118,6 +120,7 @@ public class GameLogic {
                 System.out.println("Collision with" + enemyList.get(i).getName());
                 livesList.remove(livesList.size() - 1);
                 enemyList.remove(i);
+                isColliding = true;
             } else {
                 //go to end screen
             }
@@ -184,6 +187,9 @@ public class GameLogic {
         if (time / 1000 >= 15) {
             g.drawString("No more time!", 500, 50);
         }
+    }
+    boolean getIsColliding(){
+        return isColliding;
     }
 
 }

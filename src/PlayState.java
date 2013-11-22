@@ -24,7 +24,7 @@ public class PlayState extends BasicGameState {
     /** The shortest time possible to move the width of the screen once in seconds */
     private int secondsPerWindow = 1;
     private ProgressBar progBar;
-    private boolean IS_MOVING = false;
+    private boolean isMoving = false;
     private GameLogic logic;
     private boolean needsRestart = false;
     private long speedTime = 0;
@@ -142,7 +142,7 @@ public class PlayState extends BasicGameState {
         }
         if (input.isKeyDown(Input.KEY_RIGHT)) {
             // TODO:  PLACEHOLDER - FIX THIS
-            IS_MOVING = true;
+            isMoving = true;
             if (speedTime >= 250) {
                 speedTime = 0;
                 if (speed < 25) {
@@ -151,7 +151,7 @@ public class PlayState extends BasicGameState {
                 System.out.println(speed);
             }
         } else {
-            IS_MOVING = false;
+            isMoving = false;
         }
         // Check bounds
         if (player.getPosition().getY() < 150) {
@@ -159,14 +159,23 @@ public class PlayState extends BasicGameState {
         } else if (player.getPosition().getY() > 540) {
             player.setPosition(new Vector2f(player.getPosition().getX(), 540));
         }
-        //check tp see if player is on the dirt
+        //check to see if player is on the dirt
         if((player.getPosition().getY() < 210) && (speed >= 3)) {
             speed = 3;
         } else if ((player.getPosition().getY() > 485) && (speed >= 3)){
             speed = 3;
         }
 
-        logic.update(speed, IS_MOVING, player, delta);
+
+        logic.update(speed, isMoving, player, delta);
+        //check to see if collision happened
+        System.out.println(logic.getIsColliding());
+        if(logic.getIsColliding()){
+            System.out.println("Yup");
+            speed = 3;
+        }
+
+
         camera.centerOn(currentX, 0);
         camera.translateGraphics();
     }
