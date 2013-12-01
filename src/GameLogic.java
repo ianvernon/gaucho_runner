@@ -15,11 +15,12 @@ public class GameLogic {
     private ArrayList<Image> livesList;
     private ArrayList<Enemy> enemyList;
     private ArrayList<Powerup> powerups;
-    private static int NUM_OF_ENEMIES = 10;
+    private static int NUM_OF_ENEMIES = 300;
     private static int NUM_OF_POWERUPS = 5;
     private Image timerBox;
     private Scoreboard scoreboard;
     public boolean isColliding;
+
 
 
     public GameLogic() {
@@ -42,17 +43,74 @@ public class GameLogic {
         //load the enemies
         int LOCATION = 550;
 
+        //Top road bounded enemies
         try {
             for (int i = 0; i < NUM_OF_ENEMIES; i++) {
-                Image freshmanImage = new Image("res/character/Freshman.png");
-                Vector2f freshmanPos = new Vector2f(LOCATION, 300);
-                Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
-                enemyList.add(new Freshman("freshman" + i, freshmanImage, freshmanPos, freshmanShape, 3));
-                LOCATION = LOCATION + 300;
+                if (i%2 == 0) {
+
+                //System.out.println(i);
+                Image freshmanImageTop = new Image("res/character/Freshman.png");
+
+                int randomX;
+                randomX = (int) (67500 * Math.random());
+
+                int randomY = 0;
+                while(randomY < 225 || randomY > 325) {
+                    randomY = (int) (600*Math.random());
+                }
+
+
+                Vector2f freshmanPosTop = new Vector2f(randomX, randomY);
+                Shape freshmanShapeTop = new Rectangle(0, 0, freshmanImageTop.getWidth(), freshmanImageTop.getHeight());
+                Freshman fresh = new Freshman("freshman" + i, freshmanImageTop, freshmanPosTop, freshmanShapeTop, 3);
+                enemyList.add(i, fresh);
+                //LOCATION = LOCATION + 300;
+            }
+                else {
+                    Image freshmanImage = new Image("res/character/bike.png");
+
+                    int randomXOdd;
+                    randomXOdd = (int) (67500 * Math.random());
+
+                    int randomYOdd = 0;
+                    while(randomYOdd < 350 || randomYOdd > 450) {
+                        randomYOdd = (int) (600*Math.random());
+                    }
+
+
+                    Vector2f freshmanPos = new Vector2f(randomXOdd, randomYOdd);
+                    Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
+                    enemyList.add(new Freshman("freshman" + i, freshmanImage, freshmanPos, freshmanShape, 3));
+                    //LOCATION = LOCATION + 300;
+                }
             }
         } catch (SlickException e) {
             e.printStackTrace();
         }
+
+        //Bottom road bounded enemies
+
+//        try {
+//            for (int i = 1; i < NUM_OF_ENEMIES; i+=2) {
+//                Image freshmanImage = new Image("res/character/bike.png");
+//
+//                int randomXOdd;
+//                randomXOdd = (int) (67500 * Math.random());
+//
+//                int randomYOdd = 0;
+//                while(randomYOdd < 350 || randomYOdd > 450) {
+//                    randomYOdd = (int) (600*Math.random());
+//                }
+//
+//
+//                Vector2f freshmanPos = new Vector2f(randomXOdd, randomYOdd);
+//                Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
+//                enemyList.add(new Freshman("freshman" + i, freshmanImage, freshmanPos, freshmanShape, 3));
+//                //LOCATION = LOCATION + 300;
+//            }
+//        } catch (SlickException e) {
+//            e.printStackTrace();
+//        }
 
         // load the powerups
 
@@ -66,7 +124,7 @@ public class GameLogic {
                 Vector2f powerUpPos = new Vector2f(LOCATION, 370);
                 Shape powerUpShape = new Rectangle(0, 0, powerUpImage.getWidth(), powerUpImage.getHeight());
                 powerups.add(new ExtraLife("extraLife" + i, powerUpImage, powerUpPos, powerUpShape, 0, false));
-                LOCATION = LOCATION + 300;
+                //LOCATION = LOCATION + 300;
             }
         }
         catch(SlickException ex)
@@ -90,26 +148,29 @@ public class GameLogic {
     public void update(int speed, boolean isMoving, Player player, int delta) {
         this.time += delta;
 
-
         //Translates enemy
         if (isMoving) {
             for (int i = 0; i < enemyList.size(); i++) {
-                enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, 300));
-            }
-            for (int i = 0; i < powerups.size(); i++) {
-                powerups.get(i).setPosition(new Vector2f(powerups.get(i).getPosition().getX() - speed, 370));
-            }
-        }else{
-            //TODO fix this ian. please. :)
-            for (int i = 0; i < enemyList.size(); i++) {
-                enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, 300));
+                enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, enemyList.get(i).getPosition().getY()));
             }
             for (int i = 0; i < powerups.size(); i++) {
                 powerups.get(i).setPosition(new Vector2f(powerups.get(i).getPosition().getX() - speed, 370));
             }
         }
-        for (int i = 0; i < enemyList.size(); i++){
-            enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() + 5, 300));
+        else {
+            //TODO fix this ian. please. :)
+            for (int i = 0; i < enemyList.size(); i++) {
+                enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, enemyList.get(i).getPosition().getY()));
+            }
+            for (int i = 0; i < powerups.size(); i++) {
+                powerups.get(i).setPosition(new Vector2f(powerups.get(i).getPosition().getX() - speed, 370));
+            }
+        }
+        for (int i = 0; i < enemyList.size(); i+=2){
+            enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - 5, enemyList.get(i).getPosition().getY()));
+        }
+        for (int i = 1; i < enemyList.size(); i+=2){
+            enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() + 2, enemyList.get(i).getPosition().getY()));
         }
 
         isColliding = false;
@@ -150,6 +211,7 @@ public class GameLogic {
 
     public void render(Graphics g) {
         scoreboard.render(g);
+
 
         //render enemies
         for (int i = 0; i < enemyList.size(); i++) {

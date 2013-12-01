@@ -1,4 +1,5 @@
 import org.newdawn.slick.*;
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
@@ -77,6 +78,10 @@ public class PlayState extends BasicGameState {
         player.render(g);
         g.draw(player.getCollisionShape());
 
+        if(camera.cameraX > 67000) {
+            g.drawString("HEY YOU FINISHED THE GAME HEY HEY HEY HEY HEY hipHip[]!", 200, 300);
+        }
+
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
 
@@ -145,7 +150,7 @@ public class PlayState extends BasicGameState {
             isMoving = true;
             if (speedTime >= 250) {
                 speedTime = 0;
-                if (speed < 25) {
+                if (speed < 100) {
                     speed++;
                 }
                 System.out.println(speed);
