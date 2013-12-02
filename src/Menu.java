@@ -95,4 +95,21 @@ public class Menu {
         return this.items.size();
     }
 
+    /**
+     * Time to revive the buttons
+     */
+    public void enter() {
+        for (AnimatedButton b : items){
+            b.setAlive(true);
+        }
+    }
+
+    /**
+     * Time to kill the buttons
+     */
+    public void leave() {
+        for (AnimatedButton b : items){
+            b.setAlive(false);
+        }
+    }
 }

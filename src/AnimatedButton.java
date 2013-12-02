@@ -30,6 +30,8 @@ public class AnimatedButton extends MouseOverArea {
     private final List<ButtonAction> actions = new ArrayList<ButtonAction>();
     /** Should we restart on entering the button's state ID */
     private boolean restart = false;
+    /** Is button current alive */
+    private boolean alive = false;
 
     /** The constructor for the Animated Button class
      * @param guiContext
@@ -47,6 +49,7 @@ public class AnimatedButton extends MouseOverArea {
         this.stateID = stateID;
         this.normalImage = normalImage;
         this.mouseOverImage = mouseOverImage;
+        this.alive = true;
         //this.gc = gameContainer;
 
     }
@@ -58,7 +61,7 @@ public class AnimatedButton extends MouseOverArea {
      * @param mouseOverImage
      * @param x
      * @param y
-     * @param restart
+     * @param restart should we restart the PlayState?
      */
     public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y, int stateID, boolean restart) {
         super(guiContext, normalImage, x, y);
@@ -101,6 +104,16 @@ public class AnimatedButton extends MouseOverArea {
         activated = b;
     }
 
+    /** Returns current status of alive */
+    public boolean isAlive() {
+        return alive;
+    }
+
+    /** Sets the value of alive */
+    protected void setAlive(boolean b) {
+        alive = b;
+    }
+
     /** Checks to see if mouse has been clicked
      * @param button
      * @param x
@@ -118,9 +131,10 @@ public class AnimatedButton extends MouseOverArea {
 //            }
 //        }
 //        super.mouseClicked(button, x, y, clickCount);
-        if (isMouseOver()) {
+        if (isAlive() && isMouseOver()) {
             if (restart) {
-                //sbg.getState(1).restart();
+                PlayState ps = (PlayState) sbg.getState(1);
+                ps.restart();
             }
             sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
 

@@ -178,4 +178,20 @@ public class MenuState extends BasicGameState {
                 break;
         } */
     }
+
+    /**
+     * Notification that we've entered this state
+     */
+    public void enter(GameContainer gc, StateBasedGame sbg) {
+        mainMenu.leave();
+    }
+
+    /**
+     * Notification that we've left this state
+     */
+    public void leave(GameContainer gc, StateBasedGame sbg) {
+        mainMenu.leave();
+    }
+
 }
+

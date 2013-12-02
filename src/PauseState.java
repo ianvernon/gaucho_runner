@@ -51,7 +51,7 @@ public class PauseState extends BasicGameState {
     /** GUI context of menu state */
     private GUIContext guiContext;
     public SoundManager soundManager;
-
+    private PlayState play;
 
     /**
      * Initializes Menu state
@@ -68,6 +68,23 @@ public class PauseState extends BasicGameState {
         this.spaceBetweenItems = spaceBetweenItems;
         this.guiContext = guiContext;
 
+    }
+
+    /**
+     * Initializes Menu state
+     * @param stateID
+     * @param startingX
+     * @param startingY
+     * @param spaceBetweenItems
+     */
+    public PauseState(int stateID, int startingX, int startingY, int spaceBetweenItems, PlayState ps) {
+        super();
+        this.stateID = stateID;
+        this.startingX = startingX;
+        this.startingY = startingY;
+        this.spaceBetweenItems = spaceBetweenItems;
+        this.guiContext = guiContext;
+        this.play = ps;
     }
 
     /**
@@ -97,18 +114,15 @@ public class PauseState extends BasicGameState {
                 /*currentState = STATES.PLAY;
                 sbg.enterState(GauchoRunner.PLAY_STATE_ID);*/
             }
-        }
-        );
+        });
 
         AnimatedButton restart = new AnimatedButton(gc, sbg, restartUs, restartS, startingX, startingY + spaceBetweenItems, 1, true);
 
         restart.add(new ButtonAction() {
             public void perform() {
-
+                //play.restart();
             }
-        }
-
-        );
+        });
 
         AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2 * spaceBetweenItems, 0);
 
@@ -116,8 +130,7 @@ public class PauseState extends BasicGameState {
             public void perform() {
                 //gc.exit();
             }
-        }
-        );
+        });
 
         pauseMenu.addItem(play);
         pauseMenu.addItem(restart);
