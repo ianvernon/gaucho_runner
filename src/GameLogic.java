@@ -227,7 +227,7 @@ public class GameLogic {
             if(i < topE) {
                 enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - 5, enemyList.get(i).getPosition().getY()));
             }
-            else if(i>topH && i<bottomE) {
+            else if(i>=topH && i<bottomE) {
             enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() + 2, enemyList.get(i).getPosition().getY()));
             }
         }
@@ -239,12 +239,18 @@ public class GameLogic {
             if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
                 if(i < topE) {
                     topE--;
+                    topH--;
+                    bottomE--;
+                    bottomH--;
                 }
                 else if(i < topH) {
                     topH--;
+                    bottomE--;
+                    bottomH--;
                 }
                 else if(i < bottomE) {
                     bottomE--;
+                    bottomH--;
                 }
                 else {
                     bottomH--;
