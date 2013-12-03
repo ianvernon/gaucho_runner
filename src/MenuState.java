@@ -158,8 +158,11 @@ public class MenuState extends BasicGameState {
      * @param g
      */
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) {
-        g.drawImage(bg, 0, 0);
-        mainMenu.render(gc, g);
+        if(sbg.getCurrentStateID() == this.stateID)
+        {
+            g.drawImage(bg, 0, 0);
+            mainMenu.render(gc, g);
+        }
     }
 
     /**
@@ -182,20 +185,20 @@ public class MenuState extends BasicGameState {
     /**
      * Notification that we've entered this state
      */
-    public void enter(GameContainer gc, StateBasedGame sbg) {
+    /*public void enter(GameContainer gc, StateBasedGame sbg) {
 //        mainMenu.leave();
         System.out.println("Entering MenuState");
-    }
+    } */
 
     /**
      * Notification that we've left this state
      */
-    @Override
-    public void leave(GameContainer container, StateBasedGame game) throws SlickException {
+    //@Override
+    /*public void leave(GameContainer container, StateBasedGame game) throws SlickException {
 //    mainMenu.leave();
     System.out.println("Leaving MenuState");
 
-    }
+    } */
 
 }
 
