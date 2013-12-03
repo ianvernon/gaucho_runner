@@ -34,8 +34,8 @@ public class GauchoRunner extends StateBasedGame {
         this.addState(instructionState);
         PauseState pauseState = new PauseState(PAUSE_STATE_ID, 300, 180, 131, playState);
         this.addState(pauseState);
-        EndPlayState endPlayState = new EndPlayState(4, 3 );//4 = playstate
-        this.addState(endPlayState);
+//        EndPlayState endPlayState = new EndPlayState(4, 3 );//4 = playstate
+//        this.addState(endPlayState);
         this.enterState(MAIN_MENU_STATE_ID);
     }
 

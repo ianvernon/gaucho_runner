@@ -187,9 +187,8 @@ public class PlayState extends BasicGameState {
             speed = 2;
         }
         if(camera.cameraX > 69500) {
-//            g.drawString("HEY YOU FINISHED THE GAME HEY HEY HEY HEY HEY hipHip[]!", 200, 300);
-//            EndPlayState endPlayState = new EndPlayState(4, logic.getScore() );//4 = playstate
-//            sbg.addState(endPlayState);
+            EndPlayState endPlayState = new EndPlayState(4, logic.getScore() );//4 = playstate
+            sbg.addState(endPlayState);
 //            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
             sbg.enterState(4);
         }
