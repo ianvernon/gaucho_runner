@@ -23,7 +23,7 @@ public class SoundManager {
      * Loads sound resource
      */
     public void init() throws SlickException {
-        theme = new Music("res/sound/Testarossa.wav");
+        theme = new Music("res/sound/soundtrack.wav");
         crash = new Sound("res/sound/crash.wav");
         cheer = new Sound("res/sound/cheering.wav");
 
