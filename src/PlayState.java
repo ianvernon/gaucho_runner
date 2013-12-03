@@ -5,6 +5,8 @@ import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.state.transition.FadeInTransition;
+import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.tiled.TiledMap;
 
 /** A class that implements the state where the game is played */
@@ -78,8 +80,12 @@ public class PlayState extends BasicGameState {
         player.render(g);
         g.draw(player.getCollisionShape());
 
-        if(camera.cameraX > 67000) {
-            g.drawString("HEY YOU FINISHED THE GAME HEY HEY HEY HEY HEY hipHip[]!", 200, 300);
+        if(camera.cameraX > 67500) {
+//            g.drawString("HEY YOU FINISHED THE GAME HEY HEY HEY HEY HEY hipHip[]!", 200, 300);
+//            EndPlayState endPlayState = new EndPlayState(4, logic.getScore() );//4 = playstate
+//            sbg.addState(endPlayState);
+//            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            sbg.enterState(4);
         }
 
         progBar.update(currentX, camera.mapWidth);

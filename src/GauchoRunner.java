@@ -15,6 +15,7 @@ public class GauchoRunner extends StateBasedGame {
     public static final int INSTRUCTION_STATE_ID = 2;
     /** The state ID for Pause menu */
     public static final int PAUSE_STATE_ID = 3;
+    public static final int END_PLAY_STATE = 4;
     /** The container for the main game */
     private static AppGameContainer app;
     ///** The restartFlag to determine if the PlayState will be restarted upon entering */
@@ -33,6 +34,8 @@ public class GauchoRunner extends StateBasedGame {
         this.addState(instructionState);
         PauseState pauseState = new PauseState(PAUSE_STATE_ID, 300, 180, 131, playState);
         this.addState(pauseState);
+        EndPlayState endPlayState = new EndPlayState(4, 3 );//4 = playstate
+        this.addState(endPlayState);
         this.enterState(MAIN_MENU_STATE_ID);
     }
 

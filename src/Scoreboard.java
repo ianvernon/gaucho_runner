@@ -3,7 +3,7 @@ import org.newdawn.slick.*;
 
 public class Scoreboard {
 
-    private int score;
+    private int score = 0;
     private int numOfLives;
     private int timeFinished;
     private int numOfPowerUps;
@@ -18,16 +18,13 @@ public class Scoreboard {
         setNumOfLives(sizeOfLivesList);
         setTimeFinished(secondsToComplete);
         setNumOfPowerUps(sizeOfPowerUpsList);
-
-        calculateScore();
-
     }
 
     public void render(Graphics g) {
         g.setColor(Color.blue);
         g.fillRoundRect(0, 0, 225, 100, 10);
         g.setColor(Color.white);
-        g.drawString("Score: " + String.valueOf(score), 650, 550);
+//        g.drawString("Score: " + score, 650, 550);
 
     }
 
@@ -57,10 +54,10 @@ public class Scoreboard {
     }
 
     public int calculateScore() {
-        this.score = 0;
-        this.score += numOfLives * 500;
-        this.score += ((TIME_ALLOWED - timeFinished)*(TIME_ALLOWED - timeFinished));
-        this.score += numOfPowerUps * 50;
+
+        score += numOfLives * 500;
+        score += ((TIME_ALLOWED - timeFinished)*(TIME_ALLOWED - timeFinished));
+        score += numOfPowerUps * 50;
 
         return score;
     }

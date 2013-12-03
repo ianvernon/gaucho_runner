@@ -389,4 +389,9 @@ public class GameLogic {
         return isColliding;
     }
 
+    int getScore()
+    {
+        return scoreboard.calculateScore();
+    }
+
 }

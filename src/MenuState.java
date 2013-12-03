@@ -183,14 +183,18 @@ public class MenuState extends BasicGameState {
      * Notification that we've entered this state
      */
     public void enter(GameContainer gc, StateBasedGame sbg) {
-        mainMenu.leave();
+//        mainMenu.leave();
+        System.out.println("Entering MenuState");
     }
 
     /**
      * Notification that we've left this state
      */
-    public void leave(GameContainer gc, StateBasedGame sbg) {
-        mainMenu.leave();
+    @Override
+    public void leave(GameContainer container, StateBasedGame game) throws SlickException {
+//    mainMenu.leave();
+//    System.out.println("Leaving MenuState");
+
     }
 
 }
