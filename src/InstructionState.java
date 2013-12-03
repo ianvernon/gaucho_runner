@@ -14,19 +14,23 @@ public class InstructionState extends BasicGameState {
     /** Instructions state ID */
     private int stateID;
     /** Starting menu x-position */
-    private int startingX = 50;
+    private int startingX = 500;
     /** Starting menu y-position */
-    private int startingY = 450;
+    private int startingY = 470;
     /** The space between Menu items */
     private int spaceBetweenItems = 131;
     /** Location of graphic when quit button is selected */
-    private final String quitSelected = "res/menu/QuitButton.png";
+    private final String menuSelected = "res/menu/MenuSelected.png";
     /** Location of graphic when quit button is unselected */
-    private final String quitUnselected = "res/menu/QuitButtonSelected.png";
+    private final String menuUnselected = "res/menu/MenuUnselected.png";
     /** Image object of graphic when quit button is selected */
     private Image backUs;
     /** Image object of graphic when quit button is selected */
     private Image backS;
+    /** background image */
+    private Image instructionList;
+    /** Location of background */
+    private final String instructions = "res/menu/Instructions.png";
 
     /**
      * Sets instruction state ID
@@ -44,6 +48,7 @@ public class InstructionState extends BasicGameState {
      */
     public void init(GameContainer gc, StateBasedGame sbg) {
         initMenu(gc, sbg);
+
     }
 
     /**
@@ -55,7 +60,7 @@ public class InstructionState extends BasicGameState {
      */
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        g.drawString("Instructions", 100, 100);
+        g.drawImage(instructionList, 0, 0);
         instructionsMenu.render(gc, g);
     }
 
@@ -90,8 +95,9 @@ public class InstructionState extends BasicGameState {
 
         // create images for each button
         try {
-            backUs = new Image(quitUnselected);
-            backS = new Image(quitSelected);
+            instructionList = new Image(instructions);
+            backUs = new Image(menuUnselected);
+            backS = new Image(menuSelected);
         } catch (SlickException ex) {
             ex.printStackTrace();
             return;
