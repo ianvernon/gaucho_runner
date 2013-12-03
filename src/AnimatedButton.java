@@ -149,10 +149,10 @@ public class AnimatedButton extends MouseOverArea {
     public void render(GUIContext gc, Graphics g) {
         if (activated) {
             g.drawImage(normalImage, this.getX(), this.getY());
-//            super.render(gc, g);
+            super.render(gc, g);
         } else {
             g.drawImage(mouseOverImage, this.getX(), this.getY());
-//            super.render(gc, g);
+            super.render(gc, g);
         }
     }
 
