@@ -180,7 +180,7 @@ public class GameLogic {
             //Bottom road bounded enemies
             bottomE = enemyTypeInterval;
             while(bottomE < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES + NUM_OF_BOTTOMENEMIES + NUM_OF_BOTTOMHOLES)) {
-                Image freshmanImage = new Image("res/character/bike.png");
+                Image freshmanImage = new Image("res/character/Freshman_2.png");
 
                 int randomX;
                 randomX = (int) (67500 * Math.random());
