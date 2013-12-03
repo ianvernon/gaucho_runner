@@ -102,7 +102,7 @@ public class InstructionState extends BasicGameState {
             ex.printStackTrace();
             return;
         }
-        AnimatedButton play = new AnimatedButton(gc, sbg, backUs, backS, startingX, startingY, 0);
+        AnimatedButton play = new AnimatedButton(gc, sbg, backUs, backS, startingX, startingY, 0, sbg.getCurrentStateID());
 
         play.add(new ButtonAction() {
             public void perform() {

@@ -32,7 +32,7 @@ public class AnimatedButton extends MouseOverArea {
     private boolean restart = false;
     /** Is button current alive */
     private boolean alive = false;
-    //private int assignedStateID
+    private int assignedStateID;
     // assignedStateID assigns the button to be active in a specific state to solve button problem
 
     /** The constructor for the Animated Button class
@@ -43,7 +43,7 @@ public class AnimatedButton extends MouseOverArea {
      * @param x
      * @param y
      */
-    public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y, int stateID) {
+    public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y, int stateID, int assignedStateID) {
         super(guiContext, normalImage, x, y);
         super.setMouseOverImage(mouseOverImage);
         super.setMouseDownImage(mouseOverImage);
@@ -53,7 +53,7 @@ public class AnimatedButton extends MouseOverArea {
         this.mouseOverImage = mouseOverImage;
         this.alive = true;
         //this.gc = gameContainer;
-        //this.assignedStateID = assignedStateID
+        this.assignedStateID = assignedStateID;
 
     }
 
@@ -132,7 +132,7 @@ public class AnimatedButton extends MouseOverArea {
                 PlayState ps = (PlayState) sbg.getState(1);
                 ps.restart();
             }
-            //if(sbg.getCurrentStateID() == assignedStateID)
+            if(sbg.getCurrentStateID() == assignedStateID)
             //{
              sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
             //}

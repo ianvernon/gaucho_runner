@@ -55,7 +55,7 @@ public class Menu {
         } else {
             itemY = items.get(items.size() - 1).getY();
         }*/
-        items.add(new AnimatedButton(gc, sbg, normalImage, mouseOverImage, x, y, stateID));
+        items.add(new AnimatedButton(gc, sbg, normalImage, mouseOverImage, x, y, stateID, sbg.getCurrentStateID()));
     }
 
     /**

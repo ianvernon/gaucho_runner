@@ -90,7 +90,7 @@ public class MenuState extends BasicGameState {
             ex.printStackTrace();
             return;
         }
-        AnimatedButton play = new AnimatedButton(gc, sbg, playUs, playS, startingX, startingY, 1);  //should 1 be PLAY_STATE_ID?
+        AnimatedButton play = new AnimatedButton(gc, sbg, playUs, playS, startingX, startingY, 1, sbg.getCurrentStateID());  //should 1 be PLAY_STATE_ID?
 
         play.add(new ButtonAction() {
             public void perform() {
@@ -100,7 +100,7 @@ public class MenuState extends BasicGameState {
         }
         );
 
-        AnimatedButton instructions = new AnimatedButton(gc, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 2);
+        AnimatedButton instructions = new AnimatedButton(gc, sbg, instructionsUs, instructionsS, startingX, startingY + spaceBetweenItems, 2, sbg.getCurrentStateID());
 
         instructions.add(new ButtonAction() {
             public void perform() {
@@ -110,7 +110,7 @@ public class MenuState extends BasicGameState {
 
         );
 
-        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2 * spaceBetweenItems, 3);
+        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2 * spaceBetweenItems, 3, sbg.getCurrentStateID());
 
         quit.add(new ButtonAction() {
             public void perform() {

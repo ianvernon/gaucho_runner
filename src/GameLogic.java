@@ -107,7 +107,7 @@ public class GameLogic {
             topE = enemyTypeInterval;
             while(topE < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES)) {
 
-                Image freshmanImage = new Image("res/character/Freshman.png");
+                Image freshmanImage = new Image("res/character/bike_reversed.png");
 
                 int randomX;
                 randomX = (int) (67500 * Math.random());
@@ -339,8 +339,8 @@ public class GameLogic {
         }
         if (livesList.isEmpty()) {
 //            g.drawString("No more lives!", 300, 50);
-            s.stop("theme");
-            gameOver = true;
+            //s.stop("theme");
+            //gameOver = true;
         }
         if (timeToFinish <= 0) {
 //            g.drawString("No more time!", 500, 50);
