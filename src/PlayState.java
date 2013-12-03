@@ -187,9 +187,16 @@ public class PlayState extends BasicGameState {
             speed = 2;
         }
         if(camera.cameraX > 69500) {
-            EndPlayState endPlayState = new EndPlayState(4, logic.getScore() );//4 = playstate
+            EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), false );//4 = playstate
             sbg.addState(endPlayState);
 //            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            logic.stopSound("theme");
+            sbg.enterState(4);
+        }
+        if(logic.getGameOver()){
+            EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), true );//4 = playstate
+            sbg.addState(endPlayState);
+            logic.stopSound("theme");
             sbg.enterState(4);
         }
 

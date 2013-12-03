@@ -29,6 +29,7 @@ public class GameLogic {
     private Scoreboard scoreboard;
     public boolean isColliding;
     SoundManager s;
+    private boolean gameOver = false;
 
 
 
@@ -332,6 +333,16 @@ public class GameLogic {
                 powerups.remove(i);
             }
         }
+        if (livesList.isEmpty()) {
+//            g.drawString("No more lives!", 300, 50);
+            s.stop("theme");
+            gameOver = true;
+        }
+        if (time / 1000 >= 15) {
+//            g.drawString("No more time!", 500, 50);
+            s.stop("theme");
+            gameOver = true;
+        }
 
         scoreboard.update(livesList.size(), time, powerups.size());
     }
@@ -364,18 +375,15 @@ public class GameLogic {
         }
 
 
-        if (livesList.isEmpty()) {
-            g.drawString("No more lives!", 300, 50);
-        }
+
 
         //TODO replace this with the new image for the scoreboard background
         //timerBox.draw(2, 98);
         g.drawString("Time: " + time / 1000 + "s", 10, 47);
 
 
-        if (time / 1000 >= 15) {
-            g.drawString("No more time!", 500, 50);
-        }
+
+
     }
     boolean getIsColliding(){
         return isColliding;
@@ -391,6 +399,9 @@ public class GameLogic {
 
     public void stopSound(String src){
         s.stop(src);
+    }
+    public boolean getGameOver(){
+        return gameOver;
     }
 
 }

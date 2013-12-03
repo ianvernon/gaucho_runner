@@ -11,11 +11,13 @@ import org.newdawn.slick.GameContainer;
 public class EndPlayState extends BasicGameState {
     private int score;
     private int stateID;
+    private boolean lost;
 
-    EndPlayState(int stateID, int score){
+    EndPlayState(int stateID, int score, boolean lost){
         super();
         this.stateID = stateID;
         this.score = score;
+        this.lost = lost;
     }
 
 
