@@ -53,48 +53,9 @@ public class GameLogic {
 
         //Initialize enemies
         try {
-            //Top road bounded enemies
-            topE = 0;
-            while(topE < NUM_OF_TOPENEMIES) {
-
-                Image freshmanImage = new Image("res/character/Freshman.png");
-
-                int randomX;
-                randomX = (int) (67500 * Math.random());
-
-                int randomY = 0;
-                while(randomY < 225 || randomY > 325) {
-                    randomY = (int) (600*Math.random());
-                }
-
-
-                Vector2f freshmanPos = new Vector2f(randomX, randomY);
-                Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
-                Freshman fresh = new Freshman("freshman" + enemyTypeInterval, freshmanImage, freshmanPos, freshmanShape, 3);
-
-                for (int j = 0; j < enemyList.size(); j++) {
-                    if(fresh.isCollidingWith(enemyList.get(j))) {
-                        while (fresh.isCollidingWith(enemyList.get(j))) {
-                            randomX = (int) (67500 * Math.random());
-
-                            while(randomY < 225 || randomY > 325) {
-                                randomY = (int) (600*Math.random());
-                            }
-                        Vector2f newPosition = new Vector2f(randomX,randomY);
-                        fresh.setPosition(newPosition);
-                        }
-                    }
-                }
-
-                enemyList.add(enemyTypeInterval, fresh);
-
-                enemyTypeInterval++;
-                topE++;
-            }
-
             //Top road bounded holes
-            topH = enemyTypeInterval;
-            while(topH < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES)) {
+            topH = 0;
+            while(topH < NUM_OF_TOPHOLES) {
                 Image freshmanImage = new Image("res/character/hole.png");
 
                 int randomX;
@@ -128,9 +89,83 @@ public class GameLogic {
                 topH++;
             }
 
+            //Top road bounded enemies
+            topE = enemyTypeInterval;
+            while(topE < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES)) {
+
+                Image freshmanImage = new Image("res/character/Freshman.png");
+
+                int randomX;
+                randomX = (int) (67500 * Math.random());
+
+                int randomY = 0;
+                while(randomY < 225 || randomY > 325) {
+                    randomY = (int) (600*Math.random());
+                }
+
+
+                Vector2f freshmanPos = new Vector2f(randomX, randomY);
+                Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
+                Freshman fresh = new Freshman("freshman" + enemyTypeInterval, freshmanImage, freshmanPos, freshmanShape, 3);
+
+                for (int j = 0; j < enemyList.size(); j++) {
+                    if(fresh.isCollidingWith(enemyList.get(j))) {
+                        while (fresh.isCollidingWith(enemyList.get(j))) {
+                            randomX = (int) (67500 * Math.random());
+
+                            while(randomY < 225 || randomY > 325) {
+                                randomY = (int) (600*Math.random());
+                            }
+                            Vector2f newPosition = new Vector2f(randomX,randomY);
+                            fresh.setPosition(newPosition);
+                        }
+                    }
+                }
+
+                enemyList.add(enemyTypeInterval, fresh);
+
+                enemyTypeInterval++;
+                topE++;
+            }
+
+            //Bottom road bounded holes
+            bottomH = enemyTypeInterval;
+            while(bottomH < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES + NUM_OF_BOTTOMENEMIES)) {
+                Image freshmanImage = new Image("res/character/hole.png");
+
+                int randomX;
+                randomX = (int) (67500 * Math.random());
+
+                int randomY = 0;
+                while(randomY < 350 || randomY > 450) {
+                    randomY = (int) (600*Math.random());
+                }
+
+
+                Vector2f freshmanPos = new Vector2f(randomX, randomY);
+                Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
+                Freshman fresh = new Freshman("freshman" + enemyTypeInterval, freshmanImage, freshmanPos, freshmanShape, 3);
+                for (int j = 0; j < enemyList.size(); j++) {
+                    if(fresh.isCollidingWith(enemyList.get(j))) {
+                        while (fresh.isCollidingWith(enemyList.get(j))) {
+                            randomX = (int) (67500 * Math.random());
+
+                            while(randomY < 225 || randomY > 325) {
+                                randomY = (int) (600*Math.random());
+                            }
+                            Vector2f newPosition = new Vector2f(randomX,randomY);
+                            fresh.setPosition(newPosition);
+                        }
+                    }
+                }
+                enemyList.add(new Freshman("freshman" + enemyTypeInterval, freshmanImage, freshmanPos, freshmanShape, 3));
+                enemyTypeInterval++;
+                bottomH++;
+            }
+
             //Bottom road bounded enemies
-           bottomE = enemyTypeInterval;
-            while(bottomE < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES + NUM_OF_BOTTOMENEMIES)) {
+            bottomE = enemyTypeInterval;
+            while(bottomE < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES + NUM_OF_BOTTOMENEMIES + NUM_OF_BOTTOMHOLES)) {
                 Image freshmanImage = new Image("res/character/bike.png");
 
                 int randomX;
@@ -163,40 +198,6 @@ public class GameLogic {
                 bottomE++;
             }
 
-            //Bottom road bounded holes
-            bottomH = enemyTypeInterval;
-            while(bottomH < (NUM_OF_TOPENEMIES + NUM_OF_TOPHOLES + NUM_OF_BOTTOMENEMIES + NUM_OF_BOTTOMHOLES)) {
-                Image freshmanImage = new Image("res/character/hole.png");
-
-                int randomX;
-                randomX = (int) (67500 * Math.random());
-
-                int randomY = 0;
-                while(randomY < 350 || randomY > 450) {
-                    randomY = (int) (600*Math.random());
-                }
-
-
-                Vector2f freshmanPos = new Vector2f(randomX, randomY);
-                Shape freshmanShape = new Rectangle(0, 0, freshmanImage.getWidth(), freshmanImage.getHeight());
-                Freshman fresh = new Freshman("freshman" + enemyTypeInterval, freshmanImage, freshmanPos, freshmanShape, 3);
-                for (int j = 0; j < enemyList.size(); j++) {
-                    if(fresh.isCollidingWith(enemyList.get(j))) {
-                        while (fresh.isCollidingWith(enemyList.get(j))) {
-                            randomX = (int) (67500 * Math.random());
-
-                            while(randomY < 225 || randomY > 325) {
-                                randomY = (int) (600*Math.random());
-                            }
-                            Vector2f newPosition = new Vector2f(randomX,randomY);
-                            fresh.setPosition(newPosition);
-                        }
-                    }
-                }
-                enemyList.add(new Freshman("freshman" + enemyTypeInterval, freshmanImage, freshmanPos, freshmanShape, 3));
-                enemyTypeInterval++;
-                bottomH++;
-            }
 
         } catch (SlickException e) {
             e.printStackTrace();
@@ -281,10 +282,10 @@ public class GameLogic {
             }
         }
         for (int i = 0; i < enemyList.size(); i++){
-            if(i < topE) {
+            if((i >= topH) && (i < topE) ) {
                 enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - 5, enemyList.get(i).getPosition().getY()));
             }
-            else if(i>=topH && i<bottomE) {
+            else if(i >= bottomH) {
             enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() + 2, enemyList.get(i).getPosition().getY()));
             }
         }
@@ -294,23 +295,23 @@ public class GameLogic {
         for (int i = 0; i < enemyList.size(); i++) {
             //if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
             if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
-                if(i < topE) {
+                if(i < topH) {
+                    topH--;
                     topE--;
-                    topH--;
-                    bottomE--;
                     bottomH--;
+                    bottomE--;
                 }
-                else if(i < topH) {
-                    topH--;
-                    bottomE--;
+                else if(i < topE) {
+                    topE--;
                     bottomH--;
+                    bottomE--;
                 }
-                else if(i < bottomE) {
-                    bottomE--;
+                else if(i < bottomH) {
                     bottomH--;
+                    bottomE--;
                 }
                 else {
-                    bottomH--;
+                    bottomE--;
                 }
                 System.out.println("Collision with" + enemyList.get(i).getName());
                 livesList.remove(livesList.size() - 1);
