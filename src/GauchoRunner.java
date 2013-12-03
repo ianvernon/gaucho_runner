@@ -25,7 +25,7 @@ public class GauchoRunner extends StateBasedGame {
      * Creates the states used in the game
      */
     public GauchoRunner() {
-        super("Gaucho Runner");
+        /*super("Gaucho Runner");
         MenuState menuState = new MenuState(MAIN_MENU_STATE_ID, 300, 180, 131);
         this.addState(menuState);
         PlayState playState = new PlayState(PLAY_STATE_ID);
@@ -37,6 +37,18 @@ public class GauchoRunner extends StateBasedGame {
 //        EndPlayState endPlayState = new EndPlayState(4, 3 );//4 = playstate
 //        this.addState(endPlayState);
         this.enterState(MAIN_MENU_STATE_ID);
+        */
+        super("Gaucho Runner");
+        MenuState menuState = new MenuState(MAIN_MENU_STATE_ID, 300, 180, 131);
+        this.addState(new MenuState(MAIN_MENU_STATE_ID, 300, 180, 131));
+        PlayState playState = new PlayState(PLAY_STATE_ID);
+        this.addState(playState);
+        InstructionState instructionState = new InstructionState(INSTRUCTION_STATE_ID);
+        this.addState(instructionState);
+        PauseState pauseState = new PauseState(PAUSE_STATE_ID, 300, 180, 131, playState);
+        this.addState(pauseState);
+//        EndPlayState endPlayState = new EndPlayState(4, 3 );//4 = playstate
+//        this.addState(endPlayState);
     }
 
     /**
@@ -59,7 +71,11 @@ public class GauchoRunner extends StateBasedGame {
     }
 
     @Override
-    public void initStatesList(GameContainer gameContainer) throws SlickException {
+    public void initStatesList(GameContainer gc) throws SlickException {
         //NOTHING FOR NOW - MUST OVERRIDE
+        this.getState(MAIN_MENU_STATE_ID).init(gc, this);
+        this.getState(PLAY_STATE_ID).init(gc, this);
+        this.getState(INSTRUCTION_STATE_ID).init(gc, this);
+        this.enterState(MAIN_MENU_STATE_ID);
     }
 }
