@@ -252,7 +252,7 @@ public class GameLogic {
         try {
             //scoreboard stuff, loads the image
             for (int i = 0; i < STARTING_LIVES; i++) {
-                Image liveImage = new Image("res/misc/heart.png");
+                Image liveImage = new Image("res/misc/life.png");
                 livesList.add(liveImage);
             }
         } catch (SlickException e) {
@@ -330,7 +330,7 @@ public class GameLogic {
                 System.out.println("Collision with" + powerups.get(i).getName());
                 try
                 {
-                    livesList.add(new Image("res/misc/heart.png"));
+                    livesList.add(new Image("res/misc/life.png"));
                 }
                 catch(Exception ex)
                 {
