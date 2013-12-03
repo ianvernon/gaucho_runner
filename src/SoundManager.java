@@ -8,8 +8,9 @@ import org.newdawn.slick.Sound;
  */
 public class SoundManager {
     /** Source of sound*/
-    private Sound  crash;
-    private Music  theme;
+    private Sound crash;
+    private Sound cheer;
+    private Music theme;
 
     /**
      * Initializes the source of sound
@@ -23,10 +24,8 @@ public class SoundManager {
      */
     public void init() throws SlickException {
         theme = new Music("res/sound/Testarossa.wav");
-        theme.loop();
-
-
         crash = new Sound("res/sound/crash.wav");
+        cheer = new Sound("res/sound/cheering.wav");
 
     }
 
@@ -41,16 +40,29 @@ public class SoundManager {
      * Plays sound resource
      */
     public void play(String src) {
-//        wav.playAsMusic(1.0f, 1.0f, true);
-//
-//   soundList.get(0).playAsMusic(1.0f, 1.0f, true);
         if(src == "theme"){
-            theme.play();
+            theme.loop();
         }
         else if (src == "crash"){
             crash.play();
         }
+        else if (src == "cheering"){
+            cheer.play();
+        }
 
+
+    }
+    public void stop(String src){
+        if(src == "theme"){
+//            theme.stop();
+            theme.fade(1500, 0f, true);
+        }
+        else if (src == "crash"){
+            crash.stop();
+        }
+        else if (src == "cheering"){
+            cheer.stop();
+        }
 
     }
 

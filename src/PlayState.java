@@ -31,6 +31,7 @@ public class PlayState extends BasicGameState {
     private GameLogic logic;
     private boolean needsRestart = false;
     private long speedTime = 0;
+    private boolean isDone = false;
 
     /**
      * Sets game to playable state
@@ -64,6 +65,8 @@ public class PlayState extends BasicGameState {
         progBar = new ProgressBar(250, 20);
         logic = new GameLogic();
 
+        logic.playSound("theme");
+
     }
 
     /**
@@ -80,13 +83,7 @@ public class PlayState extends BasicGameState {
         player.render(g);
         g.draw(player.getCollisionShape());
 
-        if(camera.cameraX > 67500) {
-//            g.drawString("HEY YOU FINISHED THE GAME HEY HEY HEY HEY HEY hipHip[]!", 200, 300);
-//            EndPlayState endPlayState = new EndPlayState(4, logic.getScore() );//4 = playstate
-//            sbg.addState(endPlayState);
-//            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
-            sbg.enterState(4);
-        }
+
 
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
@@ -182,6 +179,19 @@ public class PlayState extends BasicGameState {
         //check to see if collision happened
         if(logic.getIsColliding()){
             speed = 3;
+        }
+        if(camera.cameraX > 68050 && !isDone){
+            isDone = true;
+            logic.stopSound("theme");
+            logic.playSound("cheering");
+            speed = 2;
+        }
+        if(camera.cameraX > 69500) {
+//            g.drawString("HEY YOU FINISHED THE GAME HEY HEY HEY HEY HEY hipHip[]!", 200, 300);
+//            EndPlayState endPlayState = new EndPlayState(4, logic.getScore() );//4 = playstate
+//            sbg.addState(endPlayState);
+//            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            sbg.enterState(4);
         }
 
 

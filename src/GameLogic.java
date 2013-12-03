@@ -44,15 +44,13 @@ public class GameLogic {
         isColliding = false;
 
         //sound jazz
-
         s = new SoundManager();
+
         try{
             s.init();
         }catch (SlickException e){
             e.printStackTrace();
         }
-
-        s.play("theme");
 
         try {
             timerBox = new Image("res/misc/TimerBackground.png");
@@ -405,6 +403,13 @@ public class GameLogic {
     int getScore()
     {
         return scoreboard.calculateScore();
+    }
+    public void playSound(String src){
+        s.play(src);
+    }
+
+    public void stopSound(String src){
+        s.stop(src);
     }
 
 }
