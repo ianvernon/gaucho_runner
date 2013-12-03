@@ -32,6 +32,8 @@ public class AnimatedButton extends MouseOverArea {
     private boolean restart = false;
     /** Is button current alive */
     private boolean alive = false;
+    //private int assignedStateID
+    // assignedStateID assigns the button to be active in a specific state to solve button problem
 
     /** The constructor for the Animated Button class
      * @param guiContext
@@ -51,6 +53,7 @@ public class AnimatedButton extends MouseOverArea {
         this.mouseOverImage = mouseOverImage;
         this.alive = true;
         //this.gc = gameContainer;
+        //this.assignedStateID = assignedStateID
 
     }
 
@@ -122,21 +125,18 @@ public class AnimatedButton extends MouseOverArea {
      * */
     @Override
     public void mouseClicked(int button, int x, int y, int clickCount) {
-//        if (isMouseOver() && sbg.getCurrentStateID() == stateID)
-//        {
-//            sbg.enterState(2);    //TODO this is what i added. not sure what the for loop is for. Also change from 1 playState            activated = !activated;
-//            for(ButtonAction action: actions)
-//            {
-//                action.perform();
-//            }
-//        }
+//
 //        super.mouseClicked(button, x, y, clickCount);
         if (isAlive() && isMouseOver()) {
             if (restart) {
                 PlayState ps = (PlayState) sbg.getState(1);
                 ps.restart();
             }
-            sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            //if(sbg.getCurrentStateID() == assignedStateID)
+            //{
+             sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            //}
+
 
         }
     }
