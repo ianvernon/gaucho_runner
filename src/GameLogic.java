@@ -1,5 +1,6 @@
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
@@ -19,6 +20,7 @@ public class GameLogic {
     private static int NUM_OF_TOPHOLES = 50;
     private static int NUM_OF_BOTTOMENEMIES = 50;
     private static int NUM_OF_BOTTOMHOLES = 50;
+    private static int TIME_TO_FINISH = 160;
     private int enemyTypeInterval = 0;
     private int topE;
     private int topH;
@@ -30,6 +32,7 @@ public class GameLogic {
     public boolean isColliding;
     SoundManager s;
     private boolean gameOver = false;
+    private int timeToFinish;
 
 
 
@@ -323,6 +326,7 @@ public class GameLogic {
                 System.out.println("Collision with" + powerups.get(i).getName());
                 try
                 {
+                    s.play("powerup");
                     livesList.add(new Image("res/misc/life.png"));
                 }
                 catch(Exception ex)
@@ -338,7 +342,7 @@ public class GameLogic {
             s.stop("theme");
             gameOver = true;
         }
-        if (time / 1000 >= 15) {
+        if (timeToFinish <= 0) {
 //            g.drawString("No more time!", 500, 50);
             s.stop("theme");
             gameOver = true;
@@ -354,7 +358,7 @@ public class GameLogic {
         //render enemies
         for (int i = 0; i < enemyList.size(); i++) {
             enemyList.get(i).render(g);
-            g.draw(enemyList.get(i).getCollisionShape());
+//            g.draw(enemyList.get(i).getCollisionShape());
         }
 
         // render powerups
@@ -362,7 +366,7 @@ public class GameLogic {
         for(int i = 0; i < powerups.size(); i++)
         {
             powerups.get(i).render(g);
-            g.draw(powerups.get(i).getCollisionShape());
+//            g.draw(powerups.get(i).getCollisionShape());
         }
 
         //draws the lives
@@ -379,7 +383,8 @@ public class GameLogic {
 
         //TODO replace this with the new image for the scoreboard background
         //timerBox.draw(2, 98);
-        g.drawString("Time: " + time / 1000 + "s", 10, 47);
+        timeToFinish = TIME_TO_FINISH - time/1000;
+        g.drawString("Time Left: " + timeToFinish + "s", 10, 47);
 
 
 

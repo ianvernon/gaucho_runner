@@ -81,7 +81,7 @@ public class PlayState extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         camera.drawMap(0, 0);
         player.render(g);
-        g.draw(player.getCollisionShape());
+//        g.draw(player.getCollisionShape());
 
 
 
@@ -128,6 +128,7 @@ public class PlayState extends BasicGameState {
         Input input = gc.getInput();
 
         speedTime += delta;
+
         // Enter Pause Screen if user presses escape
         if (input.isKeyDown(Input.KEY_ESCAPE))
             sbg.enterState(3);
@@ -197,6 +198,7 @@ public class PlayState extends BasicGameState {
             EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), true );//4 = playstate
             sbg.addState(endPlayState);
             logic.stopSound("theme");
+            logic.playSound("boo");
             sbg.enterState(4);
         }
 

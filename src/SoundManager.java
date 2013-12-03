@@ -10,6 +10,8 @@ public class SoundManager {
     /** Source of sound*/
     private Sound crash;
     private Sound cheer;
+    private Sound boo;
+    private Sound powerUp;
     private Music theme;
 
     /**
@@ -26,6 +28,8 @@ public class SoundManager {
         theme = new Music("res/sound/soundtrack.wav");
         crash = new Sound("res/sound/crash.wav");
         cheer = new Sound("res/sound/cheering.wav");
+        boo = new Sound("res/sound/booing.wav");
+        powerUp = new Sound("res/sound/powerup.wav");
 
     }
 
@@ -49,6 +53,12 @@ public class SoundManager {
         else if (src == "cheering"){
             cheer.play();
         }
+        else if (src == "boo"){
+            boo.play();
+        }
+        else if (src == "powerup"){
+            powerUp.play();
+        }
 
 
     }
@@ -62,6 +72,12 @@ public class SoundManager {
         }
         else if (src == "cheering"){
             cheer.stop();
+        }
+        else if (src == "boo"){
+            boo.stop();
+        }
+        else if (src == "powerup"){
+            powerUp.stop();
         }
 
     }
