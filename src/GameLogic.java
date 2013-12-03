@@ -28,6 +28,7 @@ public class GameLogic {
     private Image timerBox;
     private Scoreboard scoreboard;
     public boolean isColliding;
+    SoundManager s;
 
 
 
@@ -41,6 +42,17 @@ public class GameLogic {
         powerups = new ArrayList<Powerup>();
         scoreboard = new Scoreboard();
         isColliding = false;
+
+        //sound jazz
+
+        s = new SoundManager();
+        try{
+            s.init();
+        }catch (SlickException e){
+            e.printStackTrace();
+        }
+
+        s.play("theme");
 
         try {
             timerBox = new Image("res/misc/TimerBackground.png");
@@ -295,6 +307,7 @@ public class GameLogic {
         for (int i = 0; i < enemyList.size(); i++) {
             //if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
             if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
+                s.play("crash");
                 if(i < topH) {
                     topH--;
                     topE--;
