@@ -36,12 +36,16 @@ public class AnimatedButton extends MouseOverArea {
     // assignedStateID assigns the button to be active in a specific state to solve button problem
 
     /** The constructor for the Animated Button class
-     * @param guiContext
-     * @param sbg
-     * @param normalImage
-     * @param mouseOverImage
-     * @param x
-     * @param y
+     * @param guiContext the context in which GUI components are created / rendered (info about system - mouse cursor,
+     *                   groups system properties that affect how program is run in terms of graphics / interaction w/ user)
+     * @param sbg the current State Based Game this button is a part of
+     * @param normalImage the image that is displayed at the start when mouse is not over button
+     * @param mouseOverImage the image that is displayed when mouse is over this button
+     * @param x position of this button on the screen
+     * @param y position of this button on the screen
+     * @param stateID the ID of the state that this button goes to when clicked on
+     * @param assignedStateID the ID of the state that this button is active in. implemented due to fact that button
+     *                          areas are still able to be clicked / activated even after changing state
      */
     public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y, int stateID, int assignedStateID) {
         super(guiContext, normalImage, x, y);
@@ -80,10 +84,10 @@ public class AnimatedButton extends MouseOverArea {
     }
 
     /** Checks to see if the mouse has moved
-     * @param oldx
-     * @param oldy
-     * @param newx
-     * @param newy
+     * @param oldx - the old horizontal coordinate of the mouse
+     * @param oldy - the old vertical coordinate of the mouse
+     * @param newx - the new horizontal coordinate of the mouse
+     * @param newy - the new vertical coordinate of the mouse
      */
     public void mouseMoved(int oldx, int oldy, int newx, int newy) {
         if (sbg.getCurrentStateID() == stateID) {
@@ -97,17 +101,19 @@ public class AnimatedButton extends MouseOverArea {
         super.mouseMoved(oldx, oldy, newx, newy);
     }
 
-    /** Returns current status of activated */
+    /** tells system whether button is activated
+     *  @return activated whether button is activated or not */
     public boolean isActivated() {
         return activated;
     }
 
-    /** Sets the value of activated */
+    /** sets this button to be activated or inactivated
+     * @param b true / false value whether button is activated */
     protected void setActivated(boolean b) {
         activated = b;
     }
 
-    /** Returns current status of alive */
+    /** @return alive alive status of the button */
     public boolean isAlive() {
         return alive;
     }
@@ -118,15 +124,13 @@ public class AnimatedButton extends MouseOverArea {
     }
 
     /** Checks to see if mouse has been clicked
-     * @param button
-     * @param x
-     * @param y
-     * @param clickCount
+     * @param button the index of the button (starting at 0)
+     * @param x the x position of the mouse when the button was pressed
+     * @param y the y position of the mouse when the button was pressed
+     * @param clickCount the number of times the button was clicked
      * */
     @Override
     public void mouseClicked(int button, int x, int y, int clickCount) {
-//
-//        super.mouseClicked(button, x, y, clickCount);
         if (isAlive() && isMouseOver()) {
             if (restart) {
                 PlayState ps = (PlayState) sbg.getState(1);
@@ -143,8 +147,9 @@ public class AnimatedButton extends MouseOverArea {
 
     /**
      * Renders the button image
-     * @param gc
-     * @param g
+     * @param gc - the context in which GUI components are created / rendered (info about system - mouse cursor,
+     *                   groups system properties that affect how program is run in terms of graphics / interaction w/ user)
+     * @param g  - the graphics context to draw images on the screen
      */
     public void render(GUIContext gc, Graphics g) {
         if (activated) {
@@ -157,8 +162,8 @@ public class AnimatedButton extends MouseOverArea {
     }
 
     /**
-     * Adds a button action
-     * @param action
+     * Adds a button action to this button
+     * @param action - sets this action (thing button does) to the list of actions the button can do
      */
     public void add(ButtonAction action) {
         actions.add(action);
