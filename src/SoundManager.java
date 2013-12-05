@@ -7,11 +7,15 @@ import org.newdawn.slick.Sound;
  * A class that loads a sound resource and makes it available for output
  */
 public class SoundManager {
-    /** Source of sound*/
+    /** Source of crash and collision sound */
     private Sound crash;
+    /** Source of crowd cheer sound */
     private Sound cheer;
+    /** Source of booing sound */
     private Sound boo;
+    /** Source of powerup sound */
     private Sound powerUp;
+    /** Source of game theme music */
     private Music theme;
 
     /**
@@ -42,6 +46,7 @@ public class SoundManager {
 
     /**
      * Plays sound resource
+     * @param src name of sound to be played
      */
     public void play(String src) {
         if(src == "theme"){
@@ -62,6 +67,11 @@ public class SoundManager {
 
 
     }
+
+    /**
+     * Stops sound resource
+     * @param src name of sound to be stopped
+     */
     public void stop(String src){
         if(src == "theme"){
 //            theme.stop();
