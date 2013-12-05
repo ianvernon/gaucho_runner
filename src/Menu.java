@@ -23,6 +23,7 @@ public class Menu {
 
     /**
      * Initializes Menu
+     *
      * @param startingX
      * @param startingY
      * @param spaceBetweenItems
@@ -36,31 +37,25 @@ public class Menu {
 
     /**
      * Adds animated button
-     * @param gc
-     * @param sbg
-     * @param normalImage
-     * @param mouseOverImage
-     * @param x
-     * @param y
-     * @param stateID
+     *
+     * @param gc             The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg            The current State Based Game
+     * @param normalImage    The image that is displayed when the mouse is not over the button
+     * @param mouseOverImage The image that is displayed when the mouse is over the button
+     * @param x              The x position of the button location
+     * @param y              The y position of the button location
+     * @param stateID        The ID of the state that this button goes to when clicked on
      */
     public void addItem(GameContainer gc, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y,
                         int stateID) {
         // create new MouseOverArea based on input
-        // get Y of last item in the list - so we can set the Y position of the next menu item
-        // in relation to it
-        /*int itemY;
-        if (items.size() == 0) {
-            itemY = startingY;
-        } else {
-            itemY = items.get(items.size() - 1).getY();
-        }*/
         items.add(new AnimatedButton(gc, sbg, normalImage, mouseOverImage, x, y, stateID, sbg.getCurrentStateID()));
     }
 
     /**
      * Adds animated button
-     * @param button
+     *
+     * @param button The button to be added to the list
      */
     public void addItem(AnimatedButton button) {
         items.add(button);
@@ -68,8 +63,9 @@ public class Menu {
 
     /**
      * Draws animated buttons
-     * @param gc
-     * @param g
+     *
+     * @param gc The game container that handles the game loop, fps recording and managing the input system
+     * @param g  The graphics context to draw images on the screen
      */
     public void render(GUIContext gc, Graphics g) {
         for (AnimatedButton button : items) {
@@ -78,31 +74,20 @@ public class Menu {
     }
 
     /**
-     * Updates buttons
-     * @param gc
-     * @param sbg
-     * @param i
-     */
-    public void update(GameContainer gc, StateBasedGame sbg, int i) {
-        //TODO: see if this is needed
-    }
-
-    /**
      * Returns number of animated buttons
-     * @return
+     *
+     * @return The size of the item list
      */
     public int listSize() {
         return this.items.size();
     }
 
-    /**
-     * Time to revive the buttons
-     */
-    public void enter() {}
+    /** Time to revive the buttons */
+    public void enter() {
+    }
 
-    /**
-     * Time to kill the buttons
-     */
-    public void leave() {}
+    /** Time to kill the buttons */
+    public void leave() {
+    }
 
 }

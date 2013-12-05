@@ -1,14 +1,10 @@
-import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
-import org.newdawn.slick.state.StateBasedGame;
 
 import java.util.ArrayList;
 
-/**
- * A class that implements a user-controlled player. This class keeps track of lives and powerups obtained throughout the game
- */
+/** A class that implements a user-controlled player. This class keeps track of lives and powerups obtained throughout the game */
 public class Player extends CollidableInteractiveEntity {
     /** Current number of lives the player has */
     private int lives;
@@ -17,10 +13,11 @@ public class Player extends CollidableInteractiveEntity {
 
     /**
      * Initializes the player with three lives and zero power-ups
-     * @param name
-     * @param image
-     * @param position
-     * @param collisionShape
+     *
+     * @param name           The name of the player
+     * @param image          The image to be used with the player
+     * @param position       The current position of the player
+     * @param collisionShape The hit box for the player
      */
     public Player(String name, Image image, Vector2f position, Shape collisionShape, int speed) {
         super(name, image, position, collisionShape, speed);
@@ -28,9 +25,7 @@ public class Player extends CollidableInteractiveEntity {
         this.powerups = new ArrayList<Powerup>();
     }
 
-    /**
-     * Kills the player
-     */
+    /** Kills the player */
     public void kill() {
         this.lives = -1;
         powerups.clear();
@@ -38,14 +33,18 @@ public class Player extends CollidableInteractiveEntity {
 
     /**
      * Checks if the player is alive
-     * @return
+     *
+     * @return True if there are still lives
      */
     public boolean isAlive() {
         return (this.lives >= 0);
     }
-    public void addLife()
-    {
-        this.lives = lives+1;
+
+    /**
+     * Adds a life to the player
+     */
+    public void addLife() {
+        this.lives = lives + 1;
     }
 
 }

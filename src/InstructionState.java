@@ -5,10 +5,14 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-/**
- * A class that implements the state where instructions are displayed
- */
+/** A class that implements the state where instructions are displayed */
 public class InstructionState extends BasicGameState {
+    /** Location of graphic when quit button is selected */
+    private final String menuSelected = "res/menu/MenuSelected.png";
+    /** Location of graphic when quit button is unselected */
+    private final String menuUnselected = "res/menu/MenuUnselected.png";
+    /** Location of background */
+    private final String instructions = "res/menu/Instructions.png";
     /** Instructions Menu */
     private Menu instructionsMenu;
     /** Instructions state ID */
@@ -19,22 +23,17 @@ public class InstructionState extends BasicGameState {
     private int startingY = 470;
     /** The space between Menu items */
     private int spaceBetweenItems = 131;
-    /** Location of graphic when quit button is selected */
-    private final String menuSelected = "res/menu/MenuSelected.png";
-    /** Location of graphic when quit button is unselected */
-    private final String menuUnselected = "res/menu/MenuUnselected.png";
     /** Image object of graphic when quit button is selected */
     private Image backUs;
     /** Image object of graphic when quit button is selected */
     private Image backS;
     /** background image */
     private Image instructionList;
-    /** Location of background */
-    private final String instructions = "res/menu/Instructions.png";
 
     /**
      * Sets instruction state ID
-     * @param stateID
+     *
+     * @param stateID The state Id that this state will have
      */
     InstructionState(int stateID) {
         super();
@@ -43,8 +42,9 @@ public class InstructionState extends BasicGameState {
 
     /**
      * Sets the game container and state based game
-     * @param gc
-     * @param sbg
+     *
+     * @param gc  The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg The current State Based Game
      */
     public void init(GameContainer gc, StateBasedGame sbg) {
         initMenu(gc, sbg);
@@ -53,9 +53,10 @@ public class InstructionState extends BasicGameState {
 
     /**
      * Draws the instructions for the game
-     * @param gc
-     * @param sbg
-     * @param g
+     *
+     * @param gc  The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg The current State Based Game
+     * @param g   The graphics context to draw images on the screen
      * @throws SlickException
      */
     @Override
@@ -65,20 +66,22 @@ public class InstructionState extends BasicGameState {
     }
 
     /**
-     * Update the game container and state based game
-     * @param gc
-     * @param sbg
-     * @param i
+     * Updates the instructions state.
+     *
+     * @param gc    The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg   The current State Based Game
+     * @param delta The time in milliseconds
      * @throws SlickException
      */
     @Override
-    public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
+    public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
 
     }
 
     /**
      * Gets state ID
-     * @return
+     *
+     * @return the current state ID of the instruction state
      */
     @Override
     public int getID() {
@@ -87,8 +90,11 @@ public class InstructionState extends BasicGameState {
 
     /**
      * Initialized instructions menu with images
-     * @param gc
-     * @param sbg
+     *
+     * @param gc  The context in which GUI components are created / rendered
+     *            (info about system - mouse cursor, groups system properties that affect
+     *            how program is run in terms of graphics / interaction w/ user)
+     * @param sbg The current State Based Game
      */
     private void initMenu(GameContainer gc, StateBasedGame sbg) {
         instructionsMenu = new Menu(startingX, startingY, spaceBetweenItems);

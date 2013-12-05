@@ -1,11 +1,7 @@
 import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.tiled.TiledMap;
 
-/**
- * A class that implements side-scrolling functionality by holding the player a constant x position while translates the map behind it.
- */
+/** A class that implements side-scrolling functionality by holding the player a constant x position while translates the map behind it. */
 public class Camera {
     /** the map used for our scene. */
     protected TiledMap map;
@@ -30,8 +26,10 @@ public class Camera {
 
     /**
      * Creates a new Camera instance that initializes Screen coordinate values
-     * @param gc
-     * @param map
+     *
+     * @param gc  The context in which GUI components are created / rendered (info about system - mouse cursor,
+     *            groups system properties that affect how program is run in terms of graphics / interaction w/ user)
+     * @param map The current map of the game.
      */
     public Camera(GameContainer gc, TiledMap map) {
 
@@ -50,37 +48,24 @@ public class Camera {
 
     /**
      * Centers the camera on the current x position of the player
-     * @param x
-     * @param y
+     *
+     * @param x The x position to center on
+     * @param y The y position to center on
      */
     public void centerOn(float x, float y) {
         cameraX = x;
         cameraY = y - gc.getHeight() / 2f;
 
-        /*
-        if (cameraX < 0) {
-            cameraX = 0;
-        }
-        if (cameraX + gc.getWidth() > mapWidth) {
-//            cameraX = mapWidth - gc.getWidth();
-            cameraX = 0;
-        }
-
-        if (cameraY < 0) {
-            cameraY = 0;
-        }
-        */
-
         if (cameraY + gc.getHeight() > mapHeight) {
-//            cameraY = mapHeight - gc.getHeight();
             cameraY = 0;
         }
     }
 
     /**
      * Draws the part of the map available on the screen
-     * @param offsetX
-     * @param offsetY
+     *
+     * @param offsetX The current X offset to adjust the map
+     * @param offsetY The current Y offset to adjust the map
      */
     public void drawMap(int offsetX, int offsetY) {
         //calculate the offset to the next tile (needed by TiledMap.render())
@@ -101,9 +86,7 @@ public class Camera {
         }
     }
 
-    /**
-     * Translates the current view of the map
-     */
+    /** Translates the current view of the map */
     public void translateGraphics() {
         gc.getGraphics().translate(-cameraX, -cameraY);
     }

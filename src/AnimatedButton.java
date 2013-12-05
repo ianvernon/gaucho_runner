@@ -74,16 +74,15 @@ public class AnimatedButton extends MouseOverArea {
         this.stateID = stateID;
         this.normalImage = normalImage;
         this.mouseOverImage = mouseOverImage;
-        //this.gc = gameContainer;
         this.restart = restart;
 
     }
 
     /** Checks to see if the mouse has moved
-     * @param oldx - the old horizontal coordinate of the mouse
-     * @param oldy - the old vertical coordinate of the mouse
-     * @param newx - the new horizontal coordinate of the mouse
-     * @param newy - the new vertical coordinate of the mouse
+     * @param oldx The old horizontal coordinate of the mouse
+     * @param oldy The old vertical coordinate of the mouse
+     * @param newx The new horizontal coordinate of the mouse
+     * @param newy The new vertical coordinate of the mouse
      */
     public void mouseMoved(int oldx, int oldy, int newx, int newy) {
         if (sbg.getCurrentStateID() == stateID) {
@@ -104,17 +103,17 @@ public class AnimatedButton extends MouseOverArea {
     }
 
     /** sets this button to be activated or inactivated
-     * @param b true / false value whether button is activated */
+     * @param b The true / false value whether button is activated */
     protected void setActivated(boolean b) {
         activated = b;
     }
 
 
     /** Checks to see if mouse has been clicked
-     * @param button the index of the button (starting at 0)
-     * @param x the x position of the mouse when the button was pressed
-     * @param y the y position of the mouse when the button was pressed
-     * @param clickCount the number of times the button was clicked
+     * @param button The index of the button (starting at 0)
+     * @param x The x position of the mouse when the button was pressed
+     * @param y The y position of the mouse when the button was pressed
+     * @param clickCount The number of times the button was clicked
      * */
     @Override
     public void mouseClicked(int button, int x, int y, int clickCount) {
@@ -134,9 +133,9 @@ public class AnimatedButton extends MouseOverArea {
 
     /**
      * Renders the button image
-     * @param gc - the context in which GUI components are created / rendered (info about system - mouse cursor,
+     * @param gc The context in which GUI components are created / rendered (info about system - mouse cursor,
      *                   groups system properties that affect how program is run in terms of graphics / interaction w/ user)
-     * @param g  - the graphics context to draw images on the screen
+     * @param g  The graphics context to draw images on the screen
      */
     public void render(GUIContext gc, Graphics g) {
         if (activated) {
@@ -150,7 +149,7 @@ public class AnimatedButton extends MouseOverArea {
 
     /**
      * Adds a button action to this button
-     * @param action - sets this action (thing button does) to the list of actions the button can do
+     * @param action Sets this action (thing button does) to the list of actions the button can do
      */
     public void add(ButtonAction action) {
         actions.add(action);

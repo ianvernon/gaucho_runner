@@ -6,20 +6,8 @@ import org.newdawn.slick.gui.GUIContext;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-/**
- * A class that implements the state in which the main menu is first rendered
- */
+/** A class that implements the state in which the main menu is first rendered */
 public class MenuState extends BasicGameState {
-    /** Main Menu */
-    private Menu mainMenu;
-    /** Starting x-position of menu */
-    private int startingX;
-    /** Starting y-position of menu */
-    private int startingY;
-    /** State Id of menu */
-    private int stateID;
-    /** Space between menu items */
-    private int spaceBetweenItems;
     /** Location of unselected play button graphic */
     private final String playUnselected = "res/menu/PlayButton.png";
     /** Location of selected play button graphic */
@@ -34,6 +22,16 @@ public class MenuState extends BasicGameState {
     private final String quitUnselected = "res/menu/QuitButtonSelected.png";
     /** Location of background graphic */
     private final String bgPath = "res/menu/MenuBG.png";
+    /** Main Menu */
+    private Menu mainMenu;
+    /** Starting x-position of menu */
+    private int startingX;
+    /** Starting y-position of menu */
+    private int startingY;
+    /** State Id of menu */
+    private int stateID;
+    /** Space between menu items */
+    private int spaceBetweenItems;
     /** Background graphic */
     private Image bg;
     /** Unselected play button graphic */
@@ -50,15 +48,15 @@ public class MenuState extends BasicGameState {
     private Image quitS;
     /** GUI context of menu state */
     private GUIContext guiContext;
-    public SoundManager soundManager;
 
 
     /**
      * Initializes Menu state
-     * @param stateID
-     * @param startingX
-     * @param startingY
-     * @param spaceBetweenItems
+     *
+     * @param stateID           The ID of the state
+     * @param startingX         The x position of the first button
+     * @param startingY         The y position of the first button
+     * @param spaceBetweenItems The space between the buttons
      */
     public MenuState(int stateID, int startingX, int startingY, int spaceBetweenItems) {
         super();
@@ -66,14 +64,13 @@ public class MenuState extends BasicGameState {
         this.startingX = startingX;
         this.startingY = startingY;
         this.spaceBetweenItems = spaceBetweenItems;
-        this.guiContext = guiContext;
-
     }
 
     /**
      * Tries to load images on Menu
-     * @param gc
-     * @param sbg
+     *
+     * @param gc  The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg The current State Based Game this button is a part of
      */
     private void initMenu(GameContainer gc, StateBasedGame sbg) {
         mainMenu = new Menu(startingX, startingY, spaceBetweenItems);
@@ -126,7 +123,8 @@ public class MenuState extends BasicGameState {
 
     /**
      * Gets state ID of menu
-     * @return
+     *
+     * @return The state id of the current state
      */
     public int getID() {
         return this.stateID;
@@ -134,8 +132,9 @@ public class MenuState extends BasicGameState {
 
     /**
      * Initializes Menu background and buttons
-     * @param gc
-     * @param sbg
+     *
+     * @param gc  The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg The current State Based Game
      * @throws SlickException
      */
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
@@ -143,8 +142,6 @@ public class MenuState extends BasicGameState {
 
             bg = new Image(bgPath);
             initMenu(gc, sbg);
-            //soundManager = new SoundManager();
-            //soundManager.play();
         } catch (SlickException ex) {
             ex.printStackTrace();
             return;
@@ -153,13 +150,13 @@ public class MenuState extends BasicGameState {
 
     /**
      * Draws Menu background and buttons
-     * @param gc
-     * @param sbg
-     * @param g
+     *
+     * @param gc  The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg The current State Based Game
+     * @param g   The graphics context to draw images on the screen
      */
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) {
-        if(sbg.getCurrentStateID() == this.stateID)
-        {
+        if (sbg.getCurrentStateID() == this.stateID) {
             g.drawImage(bg, 0, 0);
             mainMenu.render(gc, g);
         }
@@ -167,10 +164,12 @@ public class MenuState extends BasicGameState {
 
     /**
      * Updates the menu state
-     * @param gc
-     * @param sbg
-     * @param id
+     *
+     * @param gc    The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg   The current State Based Game
+     * @param delta The time in milliseconds
      */
-    public void update(GameContainer gc, StateBasedGame sbg, int id) {}
+    public void update(GameContainer gc, StateBasedGame sbg, int delta) {
+    }
 }
 
