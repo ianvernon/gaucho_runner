@@ -171,34 +171,6 @@ public class MenuState extends BasicGameState {
      * @param sbg
      * @param id
      */
-    public void update(GameContainer gc, StateBasedGame sbg, int id) {
-       /* switch(currentState)
-        {
-            case PLAY:
-
-                break;
-            case INSTRUCTIONS:
-                break;
-        } */
-    }
-
-    /**
-     * Notification that we've entered this state
-     */
-    /*public void enter(GameContainer gc, StateBasedGame sbg) {
-//        mainMenu.leave();
-        System.out.println("Entering MenuState");
-    } */
-
-    /**
-     * Notification that we've left this state
-     */
-    //@Override
-    /*public void leave(GameContainer container, StateBasedGame game) throws SlickException {
-//    mainMenu.leave();
-    System.out.println("Leaving MenuState");
-
-    } */
-
+    public void update(GameContainer gc, StateBasedGame sbg, int id) {}
 }
 

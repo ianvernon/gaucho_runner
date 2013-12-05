@@ -379,8 +379,6 @@ public class GameLogic {
         }
 
 
-
-
         //TODO replace this with the new image for the scoreboard background
         //timerBox.draw(2, 98);
         timeToFinish = TIME_TO_FINISH - time/1000;
@@ -390,7 +388,8 @@ public class GameLogic {
 
 
     }
-    boolean getIsColliding(){
+
+    public boolean getIsColliding(){
         return isColliding;
     }
 

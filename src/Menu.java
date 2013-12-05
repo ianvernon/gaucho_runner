@@ -98,18 +98,11 @@ public class Menu {
     /**
      * Time to revive the buttons
      */
-    public void enter() {
-        for (AnimatedButton b : items){
-            b.setAlive(true);
-        }
-    }
+    public void enter() {}
 
     /**
      * Time to kill the buttons
      */
-    public void leave() {
-        for (AnimatedButton b : items){
-            b.setAlive(false);
-        }
-    }
+    public void leave() {}
+
 }

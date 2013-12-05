@@ -30,8 +30,6 @@ public class AnimatedButton extends MouseOverArea {
     private final List<ButtonAction> actions = new ArrayList<ButtonAction>();
     /** Should we restart on entering the button's state ID */
     private boolean restart = false;
-    /** Is button current alive */
-    private boolean alive = false;
     private int assignedStateID;
     // assignedStateID assigns the button to be active in a specific state to solve button problem
 
@@ -55,8 +53,6 @@ public class AnimatedButton extends MouseOverArea {
         this.stateID = stateID;
         this.normalImage = normalImage;
         this.mouseOverImage = mouseOverImage;
-        this.alive = true;
-        //this.gc = gameContainer;
         this.assignedStateID = assignedStateID;
 
     }
@@ -113,15 +109,6 @@ public class AnimatedButton extends MouseOverArea {
         activated = b;
     }
 
-    /** @return alive alive status of the button */
-    public boolean isAlive() {
-        return alive;
-    }
-
-    /** Sets the value of alive */
-    protected void setAlive(boolean b) {
-        alive = b;
-    }
 
     /** Checks to see if mouse has been clicked
      * @param button the index of the button (starting at 0)
@@ -131,14 +118,14 @@ public class AnimatedButton extends MouseOverArea {
      * */
     @Override
     public void mouseClicked(int button, int x, int y, int clickCount) {
-        if (isAlive() && isMouseOver()) {
+        if (isMouseOver()) {
             if (restart) {
                 PlayState ps = (PlayState) sbg.getState(1);
                 ps.restart();
             }
             if(sbg.getCurrentStateID() == assignedStateID)
             //{
-             sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+               sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
             //}
 
 

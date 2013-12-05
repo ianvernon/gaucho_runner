@@ -67,6 +67,14 @@ public class PlayState extends BasicGameState {
 
         logic.playSound("theme");
 
+        //reset values
+        secondsPerWindow = 1;
+        isMoving = false;
+        needsRestart = false;
+        speedTime = 0;
+        isDone = false;
+        currentX = 0;
+
     }
 
     /**
@@ -124,7 +132,7 @@ public class PlayState extends BasicGameState {
         //Sets the number of windows per map
         windowsPerMap = (camera.mapWidth - 800) / (40 * camera.tileWidth);
 
-//        int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
+        //int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
         Input input = gc.getInput();
 
         speedTime += delta;
@@ -132,8 +140,9 @@ public class PlayState extends BasicGameState {
         // Enter Pause Screen if user presses escape
         if (input.isKeyDown(Input.KEY_ESCAPE))
             sbg.enterState(3);
-
-        if (input.isKeyDown(Input.KEY_UP)) {
+        else if (input.isKeyDown(Input.KEY_R))
+            this.restart(gc, sbg);
+        else if (input.isKeyDown(Input.KEY_UP)) {
             player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() - player.getSpeed()));
         } else if (input.isKeyDown(Input.KEY_DOWN)) {
             player.setPosition(new Vector2f(player.getPosition().getX(), player.getPosition().getY() + player.getSpeed()));
@@ -190,7 +199,7 @@ public class PlayState extends BasicGameState {
         if(camera.cameraX > 69500) {
             EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), false );//4 = playstate
             sbg.addState(endPlayState);
-//            sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
+            //sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
             logic.stopSound("theme");
             sbg.enterState(4);
         }
@@ -220,6 +229,7 @@ public class PlayState extends BasicGameState {
     /** Restarts the game ( using init() ) */
     public void restart(GameContainer gc, StateBasedGame sbg) {
         //TODO: implement init()-indepenent restart()
+        System.out.println("Restarting PlayState");
         try {
             this.init(gc, sbg);
         } catch (SlickException ex) {
