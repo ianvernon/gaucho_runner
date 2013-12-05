@@ -10,12 +10,11 @@ public abstract class Powerup extends CollidableInteractiveEntity {
     protected boolean isPickedUp;
     /**
      * Initializes powerup values
-     * @param name
-     * @param image
-     * @param position
-     * @param collisionShape
+     * @param name name of powerup
+     * @param image powerup image
+     * @param position powerup position
+     * @param collisionShape powerup shape for collision detection
      */
-
     public Powerup(String name, Image image, Vector2f position, Shape collisionShape, int speed, boolean isPickedUp) {
         super(name, image, position, collisionShape, speed);
         isPickedUp = false;

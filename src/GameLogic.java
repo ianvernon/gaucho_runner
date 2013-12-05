@@ -80,9 +80,6 @@ public class GameLogic {
             e.printStackTrace();
         }
 
-        //load the enemies
-        int LOCATION = 550;
-
         //Initialize enemies
         try {
             //Top road bounded holes
@@ -252,7 +249,6 @@ public class GameLogic {
                 Vector2f powerUpPos = new Vector2f(randomX, randomY);
                 Shape powerUpShape = new Rectangle(0, 0, powerUpImage.getWidth(), powerUpImage.getHeight());
                 powerups.add(new ExtraLife("extraLife" + i, powerUpImage, powerUpPos, powerUpShape, 0, false));
-                //LOCATION = LOCATION + 300;
             }
         }
         catch(SlickException ex)
@@ -293,7 +289,6 @@ public class GameLogic {
             }
         }
         else {
-            //TODO fix this ian. please. :)
             for (int i = 0; i < enemyList.size(); i++) {
                 enemyList.get(i).setPosition(new Vector2f(enemyList.get(i).getPosition().getX() - speed, enemyList.get(i).getPosition().getY()));
             }
@@ -313,7 +308,6 @@ public class GameLogic {
         isColliding = false;
         //checks for lives and collisions
         for (int i = 0; i < enemyList.size(); i++) {
-            //if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
             if (player.isCollidingWith(enemyList.get(i)) && !livesList.isEmpty()) {
                 s.play("crash");
                 if(i < topH) {
@@ -338,11 +332,9 @@ public class GameLogic {
                 livesList.remove(livesList.size() - 1);
                 enemyList.remove(i);
                 isColliding = true;
-            } else {
-                //go to end screen
             }
-
         }
+
         // check if interacting with powerup
         for(int i = 0; i < powerups.size(); i++)
         {
@@ -363,12 +355,10 @@ public class GameLogic {
             }
         }
         if (livesList.isEmpty()) {
-//            g.drawString("No more lives!", 300, 50);
-            //s.stop("theme");
-            //gameOver = true;
+            s.stop("theme");
+            gameOver = true;
         }
         if (timeToFinish <= 0) {
-//            g.drawString("No more time!", 500, 50);
             s.stop("theme");
             gameOver = true;
         }
@@ -387,7 +377,6 @@ public class GameLogic {
         //render enemies
         for (int i = 0; i < enemyList.size(); i++) {
             enemyList.get(i).render(g);
-//            g.draw(enemyList.get(i).getCollisionShape());
         }
 
         // render powerups
@@ -395,7 +384,6 @@ public class GameLogic {
         for(int i = 0; i < powerups.size(); i++)
         {
             powerups.get(i).render(g);
-//            g.draw(powerups.get(i).getCollisionShape());
         }
 
         //draws the lives
@@ -407,14 +395,8 @@ public class GameLogic {
             location += livesList.get(i).getWidth() + 7; //the integer is the spacing between the images
         }
 
-
-        //TODO replace this with the new image for the scoreboard background
-        //timerBox.draw(2, 98);
         timeToFinish = TIME_TO_FINISH - time/1000;
         g.drawString("Time Left: " + timeToFinish + "s", 10, 47);
-
-
-
 
     }
 
