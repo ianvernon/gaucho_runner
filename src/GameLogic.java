@@ -1,6 +1,5 @@
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
@@ -8,38 +7,63 @@ import org.newdawn.slick.geom.Vector2f;
 
 import java.util.ArrayList;
 
-
+/**
+ * The logic behind the game that is run during PlayState
+ */
 public class GameLogic {
-
+    /** The amount of time the player has been in PlayState in seconds */
     private int time;
+    /** The number of lives the player starts with */
     private int STARTING_LIVES = 3;
+    /** An array of lives the player has left */
     private ArrayList<Image> livesList;
+    /** An array of all enemies in the game */
     private ArrayList<Enemy> enemyList;
+    /** An array of all Powerups in the game */
     private ArrayList<Powerup> powerups;
+    /** The number of enemies bounded to the top half of the road */
     private static int NUM_OF_TOPENEMIES = 50;
+    /** The number of holes bounded to the top half of the road */
     private static int NUM_OF_TOPHOLES = 50;
+    /** The number of enemies bounded to the bottom half of the road */
     private static int NUM_OF_BOTTOMENEMIES = 50;
+    /** The number of holes bounded to the bottom half of the road */
     private static int NUM_OF_BOTTOMHOLES = 50;
+    /** The amount of time the player has to complete the course */
     private static int TIME_TO_FINISH = 160;
+    /** A number that holds number ranges to determine the type of enemy being called */
     private int enemyTypeInterval = 0;
+    /** Top enemy interval counter */
     private int topE;
+    /** Top hole interval counter */
     private int topH;
+    /** Bottom enemy interval counter */
     private int bottomE;
+    /** Bottom hole interval counter */
     private int bottomH;
+    /** Total number of powerups in the game */
     private static int NUM_OF_POWERUPS = 20;
-    private Image timerBox;
+    /** Scoreboard holding scoring mechanics and board render */
     private Scoreboard scoreboard;
+    /** Sees if the object is colliding with another */
     public boolean isColliding;
+    /** Manages sound */
     SoundManager s;
+    /** Sees if game should be ended */
     private boolean gameOver = false;
+    /** The current amount of time left to complete the course */
     private int timeToFinish;
 
-
-
+    /**
+     * Game Logic Constructor
+     */
     public GameLogic() {
         init();
     }
 
+    /**
+     * Initializes values in Game Logic
+     */
     public void init() {
         livesList = new ArrayList<Image>();
         enemyList = new ArrayList<Enemy>();
@@ -53,12 +77,6 @@ public class GameLogic {
         try{
             s.init();
         }catch (SlickException e){
-            e.printStackTrace();
-        }
-
-        try {
-            timerBox = new Image("res/misc/TimerBackground.png");
-        } catch (SlickException e) {
             e.printStackTrace();
         }
 
@@ -255,6 +273,13 @@ public class GameLogic {
         }
     }
 
+    /**
+     * Updates game logic
+     * @param speed pixels per frame which which the player is moving
+     * @param isMoving sees if player is moving
+     * @param player player object
+     * @param delta time that has passed since start of game
+     */
     public void update(int speed, boolean isMoving, Player player, int delta) {
         this.time += delta;
 
@@ -351,6 +376,10 @@ public class GameLogic {
         scoreboard.update(livesList.size(), time, powerups.size());
     }
 
+    /**
+     * Renders the game in accordance with position updates as the game progresses
+     * @param g the graphics context to draw images on the screen
+     */
     public void render(Graphics g) {
         scoreboard.render(g);
 
@@ -389,21 +418,43 @@ public class GameLogic {
 
     }
 
+    /**
+     * Method call to see whether object is colliding with another
+     * @return sees whether object is colliding with another
+     */
     public boolean getIsColliding(){
         return isColliding;
     }
 
+    /**
+     * Method call to get score
+     * @return score of player
+     */
     int getScore()
     {
         return scoreboard.calculateScore();
     }
+
+    /**
+     * Method call to play sound
+     * @param src name of sound to be played
+     */
     public void playSound(String src){
         s.play(src);
     }
 
+    /**
+     *  Method call to stop sound
+      * @param src name of sound to be stopped
+     */
     public void stopSound(String src){
         s.stop(src);
     }
+
+    /**
+     * Method call to see whether game is over
+     * @return sees if game is over
+     */
     public boolean getGameOver(){
         return gameOver;
     }
