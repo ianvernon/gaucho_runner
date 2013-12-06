@@ -52,12 +52,12 @@ public class PauseState extends BasicGameState {
     private PlayState play;
 
     /**
-     * Initializes Menu state
+     * Initializes Menu state if no PlayState is passed
      *
-     * @param stateID
-     * @param startingX
-     * @param startingY
-     * @param spaceBetweenItems
+     * @param stateID           The ID of the state
+     * @param startingX         The x position of the first button
+     * @param startingY         The y position of the first button
+     * @param spaceBetweenItems The space between the buttons
      */
     public PauseState(int stateID, int startingX, int startingY, int spaceBetweenItems) {
         super();
@@ -70,7 +70,7 @@ public class PauseState extends BasicGameState {
     }
 
     /**
-     * Initializes Menu state
+     * Initializes Menu state if a PlayState is passed
      *
      * @param stateID           The ID of the state
      * @param startingX         The x position of the first button

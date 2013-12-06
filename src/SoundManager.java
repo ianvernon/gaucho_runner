@@ -1,4 +1,3 @@
-import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Sound;
@@ -38,13 +37,6 @@ public class SoundManager {
     }
 
     /**
-     * Destroys sound resource
-     */
-    public void destroy() {
-//        AL.destroy();
-    }
-
-    /**
      * Plays sound resource
      * @param src name of sound to be played
      */
@@ -64,8 +56,6 @@ public class SoundManager {
         else if (src == "powerup"){
             powerUp.play();
         }
-
-
     }
 
     /**
@@ -74,7 +64,6 @@ public class SoundManager {
      */
     public void stop(String src){
         if(src == "theme"){
-//            theme.stop();
             theme.fade(1500, 0f, true);
         }
         else if (src == "crash"){
@@ -91,5 +80,4 @@ public class SoundManager {
         }
 
     }
-
 }

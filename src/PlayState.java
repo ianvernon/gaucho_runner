@@ -1,21 +1,18 @@
 import org.newdawn.slick.*;
-import org.newdawn.slick.Graphics;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
-import org.newdawn.slick.state.transition.FadeInTransition;
-import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.tiled.TiledMap;
 
 /** A class that implements the state where the game is played */
 public class PlayState extends BasicGameState {
+    public static int speed = 5;
     /** Map location */
     private final String MAP_PATH = "res/map/fullmap.tmx";
     /** Current x-position */
     int currentX = 0;
-    public static int speed = 5;
     /** Game map */
     private TiledMap map;
     /** Camera that moves the map */
@@ -26,17 +23,23 @@ public class PlayState extends BasicGameState {
     private int stateID;
     /** The shortest time possible to move the width of the screen once in seconds */
     private int secondsPerWindow = 1;
+    /** The object for the progress bar */
     private ProgressBar progBar;
-    private boolean isMoving = false;
+    /** The object for the game logic */
     private GameLogic logic;
+    /** Flag that is set when the player is moving */
+    private boolean isMoving = false;
+    /** Flag that checks to see if the game needs to be restarted or resumed */
     private boolean needsRestart = false;
+    /** Variable that helps with smooth speed adjustments */
     private long speedTime = 0;
+    /** Flag that checks if the game is over */
     private boolean isDone = false;
 
     /**
      * Sets game to playable state
      *
-     * @param stateID
+     * @param stateID The ID of the state
      */
     public PlayState(int stateID) {
         super();
@@ -46,8 +49,8 @@ public class PlayState extends BasicGameState {
     /**
      * Sets the player graphic, position, shape, and loads the map
      *
-     * @param gc
-     * @param sbg
+     * @param gc  The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg The current State Based Game.
      * @throws SlickException
      */
     @Override
@@ -80,9 +83,9 @@ public class PlayState extends BasicGameState {
     /**
      * Draws map and player and displays time in seconds
      *
-     * @param gc
-     * @param sbg
-     * @param g
+     * @param gc  The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg The current State Based Game this button is a part of
+     * @param g   The graphics context to draw images on the screen
      * @throws SlickException
      */
     @Override
@@ -90,8 +93,6 @@ public class PlayState extends BasicGameState {
         camera.drawMap(0, 0);
         player.render(g);
 //        g.draw(player.getCollisionShape());
-
-
 
         progBar.update(currentX, camera.mapWidth);
         progBar.render();
@@ -109,28 +110,16 @@ public class PlayState extends BasicGameState {
     /**
      * Updates time, player position, and camera location
      *
-     * @param gc
-     * @param sbg
-     * @param delta
+     * @param gc    The game container that handles the game loop, fps recording and managing the input system
+     * @param sbg   The current State Based Game this button is a part of
+     * @param delta Time in milliseconds that assists in time left and smooth speed adjustments
      * @throws SlickException
      */
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
-        int eventsPerSecond;
-        int windowsPerMap;
 
         if (needsRestart)
             this.restart(gc, sbg);
-
-        //checks to make sure it does not divide by zero
-        if (gc.getFPS() == 0) {
-            eventsPerSecond = 60;
-        } else {
-            eventsPerSecond = gc.getFPS();
-        }
-
-        //Sets the number of windows per map
-        windowsPerMap = (camera.mapWidth - 800) / (40 * camera.tileWidth);
 
         //int speed = camera.mapWidth / (eventsPerSecond * secondsPerWindow * windowsPerMap);
         Input input = gc.getInput();
@@ -159,7 +148,6 @@ public class PlayState extends BasicGameState {
             }
         }
         if (input.isKeyDown(Input.KEY_RIGHT)) {
-            // TODO:  PLACEHOLDER - FIX THIS
             isMoving = true;
             if (speedTime >= 250) {
                 speedTime = 0;
@@ -178,33 +166,32 @@ public class PlayState extends BasicGameState {
             player.setPosition(new Vector2f(player.getPosition().getX(), 540));
         }
         //check to see if player is on the dirt
-        if((player.getPosition().getY() < 210) && (speed >= 3)) {
+        if ((player.getPosition().getY() < 210) && (speed >= 3)) {
             speed = 3;
-        } else if ((player.getPosition().getY() > 485) && (speed >= 3)){
+        } else if ((player.getPosition().getY() > 485) && (speed >= 3)) {
             speed = 3;
         }
 
 
         logic.update(speed, isMoving, player, delta);
         //check to see if collision happened
-        if(logic.getIsColliding()){
+        if (logic.getIsColliding()) {
             speed = 3;
         }
-        if(camera.cameraX > 68050 && !isDone){
+        if (camera.cameraX > 68050 && !isDone) {
             isDone = true;
             logic.stopSound("theme");
             logic.playSound("cheering");
             speed = 2;
         }
-        if(camera.cameraX > 69500) {
-            EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), false );//4 = playstate
+        if (camera.cameraX > 69500) {
+            EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), false);//4 = playstate
             sbg.addState(endPlayState);
-            //sbg.enterState(4, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
             logic.stopSound("theme");
             sbg.enterState(4);
         }
-        if(logic.getGameOver()){
-            EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), true );//4 = playstate
+        if (logic.getGameOver()) {
+            EndPlayState endPlayState = new EndPlayState(4, logic.getScore(), true);//4 = playstate
             sbg.addState(endPlayState);
             logic.stopSound("theme");
             logic.playSound("boo");
@@ -241,7 +228,7 @@ public class PlayState extends BasicGameState {
     /**
      * Gets state ID of the play state
      *
-     * @return
+     * @return returns the current state id
      */
     @Override
     public int getID() {
