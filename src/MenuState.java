@@ -107,7 +107,7 @@ public class MenuState extends BasicGameState {
 
         );
 
-        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2 * spaceBetweenItems, 3, sbg.getCurrentStateID());
+        AnimatedButton quit = new AnimatedButton(gc, sbg, quitUs, quitS, startingX, startingY + 2 * spaceBetweenItems, 4, sbg.getCurrentStateID());
 
         quit.add(new ButtonAction() {
             public void perform() {
