@@ -1,21 +1,25 @@
 -------------------------------------------------------------------------------
 Gaucho Runner
 -------------------------------------------------------------------------------
-Version 0.1
-Release date: 11/08/2013
+Version 0.2
+Release date: 12/06/2013
 -------------------------------------------------------------------------------
 Project state: beta
 -------------------------------------------------------------------------------
 Credits
-	Sarah Darwiche
-    Heneli Kailahi
-    Evan Moelter
-    James Thompson
-    Ian Vernon
+    Sarah Darwiche, 
+    Heneli Kailahi, 
+    Evan Moelter, 
+    James Thompson, 
+    Ian Vernon, 
 
 Contact
+    sarahdarwiche@umail.ucsb.edu
+    hkailahi@umail.ucsb.edu
+    evanmoelter@umail.ucsb.edu
     jsthompson@umail.ucsb.edu
-    hkailahi@umain.ucsb.edu
+    ianvernon@umail.ucsb.edu
+    
 -------------------------------------------------------------------------------
 Project Description
 
@@ -54,12 +58,13 @@ Down Arrow - moves bike down
 -------------------------------------------------------------------------------
 Bugs
 
-Button locations are still on screen even though they are not being rendered
+When you go to instructions first then go to play the game it immediatly goes 
+to the end state.
 
 -------------------------------------------------------------------------------
 Documentation
 The Javadocs for Gaucho Runner are included in the doc folder.
-doc/javadoc/index.html
+javadoc/index.html
 
 -------------------------------------------------------------------------------
 Additional Notes
