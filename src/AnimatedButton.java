@@ -54,16 +54,16 @@ public class AnimatedButton extends MouseOverArea {
         this.normalImage = normalImage;
         this.mouseOverImage = mouseOverImage;
         this.assignedStateID = assignedStateID;
-
     }
 
     /** The constructor for the Animated Button class
-     * @param guiContext
-     * @param sbg
-     * @param normalImage
-     * @param mouseOverImage
-     * @param x
-     * @param y
+     * @param guiContext the context in which GUI components are created / rendered (info about system - mouse cursor,
+     *                   groups system properties that affect how program is run in terms of graphics / interaction w/ user)
+     * @param sbg the current State Based Game this button is a part of
+     * @param normalImage the image that is displayed at the start when mouse is not over button
+     * @param mouseOverImage the image that is displayed when mouse is over this button
+     * @param x position of this button on the screen
+     * @param y position of this button on the screen
      * @param restart should we restart the PlayState?
      */
     public AnimatedButton(GUIContext guiContext, StateBasedGame sbg, Image normalImage, Image mouseOverImage, int x, int y, int stateID, boolean restart) {
@@ -75,7 +75,6 @@ public class AnimatedButton extends MouseOverArea {
         this.normalImage = normalImage;
         this.mouseOverImage = mouseOverImage;
         this.restart = restart;
-
     }
 
     /** Checks to see if the mouse has moved
@@ -87,7 +86,6 @@ public class AnimatedButton extends MouseOverArea {
     public void mouseMoved(int oldx, int oldy, int newx, int newy) {
         if (sbg.getCurrentStateID() == stateID) {
             if (isMouseOver() && !lastMouseOver && !isActivated()) {
-
                 lastMouseOver = true;
             } else if (!isMouseOver()) {
                 lastMouseOver = false;
@@ -96,13 +94,13 @@ public class AnimatedButton extends MouseOverArea {
         super.mouseMoved(oldx, oldy, newx, newy);
     }
 
-    /** tells system whether button is activated
+    /** Tells system whether button is activated
      *  @return activated whether button is activated or not */
     public boolean isActivated() {
         return activated;
     }
 
-    /** sets this button to be activated or inactivated
+    /** Sets this button to be activated or inactivated
      * @param b The true / false value whether button is activated */
     protected void setActivated(boolean b) {
         activated = b;
@@ -122,12 +120,9 @@ public class AnimatedButton extends MouseOverArea {
                 PlayState ps = (PlayState) sbg.getState(1);
                 ps.restart();
             }
-            if(sbg.getCurrentStateID() == assignedStateID)
-            //{
+            if(sbg.getCurrentStateID() == assignedStateID){
                sbg.enterState(stateID, new FadeOutTransition(Color.black, 1000), new FadeInTransition(Color.black, 1000));
-            //}
-
-
+            }
         }
     }
 
@@ -154,5 +149,4 @@ public class AnimatedButton extends MouseOverArea {
     public void add(ButtonAction action) {
         actions.add(action);
     }
-
 }
